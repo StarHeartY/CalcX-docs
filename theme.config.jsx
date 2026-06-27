@@ -5,6 +5,21 @@ export default {
   project: {
     link: 'https://github.com/StarHeartY/CalcX-docs' // 右上角的 GitHub 图标链接
   },
+
+  // 版权声明
+  footer: {
+    content: (
+      <span>
+        Copyright © {(() => {
+          const start = 2026
+          const now = new Date().getFullYear()
+          return start === now ? now : `${start}–${now}`
+        })()} <a href="https://calcx.startyi.com" target="_blank" rel="noopener noreferrer">CalculatorX</a>.
+        All Rights Reserved.
+      </span>
+    )
+  },
+
   // 关闭右侧的 "Edit this page"
   editLink: {
     component: () => null
@@ -51,9 +66,6 @@ export default {
     )
   },
 
-  footer: {
-    text: '© 2026 CalculatorX Project'
-  },
   // 强制全站默认主题色跟随系统，不闪烁
   nextThemes: {
     defaultTheme: 'system'
