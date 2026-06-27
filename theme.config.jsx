@@ -10,6 +10,22 @@ export default {
     component: () => null
   },
 
+  // 将 "Last updated on" 改为中文
+  gitTimestamp: function GitTimestamp({ timestamp }) {
+    return (
+      <>
+        最后更新于{' '}
+        <time dateTime={timestamp.toISOString()}>
+          {timestamp.toLocaleDateString('zh-CN', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          })}
+        </time>
+      </>
+    )
+  },
+
   // head 必须用函数形式以获取当前页面的动态标题
   // 静态 JSX 会完全替换主题默认的 head（包括 <title>），导致页面无标题
   head: function useHead() {
