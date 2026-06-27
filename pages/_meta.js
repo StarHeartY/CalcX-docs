@@ -1,5 +1,5 @@
 export default {
-  "index": "Introduction",
+  "index": "介绍",
   "another": "Another Page",
   "advanced": "Advanced (A Folder)",
   "about": {
