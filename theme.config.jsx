@@ -1,23 +1,39 @@
+import { useConfig } from 'nextra-theme-docs'
+
 export default {
   logo: <strong>CalculatorX 帮助中心</strong>,
   project: {
     link: 'https://github.com/StarHeartY/CalcX-docs' // 右上角的 GitHub 图标链接
   },
-  docsRepositoryBase: 'https://github.com/StarHeartY/CalcX-docs/tree/main', // 用于“编辑此页”功能
-
-  useNextSeoProps() {
-    return {
-      titleTemplate: '%s – CalculatorX 帮助中心' // %s 会自动替换为当前页面的名字
-    }
+  // 关闭右侧的 "Edit this page"
+  editLink: {
+    component: () => null
   },
 
-  head: (
-    <>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="icon" type="image/png" href="/docs/favicon.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/docs/favicon.png" />
-    </>
-  ),
+  // head 必须用函数形式以获取当前页面的动态标题
+  // 静态 JSX 会完全替换主题默认的 head（包括 <title>），导致页面无标题
+  head: function useHead() {
+    const { frontMatter, title: pageTitle } = useConfig()
+    const title = pageTitle
+      ? `${pageTitle} - CalculatorX 帮助中心`
+      : 'CalculatorX 帮助中心'
+
+    return (
+      <>
+        <title>{title}</title>
+        <meta property="og:title" content={title} />
+        {frontMatter.description && (
+          <>
+            <meta name="description" content={frontMatter.description} />
+            <meta property="og:description" content={frontMatter.description} />
+          </>
+        )}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="/docs/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/docs/favicon.png" />
+      </>
+    )
+  },
 
   footer: {
     text: '© 2026 CalculatorX Project'

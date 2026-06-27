@@ -3,13 +3,13 @@ export default {
   "another": "Another Page",
   "advanced": "Advanced (A Folder)",
   "about": {
-    "title": "About",
-    "type": "page"
+    "title": "关于",
+    "type": "page"   // 出现在顶部导航栏
   },
   "contact": {
-    "title": "Contact ↗",
+    "title": "联系 ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://github.com/StarHeartY",
     "newWindow": true
   }
 }
