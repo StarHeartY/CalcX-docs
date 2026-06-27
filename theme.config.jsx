@@ -3,7 +3,7 @@ import { useConfig } from 'nextra-theme-docs'
 export default {
   logo: <strong>CalculatorX 帮助中心</strong>,
   project: {
-    link: 'https://github.com/StarHeartY/CalcX-docs' // 右上角的 GitHub 图标链接
+    link: 'https://github.com/StarHeartY/CalcX-docs'
   },
 
   // 版权声明
@@ -24,6 +24,10 @@ export default {
   editLink: {
     component: () => null
   },
+  // 反馈链接改为中文
+  feedback: {
+    content: '有疑问？反馈 →'
+  },
 
   // 将 "Last updated on" 改为中文
   gitTimestamp: function GitTimestamp({ timestamp }) {
@@ -41,8 +45,7 @@ export default {
     )
   },
 
-  // head 必须用函数形式以获取当前页面的动态标题
-  // 静态 JSX 会完全替换主题默认的 head（包括 <title>），导致页面无标题
+  // 用函数形式以获取当前页面的动态标题
   head: function useHead() {
     const { frontMatter, title: pageTitle } = useConfig()
     const title = pageTitle
