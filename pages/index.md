@@ -4,5 +4,6 @@ title: 介绍
 
 # CalculatorX 使用手册
 
-欢迎来到 CalcX 的帮助中心！
+欢迎来到 CalcX 的帮助中心！！！！！
+
 这是我们为了测试 Cloudflare 边缘源站路由，随便写的两句话。
