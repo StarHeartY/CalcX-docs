@@ -1,0 +1,56 @@
+---
+title: 介绍
+---
+import { Cards } from 'nextra/components'
+import HelpLink from '../components/HelpLink'
+import Image from 'next/image'
+import ThemeImage from '../components/ThemeImage'
+
+
+
+# CalculatorX 使用手册
+
+欢迎使用 **CalculatorX 计算器**（简称 CalcX）。本指南将带你快速熟悉软件的核心布局与基础操作，助你立刻上手这款功能强大的科学计算器。
+
+
+## 简介
+
+CalcX 是一款 **专业级符号计算器 (CAS)** <HelpLink href="docs/faq#1-什么是“符号计算器”？" title="什么是专业级符号计算器 (CAS 引擎)？" />兼 **多功能计算工具**，你可以借助它轻松应对微积分、方程求解、符号推导、函数图像、概率统计等诸多场景。也能作为计算、单位转换等日常工具。
+
+## 界面
+
+初次打开应用，所有的布局逻辑都旨在为你提供最沉浸的计算体验：
+<ThemeImage src="/docs/images/docs/index/scientific.png"
+  alt="名字"
+  width={1424}
+  height = {2931} 
+  style = {{ maxWidth: '300px', height: 'auto',borderRadius: '12px', marginTop: '16px' }}
+/>
+
+* **公式显示区：** 告别枯燥的纯文本代码。你的所有输入与计算结果，都会被实时渲染为印刷级的标准数学公式。
+* **主键盘区：** 提供大面积的数字与基础运算符，支持极速连击输入，并具备防误触设计。
+* **高级功能面板：** 包含三角函数（支持 DEG/RAD 极速无缝切换）、指数对数、微积分符号及各类科学常数。
+* **历史记录抽屉：** 每次按下等号，完整的计算过程都会被自动存档。你可以随时查阅，甚至点击历史结果将其直接“无缝填入”当前的光标位置。
+
+##  接下来去哪儿？
+
+为了让你充分发挥 CalculatorX 的全部实力，我们为你准备了不同深度的专题指南。请根据你的实际使用场景选择阅读：
+
+<Cards>
+  <Cards.Card
+    title="📐 基础运算：常规操作与历史记录"
+    href="/basics"
+  />
+  <Cards.Card
+    title="🔬 科学计算：函数、常数与进阶功能"
+    href="/scientific"
+  />
+  <Cards.Card
+    title="🚀 CAS 引擎：代数、微积分与方程终极指南"
+    href="/cas"
+  />
+  <Cards.Card
+    title="❓ 常见问题解答 (FAQ)"
+    href="/support"
+  />
+</Cards>

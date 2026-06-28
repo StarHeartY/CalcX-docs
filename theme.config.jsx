@@ -29,6 +29,16 @@ export default {
     content: '有疑问？反馈 →'
   },
 
+  // 搜索框中文化
+  search: {
+    placeholder: '搜索…',
+    emptyResult: (
+      <span className="_block _select-none _p-8 _text-center _text-sm _text-gray-400">
+        未找到相关结果
+      </span>
+    )
+  },
+
   // 将 "Last updated on" 改为中文
   gitTimestamp: function GitTimestamp({ timestamp }) {
     return (

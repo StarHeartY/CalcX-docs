@@ -1,0 +1,168 @@
+/* =========================================
+   CalculatorX 文档全局样式
+========================================= */
+
+/* --- 1. 头部大图标与标题样式 (Hero) --- */
+.hero-title {
+  color: #0f172a;
+  transition: color 0.2s ease-in-out;
+}
+
+.hero-subtitle {
+  color: #64748b;
+  transition: color 0.2s ease-in-out;
+}
+
+.hero-icon {
+  box-shadow: 12px 24px 64px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s ease;
+}
+
+.dark .hero-title {
+  color: #f1f5f9;
+}
+
+.dark .hero-subtitle {
+  color: #94a3b8;
+}
+
+.dark .hero-icon {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+
+/* --- 2. 胶囊按钮样式 (官方主页 & 邮箱) --- */
+.btn-capsule {
+  border: 2px solid #1a1a1a;
+  color: #1a1a1a;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-capsule .capsule-subtext {
+  color: #666;
+  transition: color 0.2s ease-in-out;
+}
+
+.dark .btn-capsule {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: #000 !important;
+}
+
+.dark .btn-capsule .capsule-subtext {
+  color: #a1a1aa !important;
+}
+
+.btn-adaptive {
+  border: 2px solid #1a1a1a;
+  color: #1a1a1a;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  /* 加上极其丝滑的颜色渐变过渡效果 */
+}
+
+.dark .btn-adaptive {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: #000 !important;
+}
+
+
+/* --- 3. 鸣谢卡片样式 (开源组件库) --- */
+.badge-card {
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  transition: all 0.2s ease-in-out;
+}
+
+.badge-card .badge-title {
+  color: #0f172a;
+  transition: color 0.2s ease-in-out;
+}
+
+.badge-card .badge-desc {
+  color: #64748b;
+  transition: color 0.2s ease-in-out;
+}
+
+.dark .badge-card {
+  border-color: #334155 !important;
+  background-color: #1e293b !important;
+}
+
+.dark .badge-card .badge-title {
+  color: #f1f5f9 !important;
+}
+
+.dark .badge-card .badge-desc {
+  color: #94a3b8 !important;
+}
+
+
+/* --- 4. 真实 3D 物理键帽样式 (<kbd>) --- */
+.key-cap {
+  display: inline-block;
+  padding: 3px 6px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #334155;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  margin: 0 2px;
+  vertical-align: middle;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  transition: all 0.2s ease;
+}
+
+.dark .key-cap {
+  color: #f1f5f9;
+  background-color: #1e293b;
+  border-color: #0f172a;
+  border-bottom-color: #020617;
+}
+
+/* --- 5. 脚注/注释问号链接 --- */
+.annotation-link {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 2px;
+  color: #94a3b8;
+  transition: all 0.2s ease; /* 默认浅灰色*/
+  position: relative;
+  top: -4px; /* 模拟上标（Superscript）的视觉，微微抬起 */
+}
+
+.annotation-link:hover {
+  color: #0A59F7; /* 鼠标悬浮时亮起 CalculatorX 的主题蓝 */
+  transform: scale(1.15); /* 悬浮时略微放大 */
+}
+
+.annotation-link svg {
+  width: 14px;
+  height: 14px;
+}
+
+
+/* --- 6. 深浅模式双态图片自动切换 --- */
+
+/* 默认状态（浅色模式）下：显示亮色图，隐藏暗色图 */
+.img-light-mode {
+  display: block;
+}
+
+.img-dark-mode {
+  display: none;
+}
+
+/* 当父级拥有 .dark 类（深色模式开启）时：反转显示状态！ */
+.dark .img-light-mode {
+  display: none !important;
+}
+
+.dark .img-dark-mode {
+  display: block !important;
+}
