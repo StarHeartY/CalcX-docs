@@ -2,21 +2,30 @@ import { useState } from 'react'
 import Image from 'next/image'
 
 export default function ThemeImage({ src, alt, width, height, className, style }) {
-  const autoDarkSrc = src.replace(/(\.[\w\d_-]+)$/i, '_dark$1');
+  let cleanSrc = src;
+  if (!src.startsWith('http') && !src.startsWith('/docs')) {
+    cleanSrc = src.startsWith('/')
+      ? `/docs${src}`
+      : `/docs/images/${src}`;
+  }
+
+  // 自动推断 _dark 路径
+  const autoDarkSrc = cleanSrc.replace(/(\.[\w\d_-]+)$/i, '_dark$1');
+
+  // 暗色图加载失败容错降级
   const [darkFailed, setDarkFailed] = useState(false);
-  const finalDarkSrc = darkFailed ? src : autoDarkSrc;
+  const finalDarkSrc = darkFailed ? cleanSrc : autoDarkSrc;
 
   return (
     <>
       <Image
-        src={src}
+        src={cleanSrc}
         alt={alt}
         width={width}
         height={height}
         className={`img-light-mode ${className || ''}`}
         style={{ maxWidth: '100%', height: 'auto', ...style }}
       />
-
       <Image
         src={finalDarkSrc}
         alt={alt}
