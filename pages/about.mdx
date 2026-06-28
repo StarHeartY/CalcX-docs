@@ -3,39 +3,31 @@ title: 关于
 ---
 
 
-{/* ================= 1. 全局自适应颜色 CSS ================= */}
+{/* ================= 全局自适应颜色 CSS ================= */}
 <style>{`
-  .btn-capsule {
-    border: 2px solid #1a1a1a;
-    color: #1a1a1a;
-    background-color: #fff;
-    transition: all 0.2s ease-in-out;
-  }
-  .btn-capsule .capsule-subtext { color: #666; transition: color 0.2s ease-in-out; }
   
-  .dark .btn-capsule {
-    border-color: #fff !important;
-    color: #fff !important;
-    background-color: #000 !important;
-  }
+  .hero-title { color: #0f172a; transition: color 0.2s ease-in-out; }
+  .hero-subtitle { color: #64748b; transition: color 0.2s ease-in-out; }
+  .hero-icon { box-shadow: 12px 24px 64px rgba(0, 0, 0, 0.15); transition: box-shadow 0.2s ease; }
+  
+
+  .dark .hero-title { color: #f1f5f9; }
+  .dark .hero-subtitle { color: #94a3b8; }
+  .dark .hero-icon { box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6); } /* 暗黑模式下加深阴影边界 */
+
+  
+  .btn-capsule { border: 2px solid #1a1a1a; color: #1a1a1a; background-color: #fff; transition: all 0.2s ease-in-out; }
+  .btn-capsule .capsule-subtext { color: #666; transition: color 0.2s ease-in-out; }
+  .dark .btn-capsule { border-color: #fff !important; color: #fff !important; background-color: #000 !important; }
   .dark .btn-capsule .capsule-subtext { color: #a1a1aa !important; }
 
-
-  .badge-card {
-    border: 1px solid #e2e8f0;
-    background-color: #f8fafc;
-    transition: all 0.2s ease-in-out;
-  }
+  
+  .badge-card { border: 1px solid #e2e8f0; background-color: #f8fafc; transition: all 0.2s ease-in-out; }
   .badge-card .badge-title { color: #0f172a; transition: color 0.2s ease-in-out; }
   .badge-card .badge-desc { color: #64748b; transition: color 0.2s ease-in-out; }
-  
-  .dark .badge-card {
-    border-color: #334155 !important;
-    background-color: #1e293b !important;
-  }
+  .dark .badge-card { border-color: #334155 !important; background-color: #1e293b !important; }
   .dark .badge-card .badge-title { color: #f1f5f9 !important; }
   .dark .badge-card .badge-desc { color: #94a3b8 !important; }
-
 
   .btn-adaptive {
     border: 2px solid #1a1a1a;
@@ -44,7 +36,6 @@ title: 关于
     transition: all 0.2s ease-in-out; /* 加上极其丝滑的颜色渐变过渡效果 */
   }
   
-  /* 当网页处于深色模式时，触发以下样式 */
   .dark .btn-adaptive {
     border-color: #fff !important;
     color: #fff !important;
@@ -52,7 +43,31 @@ title: 关于
   }
 `}</style>
 
+
+
 # 关于 CalculatorX
+
+
+{/* ================= App 头部大图标区域 ================= */}
+<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '40px', marginBottom: '48px' }}>
+  
+  <img
+    src="/docs/images/app-icon.png"
+    alt="CalculatorX Icon"
+    className="hero-icon"
+    style={{ width: '128px', height: '128px', borderRadius: '18px', objectFit: 'cover' }}
+  />
+  
+  <div style={{ display: 'flex', alignItems: 'center', marginTop: '32px' }}>
+    <span className="hero-title" style={{ fontSize: '36px', fontWeight: 'bold', letterSpacing: '-0.5px' }}>Calculator</span>
+    <span style={{ fontSize: '36px', fontWeight: 'bold', color: '#0A59F7', letterSpacing: '-0.5px' }}>X</span>
+  </div>
+  
+  <span className="hero-subtitle" style={{ fontSize: '14px', marginTop: '6px' }}>
+    Version 1.1.0 Beta (HarmonyOS)
+  </span>
+  
+</div>
 
 **CalculatorX** 是一款专为 HarmonyOS 打造的高性能科学计算器。我们致力于在移动设备上提供桌面级的精确计算与符号推导体验。
 
