@@ -24,3 +24,10 @@ title: 常见问题解答
 **主要功能完全不联网**，仅部分功能需要，例如：联网获取汇率等。
 
 所有的符号推导、极限求解和矩阵运算都在设备**本地**实时完成。所有计算过程和历史记录 100% 留在本地，CalculatorX 承诺不收集任何个人数据，非必要不联网。
+
+
+---
+
+### 我有其他问题
+* **提交反馈：** 前往 [GitHub Issues](https://github.com/StarHeartY/CalculatorX/issues) 提交 Bug 或功能建议。
+* **发送邮件：** [support@startyi.com](mailto:support@startyi.com)。
