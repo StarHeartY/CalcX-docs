@@ -124,3 +124,24 @@
   border-color: #0f172a;
   border-bottom-color: #020617;
 }
+
+/* --- 5. 脚注/注释问号链接 --- */
+.annotation-link {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 2px;
+  color: #94a3b8;
+  transition: all 0.2s ease; /* 默认浅灰色*/
+  position: relative;
+  top: -4px; /* 模拟上标（Superscript）的视觉，微微抬起 */
+}
+
+.annotation-link:hover {
+  color: #0A59F7; /* 鼠标悬浮时亮起 CalculatorX 的主题蓝 */
+  transform: scale(1.15); /* 悬浮时略微放大 */
+}
+
+.annotation-link svg {
+  width: 14px;
+  height: 14px;
+}
