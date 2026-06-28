@@ -267,6 +267,14 @@ CalculatorX 的强大不仅源于自身的架构设计，更得益于开源社�
 ---
 
 <div style={{ textAlign: 'center', marginTop: '4rem', color: 'gray', fontSize: '0.9rem' }}>
-  © {new Date().getFullYear()} Yi Rui (易睿). All Rights Reserved.<br/>
+
+   © {(() => {
+          const start = 2026
+          const now = new Date().getFullYear()
+          return start === now ? now : `${start}–${now}`
+        })()} Yi Rui (易睿). All Rights Reserved.<br/>
   [www.startyi.com](https://www.startyi.com)
-</div>
+
+</div> 
+
+
