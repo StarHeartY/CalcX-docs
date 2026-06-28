@@ -54,6 +54,20 @@
   color: #a1a1aa !important;
 }
 
+.btn-adaptive {
+  border: 2px solid #1a1a1a;
+  color: #1a1a1a;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  /* 加上极其丝滑的颜色渐变过渡效果 */
+}
+
+.dark .btn-adaptive {
+  border-color: #fff !important;
+  color: #fff !important;
+  background-color: #000 !important;
+}
+
 
 /* --- 3. 鸣谢卡片样式 (开源组件库) --- */
 .badge-card {
