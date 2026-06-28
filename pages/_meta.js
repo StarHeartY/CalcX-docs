@@ -3,7 +3,8 @@ export default {
   "basics": "基础运算篇",
   "scientific": "科学计算篇",
   "cas": "高级代数与 CAS 引擎篇",
-  "support": "常见问题与支持篇",
+  "support": "支持",
+  "faq": "常见问题解答",
   "home": {
     "title": "主页",
     "type": "page",
