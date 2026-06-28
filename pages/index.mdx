@@ -4,6 +4,7 @@ title: 介绍
 import { Cards } from 'nextra/components'
 import HelpLink from '../components/HelpLink'
 import Image from 'next/image'
+import ThemeImage from '../components/ThemeImage'
 
 
 
@@ -19,8 +20,12 @@ CalcX 是一款 **专业级符号计算器 (CAS)** <HelpLink href="docs/faq#1-�
 ## 界面
 
 初次打开应用，所有的布局逻辑都旨在为你提供最沉浸的计算体验：
-
-<Image src="/docs/images/screenshot.png" alt="界面截图" width={800} height={600} />
+<ThemeImage src="/docs/images/docs/index/scientific.png"
+  alt="名字"
+  width={1424}
+  height = {2931} 
+  style = {{ maxWidth: '300px', height: 'auto',borderRadius: '12px', marginTop: '16px' }}
+/>
 
 * **公式显示区：** 告别枯燥的纯文本代码。你的所有输入与计算结果，都会被实时渲染为印刷级的标准数学公式。
 * **主键盘区：** 提供大面积的数字与基础运算符，支持极速连击输入，并具备防误触设计。

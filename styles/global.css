@@ -145,3 +145,24 @@
   width: 14px;
   height: 14px;
 }
+
+
+/* --- 6. 深浅模式双态图片自动切换 --- */
+
+/* 默认状态（浅色模式）下：显示亮色图，隐藏暗色图 */
+.img-light-mode {
+  display: block;
+}
+
+.img-dark-mode {
+  display: none;
+}
+
+/* 当父级拥有 .dark 类（深色模式开启）时：反转显示状态！ */
+.dark .img-light-mode {
+  display: none !important;
+}
+
+.dark .img-dark-mode {
+  display: block !important;
+}
