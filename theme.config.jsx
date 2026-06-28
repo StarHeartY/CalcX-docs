@@ -3,15 +3,49 @@ import { useConfig } from 'nextra-theme-docs'
 export default {
   logo: <strong>CalculatorX 帮助中心</strong>,
   project: {
-    link: 'https://github.com/StarHeartY/CalcX-docs' // 右上角的 GitHub 图标链接
+    link: 'https://github.com/StarHeartY/CalcX-docs'
   },
+
+  // 版权声明
+  footer: {
+    content: (
+      <span>
+        Copyright © {(() => {
+          const start = 2026
+          const now = new Date().getFullYear()
+          return start === now ? now : `${start}–${now}`
+        })()} <a href="https://calcx.startyi.com" target="_blank" rel="noopener noreferrer">CalculatorX</a>.
+        All Rights Reserved.
+      </span>
+    )
+  },
+
   // 关闭右侧的 "Edit this page"
   editLink: {
     component: () => null
   },
+  // 反馈链接改为中文
+  feedback: {
+    content: '有疑问？反馈 →'
+  },
 
-  // head 必须用函数形式以获取当前页面的动态标题
-  // 静态 JSX 会完全替换主题默认的 head（包括 <title>），导致页面无标题
+  // 将 "Last updated on" 改为中文
+  gitTimestamp: function GitTimestamp({ timestamp }) {
+    return (
+      <>
+        最后更新于{' '}
+        <time dateTime={timestamp.toISOString()}>
+          {timestamp.toLocaleDateString('zh-CN', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          })}
+        </time>
+      </>
+    )
+  },
+
+  // 用函数形式以获取当前页面的动态标题
   head: function useHead() {
     const { frontMatter, title: pageTitle } = useConfig()
     const title = pageTitle
@@ -35,9 +69,6 @@ export default {
     )
   },
 
-  footer: {
-    text: '© 2026 CalculatorX Project'
-  },
   // 强制全站默认主题色跟随系统，不闪烁
   nextThemes: {
     defaultTheme: 'system'

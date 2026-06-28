@@ -1,3 +1,272 @@
-# About
+---
+title: 关于
+---
 
-This is the about page! This page is shown on the navbar.
+
+{/* ================= 全局自适应颜色 CSS ================= */}
+<style>{`
+  
+  .hero-title { color: #0f172a; transition: color 0.2s ease-in-out; }
+  .hero-subtitle { color: #64748b; transition: color 0.2s ease-in-out; }
+  .hero-icon { box-shadow: 12px 24px 64px rgba(0, 0, 0, 0.15); transition: box-shadow 0.2s ease; }
+  
+
+  .dark .hero-title { color: #f1f5f9; }
+  .dark .hero-subtitle { color: #94a3b8; }
+  .dark .hero-icon { box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6); } /* 暗黑模式下加深阴影边界 */
+
+  
+  .btn-capsule { border: 2px solid #1a1a1a; color: #1a1a1a; background-color: #fff; transition: all 0.2s ease-in-out; }
+  .btn-capsule .capsule-subtext { color: #666; transition: color 0.2s ease-in-out; }
+  .dark .btn-capsule { border-color: #fff !important; color: #fff !important; background-color: #000 !important; }
+  .dark .btn-capsule .capsule-subtext { color: #a1a1aa !important; }
+
+  
+  .badge-card { border: 1px solid #e2e8f0; background-color: #f8fafc; transition: all 0.2s ease-in-out; }
+  .badge-card .badge-title { color: #0f172a; transition: color 0.2s ease-in-out; }
+  .badge-card .badge-desc { color: #64748b; transition: color 0.2s ease-in-out; }
+  .dark .badge-card { border-color: #334155 !important; background-color: #1e293b !important; }
+  .dark .badge-card .badge-title { color: #f1f5f9 !important; }
+  .dark .badge-card .badge-desc { color: #94a3b8 !important; }
+
+  .btn-adaptive {
+    border: 2px solid #1a1a1a;
+    color: #1a1a1a;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out; /* 加上极其丝滑的颜色渐变过渡效果 */
+  }
+  
+  .dark .btn-adaptive {
+    border-color: #fff !important;
+    color: #fff !important;
+    background-color: #000 !important;
+  }
+`}</style>
+
+
+
+# 关于 CalculatorX
+
+
+{/* ================= App 头部大图标区域 ================= */}
+<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '40px', marginBottom: '48px' }}>
+  
+  <img
+    src="/docs/images/app-icon.png"
+    alt="CalculatorX Icon"
+    className="hero-icon"
+    style={{ width: '128px', height: '128px', borderRadius: '18px', objectFit: 'cover' }}
+  />
+  
+  <div style={{ display: 'flex', alignItems: 'center', marginTop: '32px' }}>
+    <span className="hero-title" style={{ fontSize: '36px', fontWeight: 'bold', letterSpacing: '-0.5px' }}>Calculator</span>
+    <span style={{ fontSize: '36px', fontWeight: 'bold', color: '#0A59F7', letterSpacing: '-0.5px' }}>X</span>
+  </div>
+  
+  <span className="hero-subtitle" style={{ fontSize: '14px', marginTop: '6px' }}>
+    Version 1.1.0 Beta (HarmonyOS)
+  </span>
+  
+</div>
+
+**CalculatorX** 是一款专为 HarmonyOS 打造的高性能科学计算器。我们致力于在移动设备上提供桌面级的精确计算与符号推导体验。
+
+---
+
+### 软件信息
+
+* **支持系统：** HarmonyOS
+* **开发者：** 易睿 (Yi Rui)
+
+### 联系与支持
+
+如果你在使用过程中遇到任何问题，或者有新的功能建议，欢迎通过以下方式与我们取得联系：
+
+<div style={{ display: 'flex', gap: '16px', justifyContent: 'left', flexWrap: 'wrap', marginTop: '32px', marginBottom: '32px' }}>
+
+  <a
+    href="https://calcx.startyi.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-capsule"
+    style={{ display: 'flex', alignItems: 'center', padding: '12px 18px', borderRadius: '14px', textDecoration: 'none' }}
+  >
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '12px' }}><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+      <span className="capsule-subtext" style={{ fontSize: '12px', fontWeight: 'bold', lineHeight: '1', letterSpacing: '0.5px' }}>官方主页</span>
+      <span style={{ fontSize: '14px', fontWeight: '900', lineHeight: '1.2' }}>calcx.startyi.com</span>
+    </div>
+  </a>
+
+  <a href="https://github.com/StarHeartY/CalculatorX"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      padding: '12px 18px 12px 18px',// 上右下左
+      border: '2px solid #1a1a1a',
+      borderRadius: '14px',
+      textDecoration: 'none',
+      color: '#fff',
+      backgroundColor: '#24292e'
+    }}>
+    <svg height="24" aria-hidden="true" viewBox="0 0 16 16" width="24" fill="currentColor" style={{ marginRight: '12px' }}><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.46-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg>
+    <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+      <span style={{ fontSize: '10px', fontWeight: 'bold', lineHeight: '1', letterSpacing: '0.5px', color: '#a1a1aa' }}>开源地址</span>
+        <span style={{ fontSize: '15px', fontWeight: '900', lineHeight: '1.2' }}>GitHub 仓库</span>
+      </span>
+    </a>
+
+  <a
+    href="mailto:support@startyi.com"
+    className="btn-capsule"
+    style={{ display: 'flex', alignItems: 'center', padding: '12px 18px', borderRadius: '14px', textDecoration: 'none' }}
+  >
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '12px' }}><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+      <span className="capsule-subtext" style={{ fontSize: '12px', fontWeight: 'bold', lineHeight: '1', letterSpacing: '0.5px' }}>联系邮箱</span>
+      <span style={{ fontSize: '14px', fontWeight: '900', lineHeight: '1.2' }}>support{'@'}startyi.com</span>
+    </div>
+  </a>
+
+</div>
+
+
+---
+
+### 特别鸣谢
+
+> "我们站在巨人的肩膀上。"
+
+CalculatorX 的强大不仅源于自身的架构设计，更得益于开源社区的无私奉献。本项目在底层 CAS 引擎、高精度计算以及前端渲染等模块，深度依赖或参考了以下卓越的开源组件与第三方库：
+
+{/* ================= 3. 六个开源库鸣谢 ================= */}
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px', marginTop: '24px', marginBottom: '40px' }}>
+  
+  {/* Giac/Xcas */}
+  <a href="https://www-fourier.univ-grenoble-alpes.fr/~parisse/giac.html" target="_blank" rel="noopener noreferrer" className="badge-card" style={{ display: 'flex', flexDirection: 'column', padding: '0px 16px 27px 24px', borderRadius: '12px', textDecoration: 'none' }}>
+    <span className="badge-title" style={{ display: 'flex', alignItems: 'center', fontSize: '15px', fontWeight: '800', marginBottom: '8px', lineHeight: '1' }}>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px', flexShrink: 0, transform: 'translateY(11.5px)' }}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      Giac/Xcas
+    </span>
+    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>核心微积分与高级符号运算引擎</span>
+  </a>
+
+  {/* SymEngine */}
+  <a href="https://github.com/symengine/symengine" target="_blank" rel="noopener noreferrer" className="badge-card" style={{ display: 'flex', flexDirection: 'column', padding: '0px 16px 27px 24px', borderRadius: '12px', textDecoration: 'none' }}>
+    <span className="badge-title" style={{ display: 'flex', alignItems: 'center', fontSize: '15px', fontWeight: '800', marginBottom: '8px', lineHeight: '1' }}>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px', flexShrink: 0, transform: 'translateY(11.5px)' }}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      SymEngine
+    </span>
+    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>基础计算机代数系统 (CAS)</span>
+  </a>
+
+  {/* MathLive */}
+  <a href="https://cortexjs.io/mathlive/" target="_blank" rel="noopener noreferrer" className="badge-card" style={{ display: 'flex', flexDirection: 'column', padding: '0px 16px 27px 24px', borderRadius: '12px', textDecoration: 'none' }}>
+    <span className="badge-title" style={{ display: 'flex', alignItems: 'center', fontSize: '15px', fontWeight: '800', marginBottom: '8px', lineHeight: '1' }}>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px', flexShrink: 0, transform: 'translateY(11.5px)' }}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      MathLive
+    </span>
+    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>前端公式渲染与 MathJSON 引擎</span>
+  </a>
+
+  {/* nlohmann/json */}
+  <a href="https://github.com/nlohmann/json" target="_blank" rel="noopener noreferrer" className="badge-card" style={{ display: 'flex', flexDirection: 'column', padding: '0px 16px 27px 24px', borderRadius: '12px', textDecoration: 'none' }}>
+    <span className="badge-title" style={{ display: 'flex', alignItems: 'center', fontSize: '15px', fontWeight: '800', marginBottom: '8px', lineHeight: '1' }}>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px', flexShrink: 0, transform: 'translateY(11.5px)' }}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      nlohmann/json
+    </span>
+    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>C++ 高效 JSON 解析库</span>
+  </a>
+
+  {/* Boost */}
+  <a href="https://www.boost.org/" target="_blank" rel="noopener noreferrer" className="badge-card" style={{ display: 'flex', flexDirection: 'column', padding: '0px 16px 27px 24px', borderRadius: '12px', textDecoration: 'none' }}>
+    <span className="badge-title" style={{ display: 'flex', alignItems: 'center', fontSize: '15px', fontWeight: '800', marginBottom: '8px', lineHeight: '1' }}>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px', flexShrink: 0, transform: 'translateY(11.5px)' }}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      Boost
+    </span>
+    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>高性能泛型 C++ 基础库</span>
+  </a>
+
+  {/* GMP */}
+  <a href="https://gmplib.org/" target="_blank" rel="noopener noreferrer" className="badge-card" style={{ display: 'flex', flexDirection: 'column', padding: '0px 16px 27px 24px', borderRadius: '12px', textDecoration: 'none' }}>
+    <span className="badge-title" style={{ display: 'flex', alignItems: 'center', fontSize: '15px', fontWeight: '800', marginBottom: '8px', lineHeight: '1' }}>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px', flexShrink: 0, transform: 'translateY(11.5px)' }}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      GMP
+    </span>
+    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>GNU 多精度算术库，提供极速大数支持</span>
+  </a>
+
+</div>
+
+
+
+向以上所有开源项目的贡献者致以最诚挚的敬意！
+
+### 获取 CalculatorX
+
+<div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '32px', marginBottom: '32px' }}>
+
+<a
+  href="https://appgallery.huawei.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-adaptive"
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+    padding: '12px 17px 12px 12px', // 上右下左
+    borderRadius: '14px',
+    textDecoration: 'none',
+  }}
+>
+  <img
+    src="/docs/images/appgallery-icon.png"
+    alt="AppGallery Logo"
+    style={{
+      width: '36px',
+      height: '36px',
+      marginRight: '10px',
+      objectFit: 'contain'
+    }}
+  />
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+    <span style={{ fontSize: '12px', fontWeight: 'bold', lineHeight: '1', letterSpacing: '0.5px' }}>EXPLORE IT ON</span>
+    <span style={{ fontSize: '22px', fontWeight: '900', lineHeight: '1.2' }}>AppGallery</span>
+  </div>
+</a>
+
+  <a
+    href="https://github.com/StarHeartY/CalculatorX/releases"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      padding: '12px 28px 12px 20px', // 上右下左
+      border: '2px solid #1a1a1a',
+      borderRadius: '24px',
+      textDecoration: 'none',
+      color: '#fff',
+      backgroundColor: '#24292e'
+    }}
+  >
+    <svg height="32" aria-hidden="true" viewBox="0 0 16 16" width="24" fill="currentColor" style={{ marginRight: '16px' }}>
+      <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.46-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+    </svg>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+      <span style={{ fontSize: '12px', fontWeight: 'regular', lineHeight: '1', color: '#a7a7a7',letterSpacing: '0.5px' }}>访问 GitHub</span>
+      <span style={{ fontSize: '20px', fontWeight: '900', lineHeight: '1' }}>Releases</span>
+    </div>
+  </a>
+
+</div>
+
+
+---
+
+<div style={{ textAlign: 'center', marginTop: '4rem', color: 'gray', fontSize: '0.9rem' }}>
+  © {new Date().getFullYear()} Yi Rui (易睿). All Rights Reserved.<br/>
+  [www.startyi.com](https://www.startyi.com)
+</div>

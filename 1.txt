@@ -1,0 +1,65 @@
+/* 胶囊按钮样式 (官方主页 &amp; 邮箱) */
+.btn - capsule {
+  border: 2px solid #1a1a1a;
+  color: #1a1a1a;
+  background - color: #fff;
+  transition: all 0.2s ease -in -out;
+}
+.btn - capsule.capsule - subtext { color: #666; transition: color 0.2s ease -in -out; }
+
+.dark.btn - capsule {
+  border - color: #fff!important;
+  color: #fff!important;
+  background - color: #000!important;
+}
+.dark.btn - capsule.capsule - subtext { color: #a1a1aa!important; }
+
+/* 鸣谢卡片样式 (开源组件库) */
+.badge - card {
+  border: 1px solid #e2e8f0;
+  background - color: #f8fafc;
+  transition: all 0.2s ease -in -out;
+}
+.badge - card.badge - title { color: #0f172a; transition: color 0.2s ease -in -out; }
+.badge - card.badge - desc { color: #64748b; transition: color 0.2s ease -in -out; }
+
+.dark.badge - card {
+  border - color: #334155!important;
+  background - color: #1e293b!important;
+}
+.dark.badge - card.badge - title { color: #f1f5f9!important; }
+.dark.badge - card.badge - desc { color: #94a3b8!important; }
+"
+"
+  /* 胶囊按钮样式 (官方主页 & 邮箱) */
+  .btn - capsule {
+  border: 2px solid #1a1a1a;
+  color: #1a1a1a;
+  background - color: #fff;
+  transition: all 0.2s ease -in -out;
+}
+.btn - capsule.capsule - subtext { color: #666; transition: color 0.2s ease -in -out; }
+
+.dark.btn - capsule {
+  border - color: #fff!important;
+  color: #fff!important;
+  background - color: #000!important;
+}
+.dark.btn - capsule.capsule - subtext { color: #a1a1aa!important; }
+
+/* 鸣谢卡片样式 (开源组件库) */
+.badge - card {
+  border: 1px solid #e2e8f0;
+  background - color: #f8fafc;
+  transition: all 0.2s ease -in -out;
+}
+.badge - card.badge - title { color: #0f172a; transition: color 0.2s ease -in -out; }
+.badge - card.badge - desc { color: #64748b; transition: color 0.2s ease -in -out; }
+
+.dark.badge - card {
+  border - color: #334155!important;
+  background - color: #1e293b!important;
+}
+.dark.badge - card.badge - title { color: #f1f5f9!important; }
+.dark.badge - card.badge - desc { color: #94a3b8!important; }
+"
