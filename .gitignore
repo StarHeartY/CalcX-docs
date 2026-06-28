@@ -1,4 +1,6 @@
-.next
-node_modules
+.next/
+node_modules/
 *.psd
 *.log
+out/
+release/

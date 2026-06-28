@@ -1,15 +1,16 @@
 import nextra from 'nextra'
+import React from 'react'
 
 const withNextra = nextra({
   theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.jsx',
+  themeConfig: './theme.config.tsx',
   latex: true
 })
 
 export default withNextra({
-  output: 'export',       // 开启纯静态导出
-  basePath: '/docs',      // 强行挂载到 /docs 路径
+  basePath: '/docs',
+  output: 'export',
   images: {
-    unoptimized: true     // 静态导出必须关闭图片优化
+    unoptimized: true
   }
 })
