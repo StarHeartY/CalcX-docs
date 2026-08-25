@@ -3,4 +3,4 @@ node_modules/
 *.psd
 *.log
 out/
-release/
+out_temp/
