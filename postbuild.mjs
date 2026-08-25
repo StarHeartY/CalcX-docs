@@ -4,8 +4,8 @@ import sharp from 'sharp';
 
 // 定义路径
 const outDir = path.join(process.cwd(), 'out');
-const releaseDir = path.join(process.cwd(), 'release');
-const targetDocsDir = path.join(releaseDir, 'docs');
+const tempDir = path.join(process.cwd(), 'out_temp');
+const targetDocsDir = path.join(tempDir, 'docs');
 
 // 递归获取所有文件的辅助函数
 function getAllFiles(dirPath, arrayOfFiles = []) {
@@ -28,9 +28,9 @@ async function main() {
       return;
     }
 
-    console.log('📦 [1/3] 正在安全分离离线发行版...');
-    if (fs.existsSync(releaseDir)) {
-      fs.rmSync(releaseDir, { recursive: true, force: true });
+    console.log('📦 [1/5] 正在创建临时缓冲跳板...');
+    if (fs.existsSync(tempDir)) {
+      fs.rmSync(tempDir, { recursive: true, force: true });
     }
     fs.mkdirSync(targetDocsDir, { recursive: true });
     fs.cpSync(outDir, targetDocsDir, { recursive: true });
@@ -42,7 +42,7 @@ async function main() {
     const imageFiles = allFiles.filter(f => /\.(png|jpe?g)$/i.test(f));
 
     if (imageFiles.length > 0) {
-      console.log(`🖼️ [2/3] 引擎启动：拦截到 ${imageFiles.length} 张原图，正在极限压缩为 WebP...`);
+      console.log(`🖼️ [2/5] 引擎启动：拦截到 ${imageFiles.length} 张原图，正在极限压缩为 WebP...`);
 
       // 并发执行所有的图片压缩任务，榨干 CPU 性能
       await Promise.all(imageFiles.map(async (imgPath) => {
@@ -53,7 +53,7 @@ async function main() {
         fs.unlinkSync(imgPath);
       }));
 
-      console.log(`📝 [3/3] 正在篡改底包：全局重定向图片引用...`);
+      console.log(`📝 [3/5] 正在篡改底包：全局重定向图片引用...`);
       // 找出所有可能包含图片路径的代码文件
       const codeFiles = allFiles.filter(f => /\.(html|js|json|css)$/i.test(f));
 
@@ -72,7 +72,23 @@ async function main() {
       console.log(`🖼️ [2/3] 未检测到需要压缩的图片，跳过。`);
     }
 
-    console.log('\n✨ 成功！已生成至 release/docs 目录。');
+    console.log('🧹 [4/5] 正在安全清空原始 out 目录 (保留外壳防锁)...');
+    // 逐一删除 out 里面的子文件/文件夹，绝不碰 out 文件夹本身
+    const outItems = fs.readdirSync(outDir);
+    for (const item of outItems) {
+      const itemPath = path.join(outDir, item);
+      fs.rmSync(itemPath, { recursive: true, force: true });
+    }
+
+    console.log('🚚 [5/5] 正在将精装产物回填至 out/docs 并销毁跳板...');
+    const finalDocsDir = path.join(outDir, 'docs');
+    // 把加工好的 docs 文件夹瞬间移动到 out 里面
+    fs.cpSync(targetDocsDir, finalDocsDir, { recursive: true });
+    // 销毁外部的 out_temp 空壳
+    fs.rmSync(tempDir, { recursive: true, force: true });
+
+    console.log('\n✨ 完美通关：单一权威产物已回填至 out/docs 目录！');
+    console.log('👉 本地预览请运行: npm run preview\n');
 
   } catch (error) {
     console.error('❌ 失败，请检查以下错误：\n', error);
