@@ -59,9 +59,12 @@ async function main() {
 
       for (const codePath of codeFiles) {
         let content = fs.readFileSync(codePath, 'utf8');
-        // 如果文件里提到了 png/jpg/jpeg，直接无情替换为 webp
-        if (content.match(/\.(png|jpe?g)/i)) {
-          content = content.replace(/\.(png|jpe?g)/gi, '.webp');
+
+        // 如果文件里提到了 png/jpg/jpeg，替换为 webp
+        const safeRegex = /(?<!https?:\/\/[^"']*)(?:\.(png|jpe?g))/gi;
+
+        if (content.match(safeRegex)) {
+          content = content.replace(safeRegex, '.webp');
           fs.writeFileSync(codePath, content, 'utf8');
         }
       }
