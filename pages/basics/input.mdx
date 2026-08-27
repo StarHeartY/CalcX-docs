@@ -3,6 +3,7 @@ title: 输入与编辑公式
 description: 学习 CalculatorX 中的公式输入、光标移动、删除、清空、撤销、重做和长按操作。
 ---
 import ThemeImage from '../../components/ThemeImage'
+import BackspaceKey from '../../components/BackspaceKey'
 
 # 输入与编辑公式
 
@@ -13,9 +14,9 @@ CalculatorX 会把按键输入转换成排版后的数学公式。简单表达�
 数字和运算符会插入到当前光标位置。例如，要输入 $25\times4+7$，依次点击对应的数字和运算符即可。
 
 <ThemeImage
-  src="/images/docs/basics/input-expression.png"
+  src="/images/docs/basics/input/input-expression.png"
   alt="CalculatorX 公式显示区中正在输入二十五乘四加七"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 在科学计算、方程和矩阵模式中，函数或模板按键可能一次插入多个输入位置。例如分数包含分子和分母，幂包含底数和指数。空白框表示仍需填写的部分。
@@ -28,18 +29,18 @@ CalculatorX 会把按键输入转换成排版后的数学公式。简单表达�
 - <kbd className="key-cap">⇧</kbd> 和 <kbd className="key-cap">⇩</kbd> 用于在分子、分母、矩阵等上下层结构间移动；
 - 长按方向键可以连续移动。
 
-<ThemeImage
-  src="/images/docs/basics/nested-cursor.png"
+{/* <ThemeImage
+  src="/images/docs/basics/input/nested-cursor.png"
   alt="使用方向键在分数的分子和分母之间移动光标"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/> */}
 
 基础计算键盘没有独立方向键。如果需要编辑多层公式或输入更复杂的结构，请切换到科学计算模式。
 
 ## 删除或清空输入
 
-- 点击退格键删除光标前的一个字符或结构；
-- 长按退格键约半秒后会开始连续删除；
+- 点击 <BackspaceKey /> 删除光标前的一个字符或结构；
+- 长按 <BackspaceKey /> 可以连续删除；
 - 点击 <kbd className="key-cap">AC</kbd> 清空当前公式。
 
 清空只影响正在编辑的公式，不会清除已经保存的历史记录。历史记录需要在历史页面中单独删除。
@@ -55,11 +56,11 @@ CalculatorX 会把按键输入转换成排版后的数学公式。简单表达�
 
 ## 使用 Shift 和长按
 
-科学计算、方程和矩阵键盘包含 Shift 或长按副功能：
+科学计算、方程和矩阵键盘提供 Shift 功能，部分按键另有长按操作：
 
-- 点击 Shift 后，支持第二功能的按键会切换状态；
-- 顶栏中间显示“SHIFT”时，表示第二功能已经启用；
-- 部分按键长按后会直接执行副功能；
+- 点击 Shift 后，带橙色标签的按键会切换到标签所示功能；
+- 顶栏中间显示“SHIFT”时，表示 Shift 功能已经启用；
+- 部分按键长按后会直接执行对应的 Shift 功能；
 - 部分按键会弹出横向气泡菜单，保持按住并滑向目标选项后松开即可选择。
 
 不同按键的长按行为并不完全相同，应以屏幕上出现的气泡或按键标签为准。

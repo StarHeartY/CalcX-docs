@@ -13,9 +13,9 @@ import ThemeImage from '../../components/ThemeImage'
 | 操作 | 输入方法 |
 | --- | --- |
 | 平方 | 输入底数后点击平方键 |
-| 立方 | 输入底数后使用平方键的 Shift 第二功能 |
+| 立方 | 输入底数后使用平方键的 Shift 功能 |
 | 任意次幂 | 输入底数后点击幂键，在指数位置输入数值 |
-| 倒数 | 输入表达式后使用分数键的 Shift 第二功能 $^{-1}$ |
+| 倒数 | 输入表达式后使用分数键的 Shift 功能 $^{-1}$ |
 
 例如：
 
@@ -26,9 +26,9 @@ $$
 输入 $2$，点击任意次幂键，在指数框中输入 $10$，然后点击等号。
 
 <ThemeImage
-  src="/images/docs/scientific/power-example.png"
+  src="/images/docs/scientific/powers-logarithms/power-example.png"
   alt="科学计算模式输入二的十次方并得到一千零二十四"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 输入完指数后，可以使用右方向键离开上标位置，再继续输入后面的运算。
@@ -43,14 +43,14 @@ $$
 
 还可以：
 
-- 使用平方根键的 Shift 第二功能输入立方根；
+- 使用平方根键的 Shift 功能输入立方根；
 - 长按平方根键，在气泡菜单中选择立方根或任意次根；
 - 直接点击任意次根键，在根指数和被开方数之间移动。
 
 <ThemeImage
-  src="/images/docs/scientific/root-menu.png"
+  src="/images/docs/scientific/powers-logarithms/root-menu.png"
   alt="长按平方根按键选择立方根或任意次根模板"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 自动答案模式会尽量化简并保留精确根式。例如：
@@ -63,7 +63,7 @@ $$
 
 ## 自然指数与常数 e
 
-直接点击 $e$ 键会插入自然常数 $e$。使用该键上方的橙色第二功能可以插入：
+直接点击 $e$ 键会插入自然常数 $e$。使用该键上方以橙色标出的 Shift 功能可以插入：
 
 $$
 e^{\square}
@@ -82,7 +82,7 @@ $$
 科学键盘提供：
 
 - `ln`：以 $e$ 为底的自然对数；
-- `lg`：以 $10$ 为底的常用对数，是 `ln` 的 Shift 第二功能；
+- `lg`：以 $10$ 为底的常用对数，是 `ln` 的 Shift 功能；
 - `log`：带底数和真数两个输入位置的任意底对数。
 
 示例：
@@ -100,9 +100,9 @@ $$
 $$
 
 <ThemeImage
-  src="/images/docs/scientific/logarithm-example.png"
+  src="/images/docs/scientific/powers-logarithms/logarithm-example.png"
   alt="科学计算模式输入以二为底八的对数并得到三"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 对数的真数必须在所用数域的定义范围内，底数也不能为 $1$。在实数范围计算时，真数和底数通常应为正数。
@@ -119,9 +119,9 @@ $$
 4. 使用右方向键离开指数位置。
 
 <ThemeImage
-  src="/images/docs/scientific/scientific-notation.png"
+  src="/images/docs/scientific/powers-logarithms/scientific-notation.png"
   alt="科学计算模式输入六点零二乘十的二十三次方"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 当整数、阶乘或幂的结果非常大时，CalculatorX 也可能自动使用科学记数法显示数量级，避免展开过长的数字。

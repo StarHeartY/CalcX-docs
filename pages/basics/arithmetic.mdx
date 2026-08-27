@@ -3,6 +3,7 @@ title: 四则运算、百分数与小数
 description: 使用 CalculatorX 基础计算模式完成加减乘除、百分数和小数运算。
 ---
 import ThemeImage from '../../components/ThemeImage'
+import BackspaceKey from '../../components/BackspaceKey'
 
 # 四则运算、百分数与小数
 
@@ -15,20 +16,20 @@ import ThemeImage from '../../components/ThemeImage'
 3. 检查顶栏中间是否显示“基础计算”。
 
 <ThemeImage
-  src="/images/docs/basics/basic-keyboard.png"
+  src="/images/docs/basics/arithmetic/basic-keyboard.png"
   alt="CalculatorX 基础计算模式的公式显示区和四则运算键盘"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 基础键盘中的主要按键如下：
 
 | 按键 | 作用 |
 | --- | --- |
-| `0`–`9` | 输入数字 |
+| `0`~`9` | 输入数字 |
 | `.` | 输入小数点 |
 | `+`、`−`、`×`、`÷` | 输入四则运算符 |
 | `%` | 把前面的数表示为百分数 |
-| 退格 | 删除光标前的内容，长按可连续删除 |
+| <BackspaceKey /> | 删除光标前的内容，长按可连续删除 |
 | `AC` | 清空当前表达式 |
 | `=` | 执行计算 |
 
@@ -41,9 +42,9 @@ import ThemeImage from '../../components/ThemeImage'
 3. CalculatorX 先计算 $48\div6$，最终结果为 $15$。
 
 <ThemeImage
-  src="/images/docs/basics/arithmetic-example.png"
+  src="/images/docs/basics/arithmetic/arithmetic-example.png"
   alt="基础计算模式计算四十八除以六加七并得到十五"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 ## 运算顺序
@@ -66,7 +67,7 @@ $$
 
 点击 <kbd className="key-cap">.</kbd> 输入小数点。例如，输入 $2.5\times4$ 后点击等号，结果为 $10$。
 
-同一个数字中只应输入一个小数点。若表达式不完整或小数点位置不合法，计算可能无法得到有效结果；使用退格修正后重新计算即可。
+同一个数字中只应输入一个小数点。若表达式不完整或小数点位置不合法，计算可能无法得到有效结果；使用 <BackspaceKey /> 修正后重新计算即可。
 
 ## 计算百分数
 
@@ -83,17 +84,17 @@ $$
 $$
 
 <ThemeImage
-  src="/images/docs/basics/percentage-example.png"
+  src="/images/docs/basics/arithmetic/percentage-example.png"
   alt="基础计算模式使用二百乘百分之十五得到三十"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 这里的 `%` 表示数学上的“除以一百”，不会自动判断“增加百分之多少”或“减少百分之多少”。例如增加 $15\%$ 应明确输入 $200\times(1+15\%)$；这类带括号的表达式建议在科学计算模式中输入。
 
 ## 修正输入
 
-- 输错最后一个数字时，点击退格；
-- 需要连续删除时，长按退格；
+- 输错最后一个数字时，点击 <BackspaceKey />；
+- 需要连续删除时，长按 <BackspaceKey />；
 - 想重新开始时，点击 <kbd className="key-cap">AC</kbd>；
 - 需要调整复杂表达式时，切换到具有方向键和撤销功能的模式。
 

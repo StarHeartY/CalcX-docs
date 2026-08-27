@@ -16,9 +16,9 @@ import ThemeImage from '../../components/ThemeImage'
 4. 在“选择函数类型”窗口中选择一种类型。
 
 <ThemeImage
-  src="/images/docs/graphing/function-type-dialog.png"
+  src="/images/docs/graphing/function-types/function-type-dialog.png"
   alt="选择函数类型窗口列出普通函数、极坐标、参数方程、隐函数和点"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 创建后不能直接把条目改成另一种类型。选错时可以左滑删除，再重新添加正确类型。
@@ -40,9 +40,9 @@ y=x^2-4
 $$
 
 <ThemeImage
-  src="/images/docs/graphing/normal-function.png"
+  src="/images/docs/graphing/function-types/normal-function.png"
   alt="普通函数条目输入 x 平方减四并绘制对应抛物线"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 普通函数适合多项式、分式、根式、指数、对数和三角函数等单变量图像。
@@ -73,9 +73,9 @@ $$
 这个示例使用弧度制。开始前请在设置中把“角度单位”切换为 `RAD`；如果使用 `DEG`，三角函数会按角度制解释 $t$，相同定义域将得到不同图像。
 
 <ThemeImage
-  src="/images/docs/graphing/parametric-function.png"
+  src="/images/docs/graphing/function-types/parametric-function.png"
   alt="参数方程分别输入 cos t 和 sin t 并设置 t 的定义域"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 点击 $x(t)$ 或 $y(t)$ 所在行可以分别编辑，两行需要都填写完整才能得到预期曲线。
@@ -91,9 +91,9 @@ $$
 将 $\theta$ 的定义域设为 $0$ 到 $6.28$，可以绘制半径为 $2$ 的圆。
 
 <ThemeImage
-  src="/images/docs/graphing/polar-function.png"
+  src="/images/docs/graphing/function-types/polar-function.png"
   alt="极坐标函数输入常数二并绘制半径为二的圆"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 编辑键盘会自动提供 $\theta$，不需要使用字母或其他符号代替。
@@ -117,9 +117,9 @@ $$
 画布会绘制半径为 $2$ 的圆。
 
 <ThemeImage
-  src="/images/docs/graphing/implicit-function.png"
+  src="/images/docs/graphing/function-types/implicit-function.png"
   alt="隐函数输入 x 平方加 y 平方减四并绘制圆形零值线"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 隐函数键盘同时提供 $x$ 和 $y$。不要在表达式中再次输入等号。
@@ -129,9 +129,9 @@ $$
 独立点包含 $x$ 坐标和 $y$ 坐标两行。例如分别输入 $2$ 和 $3$，画布会在 $(2,3)$ 位置绘制一个实心点。
 
 <ThemeImage
-  src="/images/docs/graphing/point.png"
+  src="/images/docs/graphing/function-types/point.png"
   alt="独立点类型分别输入横坐标二和纵坐标三并在画布中显示实心点"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 坐标可以是数字，也可以是能够计算为常数的表达式，例如 $\pi$ 或分数；不要在点坐标中使用 $x$、$y$、$t$、$\theta$ 等自变量。
@@ -146,9 +146,9 @@ $$
 4. 确保左侧最小值小于右侧最大值。
 
 <ThemeImage
-  src="/images/docs/graphing/domain.png"
+  src="/images/docs/graphing/function-types/domain.png"
   alt="参数方程条目使用数字键盘编辑 t 的最小值和最大值"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 定义域决定采样从哪里开始、在哪里结束。范围过小可能只显示曲线的一部分，范围过大则可能让局部细节不够明显。

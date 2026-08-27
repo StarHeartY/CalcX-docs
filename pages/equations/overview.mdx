@@ -3,6 +3,7 @@ title: 求解单个方程
 description: 使用 CalculatorX 输入等式、选择未知数并求出一元方程的一个或多个解。
 ---
 import ThemeImage from '../../components/ThemeImage'
+import BackspaceKey from '../../components/BackspaceKey'
 
 # 求解单个方程
 
@@ -15,9 +16,9 @@ import ThemeImage from '../../components/ThemeImage'
 3. 检查顶栏中间是否显示“方程求解”。
 
 <ThemeImage
-  src="/images/docs/equations/overview.png"
+  src="/images/docs/equations/overview/overview.png"
   alt="CalculatorX 方程求解模式的公式区、函数键盘和数字键盘"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 方程键盘上方提供分数、根式、幂、指数、对数、三角函数、方程组模板和方向键；下方提供数字、四则运算、等号与 `EXE`。
@@ -30,12 +31,12 @@ $$
 x,\ y,\ z,\ u,\ v,\ w
 $$
 
-其中 $x$、$y$、$z$ 直接显示在高级键盘中。$u$、$v$、$w$ 是它们上方的橙色第二功能：先点击 Shift，再点击对应按键即可输入。
+其中 $x$、$y$、$z$ 直接显示在高级键盘中。$u$、$v$、$w$ 是对应按键上方以橙色标出的 Shift 功能：先点击 Shift，再点击对应按键即可输入。
 
 <ThemeImage
-  src="/images/docs/equations/variables.png"
-  alt="方程求解键盘中的 x、y、z 以及 Shift 第二功能 u、v、w"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  src="/images/docs/equations/overview/variables.png"
+  alt="方程求解键盘中的 x、y、z 以及 Shift 功能 u、v、w"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 使用 $m$、$n$ 等其他字母书写参数时，它们不会被当作待求未知数。需要明确求解某个量时，应使用上述六个变量之一。
@@ -55,9 +56,9 @@ $$
 5. 结果应显示 $x=4$。
 
 <ThemeImage
-  src="/images/docs/equations/single-equation.png"
+  src="/images/docs/equations/overview/single-equation.png"
   alt="方程求解模式输入二 x 加三等于十一并得到 x 等于四"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 数字与变量相邻时表示乘法，因此输入 $2$ 后直接输入 $x$ 即可得到 $2x$，不必额外插入乘号。
@@ -70,9 +71,9 @@ $$
 | `EXE` | 把已经写好的方程交给 CalculatorX 求解 |
 
 <ThemeImage
-  src="/images/docs/equations/equal-and-exe.png"
+  src="/images/docs/equations/overview/equal-and-exe.png"
   alt="方程键盘底部并列显示用于输入等式的等号键和执行求解的 EXE 键"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 只点击 `=` 不会开始计算；只输入表达式而没有等式，也无法明确方程的左右两边。通常应先完成“左边 = 右边”，最后再点击 `EXE`。
@@ -88,9 +89,9 @@ $$
 输入方程并点击 `EXE` 后，结果会分别标出 $x$ 的多个根。出现多个结果时，应把它们看作同一个方程的完整解集，而不是只取第一个结果。
 
 <ThemeImage
-  src="/images/docs/equations/multiple-roots.png"
+  src="/images/docs/equations/overview/multiple-roots.png"
   alt="方程求解模式显示 x 平方等于四的两个根"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 方程求解使用复数求解能力，因此某些在实数范围内没有解的方程仍可能返回复数结果。
@@ -99,7 +100,7 @@ $$
 
 - 使用左右方向键移动到需要修改的位置；
 - 使用上下方向键进入分数、根式或指数等多层结构；
-- 点击退格删除光标前的内容，长按可以连续删除；
+- 点击 <BackspaceKey /> 删除光标前的内容，长按可以连续删除；
 - 使用顶栏的撤销和重做恢复编辑步骤；
 - 求解成功后，点击右上角历史按钮可以重新插入旧方程或结果。
 

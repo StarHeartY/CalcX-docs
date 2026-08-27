@@ -3,6 +3,7 @@ title: 常见问题与故障排查
 description: 排查 CalculatorX 中的公式输入、计算结果、方程、矩阵、函数图像、汇率、历史记录和设置问题。
 ---
 import ThemeImage from '../components/ThemeImage'
+import BackspaceKey from '../components/BackspaceKey'
 
 # 常见问题与故障排查
 
@@ -22,9 +23,9 @@ import ThemeImage from '../components/ThemeImage'
 | 汇率 | 输入金额后实时换算，不需要等号 |
 
 <ThemeImage
-  src="/images/docs/equations/equal-and-exe.png"
+  src="/images/docs/equations/overview/equal-and-exe.png"
   alt="方程键盘中的等号用于输入等式而 EXE 用于执行求解"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 如果操作正确仍没有结果，请检查公式中是否还有空白框、括号是否成对，以及分数、根式、指数或函数参数是否填写完整。
@@ -36,7 +37,7 @@ CalculatorX 会把新内容插入当前光标位置。光标如果仍位于分�
 可以这样处理：
 
 1. 使用方向键把光标移到目标位置；
-2. 点击退格删除错误内容；
+2. 点击 <BackspaceKey /> 删除错误内容；
 3. 在科学计算、方程和矩阵模式中使用顶栏撤销；
 4. 结构已经混乱时，点击 `AC` 清空并重新输入。
 
@@ -88,9 +89,9 @@ $$
 如果第二个矩阵被插入到第一个矩阵的某个元素中，说明光标还没有移到矩阵外侧。撤销后，先使用方向键离开当前矩阵再重新插入。
 
 <ThemeImage
-  src="/images/docs/matrix/multiple-matrices.png"
+  src="/images/docs/matrix/overview/multiple-matrices.png"
   alt="两个矩阵正确放在同一公式中并在矩阵外侧使用运算符连接"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 详细限制见[矩阵运算](/matrix/operations)。
@@ -109,9 +110,9 @@ $$
 8. 图像是否位于当前视野之外，尝试缩小和平移画布。
 
 <ThemeImage
-  src="/images/docs/graphing/visibility.png"
+  src="/images/docs/graphing/manage-functions/visibility.png"
   alt="函数列表使用彩色圆点显示曲线并使用灰色圆点隐藏曲线"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 隐函数只输入等于零之前的表达式。例如圆 $x^2+y^2=4$ 应输入 $x^2+y^2-4$。更多排查方法见[观察与调整图像](/graphing/view-graph)。
@@ -121,9 +122,9 @@ $$
 没有网络时，CalculatorX 会保留最近成功获取的汇率，但顶部会显示更新失败。首次使用且没有缓存时，必须先联网成功更新一次，否则缺少汇率的货币可能显示异常接近或相同的金额。
 
 <ThemeImage
-  src="/images/docs/exchange/update-failed.png"
+  src="/images/docs/exchange/rates-and-offline/update-failed.png"
   alt="汇率页面更新失败后显示红色失败提示和重试按钮"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 可以检查：

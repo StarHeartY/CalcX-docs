@@ -6,7 +6,7 @@ import ThemeImage from '../../components/ThemeImage'
 
 # 矩阵运算
 
-创建并填写矩阵后，可以直接使用主键盘上的运算符，也可以通过 Shift 调用橙色第二功能。矩阵运算对尺寸有明确要求，输入前先确认行数和列数可以减少报错。
+创建并填写矩阵后，可以直接使用主键盘上的运算符，也可以通过 Shift 调用按键上方以橙色标出的功能。矩阵运算对尺寸有明确要求，输入前先确认行数和列数可以减少报错。
 
 ## 加法、减法与乘法
 
@@ -28,9 +28,9 @@ $$
 $$
 
 <ThemeImage
-  src="/images/docs/matrix/basic-operations.png"
+  src="/images/docs/matrix/operations/basic-operations.png"
   alt="矩阵与向量模式中对两个矩阵执行加法、乘法或哈达玛积"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 ## 求逆、转置与共轭转置
@@ -42,16 +42,16 @@ $$
 - 输入矩阵后先点击 Shift，再点击 `Mᵀ`，计算共轭转置 $M^{\mathrm H}$。
 
 <ThemeImage
-  src="/images/docs/matrix/inverse-and-transpose.png"
+  src="/images/docs/matrix/operations/inverse-and-transpose.png"
   alt="矩阵键盘使用 M 负一次方、M 转置和 Shift 共轭转置按键"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 逆矩阵只适用于可逆方阵。转置可以用于任意矩阵；共轭转置会在转置的同时对复数元素取共轭，因此在只包含实数时与普通转置结果相同。
 
 ## 计算矩阵乘方
 
-矩阵乘方是 `M⁻¹` 上方的 Shift 第二功能：
+矩阵乘方是 `M⁻¹` 上方的 Shift 功能：
 
 1. 输入一个方阵。
 2. 点击 Shift。
@@ -63,7 +63,7 @@ $$
 
 ## 使用行列式和高级运算
 
-以下功能位于橙色 Shift 层：
+以下功能位于 Shift 功能层：
 
 | 功能 | 输入方法 | 适用对象 |
 | --- | --- | --- |
@@ -76,9 +76,9 @@ $$
 这些按键会先插入一个带空白框的函数模板。光标位于空白框时，点击矩阵尺寸按钮创建矩阵并填写元素，然后点击等号。
 
 <ThemeImage
-  src="/images/docs/matrix/advanced-operations.png"
-  alt="矩阵键盘启用 Shift 后显示 det、rref、eig、rank 和 tr 第二功能"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  src="/images/docs/matrix/operations/advanced-operations.png"
+  alt="矩阵键盘启用 Shift 后显示 det、rref、eig、rank 和 tr 功能"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 ## 运算含义
@@ -98,14 +98,14 @@ $$
 的行列式为 $6$，迹为 $5$，特征值为 $2$ 和 $3$。
 
 <ThemeImage
-  src="/images/docs/matrix/eigenvalues.png"
+  src="/images/docs/matrix/operations/eigenvalues.png"
   alt="矩阵与向量模式计算二和三组成的对角矩阵特征值"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 ## 输入单位矩阵
 
-单位矩阵是矩阵尺寸按钮上方的 Shift 第二功能：
+单位矩阵是矩阵尺寸按钮上方的 Shift 功能：
 
 1. 点击 Shift。
 2. 点击矩阵尺寸按钮，插入单位矩阵 $I$ 的阶数输入框。

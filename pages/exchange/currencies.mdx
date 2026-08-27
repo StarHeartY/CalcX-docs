@@ -15,9 +15,9 @@ import ThemeImage from '../../components/ThemeImage'
 3. 点击货币后，选择窗口会自动关闭，原卡片改为新的货币。
 
 <ThemeImage
-  src="/images/docs/exchange/currency-selector.png"
+  src="/images/docs/exchange/currencies/currency-selector.png"
   alt="选择货币窗口显示常用分组、字母分组和当前货币勾选状态"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 选择窗口顶部先显示 11 种常用货币，后续按货币代码首字母分组。右侧字母索引可以快速跳转到对应分组，当前卡片中的货币会高亮并显示勾选。
@@ -33,9 +33,9 @@ import ThemeImage from '../../components/ThemeImage'
 - 货币符号。
 
 <ThemeImage
-  src="/images/docs/exchange/search-currency.png"
+  src="/images/docs/exchange/currencies/search-currency.png"
   alt="货币选择器搜索人民币并显示代码、名称和货币符号"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 搜索时右侧字母索引会隐藏，底部会显示匹配数量。没有结果时，页面显示“未搜索到任何内容”。
@@ -58,9 +58,9 @@ import ThemeImage from '../../components/ThemeImage'
 3. 在自动打开的选择窗口中选择目标货币。
 
 <ThemeImage
-  src="/images/docs/exchange/add-currency.png"
+  src="/images/docs/exchange/currencies/add-currency.png"
   alt="汇率列表底部的添加货币按钮和新打开的货币选择窗口"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 新卡片会先以美元创建。如果没有完成选择便关闭窗口，美元卡片仍会保留，可以稍后点击代码重新选择。
@@ -70,9 +70,9 @@ import ThemeImage from '../../components/ThemeImage'
 长按一张货币卡片，待卡片浮起后上下拖动到目标位置，再松开手指。最终顺序会保存在设备本地。
 
 <ThemeImage
-  src="/images/docs/exchange/reorder-currencies.png"
+  src="/images/docs/exchange/currencies/reorder-currencies.png"
   alt="长按拖动一张货币卡片并调整它在换算列表中的位置"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 排序只改变显示顺序，不会改变当前汇率或换算结果。
@@ -84,9 +84,9 @@ import ThemeImage from '../../components/ThemeImage'
 3. 卡片会立即从列表中移除。
 
 <ThemeImage
-  src="/images/docs/exchange/delete-currency.png"
+  src="/images/docs/exchange/currencies/delete-currency.png"
   alt="汇率卡片左滑后显示红色垃圾桶删除按钮"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 删除没有单独的确认对话框。如果删除的是当前输入货币，CalculatorX 会把列表中的第一张卡片设为新的输入货币，并把输入金额重置为 `0`。

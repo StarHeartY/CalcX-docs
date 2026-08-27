@@ -17,9 +17,9 @@ import ThemeImage from '../../components/ThemeImage'
 - 从未成功获取数据时显示“从未更新”。
 
 <ThemeImage
-  src="/images/docs/exchange/last-update.png"
+  src="/images/docs/exchange/rates-and-offline/last-update.png"
   alt="汇率页面顶部显示上次更新时间和手动更新按钮"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 更新时间可以帮助判断数据是否仍适合当前用途，但不能代表银行或交易市场的实际报价时间。
@@ -32,15 +32,15 @@ import ThemeImage from '../../components/ThemeImage'
 4. 成功后页面短暂显示“更新成功”，并刷新顶部时间。
 
 <ThemeImage
-  src="/images/docs/exchange/update-status.png"
+  src="/images/docs/exchange/rates-and-offline/update-status.png"
   alt="汇率页面点击更新后按钮显示更新中状态"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 <ThemeImage
-  src="/images/docs/exchange/update-success.png"
+  src="/images/docs/exchange/rates-and-offline/update-success.png"
   alt="汇率更新成功后显示绿色成功提示和新的更新时间"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 进入汇率模式时也会自动执行同样的检查，通常不需要每次手动点击更新。
@@ -61,9 +61,9 @@ CalculatorX 按设备本地时间的自然小时复用汇率缓存。如果最�
 - 货币列表、排序和输入金额仍可正常修改并保存。
 
 <ThemeImage
-  src="/images/docs/exchange/offline-cache.png"
+  src="/images/docs/exchange/rates-and-offline/offline-cache.png"
   alt="设备离线时汇率页面保留已有换算结果并显示旧的更新时间"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 缓存不会因为更新失败而被清空。离线期间应结合顶部更新时间判断数据是否过旧。
@@ -86,9 +86,9 @@ CalculatorX 按设备本地时间的自然小时复用汇率缓存。如果最�
 更新失败后，页面会短暂显示红色“更新失败”，按钮变为“重试 ↻”，并通过提示说明网络或数据问题。
 
 <ThemeImage
-  src="/images/docs/exchange/update-failed.png"
+  src="/images/docs/exchange/rates-and-offline/update-failed.png"
   alt="汇率更新失败后显示红色失败状态和重试按钮"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 可以依次检查：

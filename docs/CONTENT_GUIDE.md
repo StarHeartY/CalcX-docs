@@ -53,6 +53,7 @@ description: 一句话说明页面帮助用户完成什么
 - 标题应具体表达任务或能力，避免“其他”“更多”等模糊词；
 - 使用简体中文和一致的产品术语；
 - 首次出现专业术语时给出中文解释，必要时附英文缩写；
+- 将按键上方以橙色标出的功能统一称为“Shift 功能”，只在首次帮助用户定位时说明橙色标签；
 - 面向用户描述结果和操作，不记录编写过程、争论或临时决策；
 - 避免“极致”“完美”“终极”等无法验证的宣传性措辞。
 
@@ -80,12 +81,15 @@ description: 一句话说明页面帮助用户完成什么
 
 ## 图片
 
-原始图片放在 `public/images/` 下，并按页面或主题分组：
+原始图片放在 `public/images/` 下。页面专属图片按照页面路由分组，使页面源码与图片目录保持对应：
 
 ```text
-public/images/docs/<section>/<name>.png
-public/images/docs/<section>/<name>_dark.png
+pages/basics/arithmetic.mdx
+public/images/docs/basics/arithmetic/<name>.png
+public/images/docs/basics/arithmetic/<name>_dark.png
 ```
+
+根级页面直接使用同名目录，例如 `pages/history.mdx` 对应 `public/images/docs/history/`。没有图片的页面不需要提前创建目录。同一张图片被多个页面复用时只保留一份，放在主要归属页面的目录中；确实不属于某个具体页面的模块公共图片可以放在对应 `<section>` 根目录。
 
 要求：
 
@@ -103,13 +107,25 @@ public/images/docs/<section>/<name>_dark.png
 import ThemeImage from '../../components/ThemeImage'
 
 <ThemeImage
-  src="/images/docs/scientific/keyboard.png"
-  alt="CalculatorX 科学计算键盘"
-  style={{ maxWidth: '320px', height: 'auto' }}
+  src="/images/docs/scientific/overview/overview.png"
+  alt="CalculatorX 科学计算主界面"
+  style={{ maxWidth: '240px', height: 'auto' }}
 />
 ```
 
 组件使用原生图片的懒加载能力，并自动尝试加载同目录下的 `_dark` 图片；暗色图片不存在时回退到普通图片。
+
+### 行内按键图标
+
+操作步骤需要用户点击或长按 CalculatorX 的退格键时，使用 `BackspaceKey` 显示应用中的实际图标，不直接复制 SVG 代码：
+
+```mdx
+import BackspaceKey from '../../components/BackspaceKey'
+
+点击 <BackspaceKey /> 删除光标前的内容。
+```
+
+组件会通过 `aria-label` 保留“退格键”的无障碍含义，并使用 `public/icon/icon_backspace.svg` 作为随明暗主题变色的图标遮罩。功能概述、并列名词、图片 `alt` 和页面标题等普通文字场景仍写作“退格”或“退格键”，不要在连续文字中突兀地插入图标。
 
 ## 视频
 
@@ -128,7 +144,7 @@ import ThemeVideo from '../../components/ThemeVideo'
 <ThemeVideo
   src="/videos/docs/basics/nested-cursor.mp4"
   ariaLabel="使用方向键在分数的分子和分母之间移动光标"
-  style={{ maxWidth: '320px', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', borderRadius: '12px', marginTop: '16px' }}
 />
 ```
 

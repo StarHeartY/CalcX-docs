@@ -10,7 +10,7 @@ import ThemeImage from '../../components/ThemeImage'
 
 ## 输入变量
 
-变量位于高级键盘的橙色第二功能中。当前键盘提供：
+变量位于高级键盘的 Shift 功能层中，并以橙色标签标出。当前键盘提供：
 
 $$
 a,\ b,\ c,\ d,\ m,\ n,\ x,\ y,\ z
@@ -18,14 +18,8 @@ $$
 
 输入变量有两种方法：
 
-1. 点击 Shift，再点击变量所在按键；
-2. 直接长按主键，触发上方标出的橙色变量。
-
-<ThemeImage
-  src="/images/docs/scientific/algebra-variables.png"
-  alt="科学计算键盘通过橙色第二功能输入 a 到 d、m、n、x、y、z 变量"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
+1. 点击 <kbd className="key-cap">⇧Shift</kbd>，再点击变量所在按键；
+2. 直接长按主键，触发上方标出的变量。
 
 数字与变量相邻时表示乘法。例如，依次输入 $2$ 和 $x$，公式会按 $2x$ 参与计算。
 
@@ -36,19 +30,19 @@ $$
 例如，输入：
 
 $$
-(x+1)^2
+(1+x)^2
 $$
 
-点击等号后，CalculatorX 会展开为：
+点击 <kbd className="key-cap">=</kbd>，得到：
 
 $$
-x^2+2x+1
+1+2x+x^2
 $$
 
 <ThemeImage
-  src="/images/docs/scientific/algebra-expansion.png"
+  src="/images/docs/scientific/algebra/algebra-expansion.png"
   alt="科学计算模式把 x 加一的平方展开为 x 平方加二 x 加一"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 如果幂只作用于括号中的一部分，应先使用方向键确认光标已经离开括号，再继续输入后面的运算。
@@ -99,19 +93,19 @@ $$
 也可以输入包含实部和虚部的普通表达式，例如 $2+3i$。
 
 <ThemeImage
-  src="/images/docs/scientific/complex-number.png"
+  src="/images/docs/scientific/algebra/complex-number.png"
   alt="科学计算模式输入虚数单位并计算 i 的平方"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 涉及复数的函数可能有不同定义域或多值结果。遇到结果形式与实数计算不同，应先确认输入是否本来就超出了实数范围。
 
 ## 绝对值与分式
 
-- 点击绝对值键可插入 $\left|\square\right|$；
+- 点击 <kbd className="key-cap">$\left|\square\right|$</kbd> 可插入绝对值；
 - 点击分数键可插入分子和分母；
 - 使用方向键在两个输入位置之间移动；
-- 分数键的 Shift 第二功能是倒数幂 $^{-1}$。
+- 分数键的 Shift 功能是倒数幂 $^{-1}$。
 
 例如：
 
@@ -121,7 +115,7 @@ $$
 
 ## 代数计算与解方程的区别
 
-科学计算模式负责化简和计算表达式，不会把普通等式自动当作待求解方程。需要求出未知数时，应切换到[“方程求解”模式](/equations/overview)，并使用 `EXE` 执行求解。
+科学计算模式负责化简和计算表达式，不会把普通等式自动当作待求解方程。需要求出未知数时，应切换到[“方程求解”模式](/equations/overview)，并使用 <kbd className="key-cap">EXE</kbd> 执行求解。
 
 ## 相关教程
 

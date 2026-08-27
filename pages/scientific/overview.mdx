@@ -3,10 +3,12 @@ title: 科学计算键盘与 Shift
 description: 认识 CalculatorX 科学计算键盘，掌握 Shift、长按气泡、方向键、角度单位和结果转换。
 ---
 import ThemeImage from '../../components/ThemeImage'
+import BackspaceKey from '../../components/BackspaceKey'
+import HelpLink from '../../components/HelpLink'
 
 # 科学计算键盘与 Shift
 
-科学计算模式在基础数字键盘上方增加了函数、常数、变量和微积分按键。许多按键还提供橙色第二功能或长按菜单，因此同一屏幕可以完成从普通算术到符号计算的多种任务。
+科学计算模式在基础数字键盘上方增加了函数、常数、变量和微积分按键。许多按键还提供以橙色标出的 Shift 功能或长按菜单，因此同一屏幕可以完成从普通算术到符号计算的多种任务。
 
 ## 进入科学计算
 
@@ -15,9 +17,9 @@ import ThemeImage from '../../components/ThemeImage'
 3. 检查顶栏中间是否显示“科学计算”和当前角度单位。
 
 <ThemeImage
-  src="/images/docs/scientific/overview.png"
+  src="/images/docs/scientific/overview/overview.png"
   alt="CalculatorX 科学计算模式的公式区、高级键盘和基础键盘"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '380px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 ## 键盘分区
@@ -31,7 +33,7 @@ import ThemeImage from '../../components/ThemeImage'
 
 | 按键 | 主要作用 |
 | --- | --- |
-| `Shift` | 切换下一次按键使用的第二功能 |
+| `Shift` | 启用下一次按键对应的 Shift 功能 |
 | `R/D` | 在弧度制和角度制之间切换 |
 | 方向键 | 在字符和多层公式结构中移动光标 |
 | `S⇄D` | 转换最近一次结果的显示格式 |
@@ -40,24 +42,18 @@ import ThemeImage from '../../components/ThemeImage'
 | `nCr`、`nPr`、`!` | 组合、排列和阶乘 |
 | `sin`、`cos`、`tan` | 输入三角函数 |
 
-## 使用 Shift 第二功能
+## 使用 Shift 功能
 
-高级键盘上方的橙色标签表示第二功能。例如，`sin` 上方是反正弦，$\pi$ 上方是 $x$，`lim` 上方是求导，定积分上方是不定积分。
+高级键盘上方的橙色标签表示 Shift 功能。例如，`sin` 上方是反正弦，$\pi$ 上方是 $x$，`lim` 上方是求导，定积分上方是不定积分。
 
 使用方法：
 
-1. 点击 <kbd className="key-cap">Shift</kbd>。
+1. 点击 <kbd className="key-cap">⇧Shift</kbd>。
 2. 顶栏中间出现“SHIFT”。
 3. 点击带橙色标签的目标按键。
-4. 第二功能被插入后，Shift 自动退出。
+4. 目标功能被插入后，Shift 自动退出。
 
-<ThemeImage
-  src="/images/docs/scientific/shift.png"
-  alt="科学计算键盘启用 Shift 后顶栏显示 SHIFT 并标出橙色第二功能"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
-
-多数没有气泡菜单的按键也可以通过长按直接触发橙色第二功能。`sin`、`cos`、`tan`、平方根和 `S⇄D` 的长按已经分配给气泡菜单；使用这些按键上方的橙色第二功能时，应先点击 Shift。
+多数按键也可以通过长按直接触发对应的 Shift 功能。
 
 ## 使用滑动气泡菜单
 
@@ -72,9 +68,9 @@ import ThemeImage from '../../components/ThemeImage'
 操作时保持手指按住，气泡出现后滑向目标选项，等目标高亮再松开。
 
 <ThemeImage
-  src="/images/docs/scientific/long-press-menu.png"
+  src="/images/docs/scientific/overview/long-press-menu.png"
   alt="长按三角函数按键后出现并高亮可滑动选择的气泡菜单"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 直接在原按键上松开而没有选中气泡选项时，不会插入气泡中的函数。
@@ -86,7 +82,7 @@ import ThemeImage from '../../components/ThemeImage'
 - 使用左右方向键在相邻内容间移动；
 - 使用上下方向键进入分子、分母、指数或上下限；
 - 长按方向键可以连续移动；
-- 使用退格删除光标前的内容；
+- 使用 <BackspaceKey /> 删除光标前的内容；
 - 使用顶栏撤销或重做恢复编辑步骤。
 
 ## 切换角度单位
@@ -105,7 +101,7 @@ import ThemeImage from '../../components/ThemeImage'
 
 ## 保存与复用
 
-成功计算后，表达式和结果会保存到科学计算历史。点击顶栏右上角的历史按钮，可以把旧表达式或结果重新插入当前光标位置。
+成功计算后，表达式和结果会保存到科学计算历史。点击顶栏右上角的历史按钮，可以把旧表达式或结果重新插入当前光标位置<HelpLink href="/history" title="了解如何查看和复用历史记录" />。
 
 ## 相关教程
 

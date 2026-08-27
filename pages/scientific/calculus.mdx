@@ -10,7 +10,7 @@ import ThemeImage from '../../components/ThemeImage'
 
 ## 求导
 
-求导是 `lim` 上方的橙色第二功能。先按 Shift 再点击 `lim`，或直接长按 `lim`，会插入：
+求导是 `lim` 上方以橙色标出的 Shift 功能。先按 Shift 再点击 `lim`，或直接长按 `lim`，会插入：
 
 $$
 \frac{d}{dx}\left(\square\right)
@@ -23,9 +23,9 @@ $$
 $$
 
 <ThemeImage
-  src="/images/docs/scientific/derivative.png"
+  src="/images/docs/scientific/calculus/derivative.png"
   alt="科学计算模式对 x 的三次方加二 x 求导并得到三 x 平方加二"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 当前快捷模板按 $x$ 求导。输入其他字母但没有明确的 $x$ 时，结果可能被视为常量表达式。
@@ -52,16 +52,16 @@ $$
 $$
 
 <ThemeImage
-  src="/images/docs/scientific/definite-integral.png"
+  src="/images/docs/scientific/calculus/definite-integral.png"
   alt="科学计算模式计算零到一的 x 平方定积分并得到三分之一"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 如果符号引擎无法得到合适的闭式结果，部分定积分会使用数值方法降级计算，此时可能得到近似小数而不是精确表达式。
 
 ## 计算不定积分
 
-不定积分是定积分键上方的橙色第二功能。它会插入：
+不定积分是定积分键上方的 Shift 功能。它会插入：
 
 $$
 \int\left(\square\right)dx
@@ -92,9 +92,9 @@ $$
 需要趋向无穷时，可以使用科学键盘上的 $\infty$。极限使用的变量为 $x$。
 
 <ThemeImage
-  src="/images/docs/scientific/limit.png"
+  src="/images/docs/scientific/calculus/limit.png"
   alt="科学计算模式计算 x 趋近零时正弦 x 除以 x 的极限"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 ## 有限求和
@@ -126,12 +126,12 @@ $$
 $$
 
 <ThemeImage
-  src="/images/docs/scientific/sum-and-product.png"
+  src="/images/docs/scientific/calculus/sum-and-product.png"
   alt="科学计算模式分别计算一到五的有限求和与有限求积"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-求和键和求积键的 Shift 第二功能分别是 `GCD` 与 `LCM`。如果看到的是最大公约数或最小公倍数模板，说明 Shift 仍处于启用状态或刚才使用了长按第二功能。
+求和键和求积键的 Shift 功能分别是 `GCD` 与 `LCM`。如果看到的是最大公约数或最小公倍数模板，说明 Shift 仍处于启用状态或刚才通过长按触发了对应功能。
 
 ## 遇到错误或长时间计算
 

@@ -3,6 +3,7 @@ title: 完成一次汇率换算
 description: 在 CalculatorX 中选择输入货币、输入金额并实时查看多种货币的换算结果。
 ---
 import ThemeImage from '../../components/ThemeImage'
+import BackspaceKey from '../../components/BackspaceKey'
 
 # 完成一次汇率换算
 
@@ -15,9 +16,9 @@ import ThemeImage from '../../components/ThemeImage'
 3. 等待页面载入本地数据并检查最新汇率。
 
 <ThemeImage
-  src="/images/docs/exchange/overview.png"
+  src="/images/docs/exchange/overview/overview.png"
   alt="CalculatorX 汇率模式显示更新时间、货币卡片和金额输入键盘"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 首次使用时，默认列表包含美元、人民币、港币、欧元、英镑、日元和韩元，默认输入金额为 $100$。以后再次进入时，会恢复你保存的货币顺序、输入金额和当前输入货币。
@@ -33,15 +34,15 @@ import ThemeImage from '../../components/ThemeImage'
 5. 点击“确定”或键盘收起键，关闭数字键盘。
 
 <ThemeImage
-  src="/images/docs/exchange/amount-input.png"
+  src="/images/docs/exchange/overview/amount-input.png"
   alt="汇率模式以美元为当前输入货币并输入一百的金额"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 <ThemeImage
-  src="/images/docs/exchange/results.png"
+  src="/images/docs/exchange/overview/results.png"
   alt="输入美元金额后人民币、港币、欧元等卡片同步显示换算结果"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 换算结果最多保留四位小数，并自动去掉末尾多余的零。汇率会随更新时间变化，因此教程不提供固定的换算数值。
@@ -57,16 +58,16 @@ import ThemeImage from '../../components/ThemeImage'
 - “确定”和键盘收起键。
 
 <ThemeImage
-  src="/images/docs/exchange/keyboard.png"
+  src="/images/docs/exchange/overview/keyboard.png"
   alt="汇率金额键盘包含数字、小数点、清空、退格、收起和确定按键"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 金额输入有以下限制：
 
 - 最多输入 15 个字符；
 - 一个金额只能包含一个小数点；
-- 退格删到最后一位时会恢复为 `0`；
+- 使用 <BackspaceKey /> 删除到最后一位时会恢复为 `0`；
 - 当前键盘不提供负号，只用于输入非负金额；
 - 手动滚动货币列表时，键盘会自动收起。
 
@@ -75,9 +76,9 @@ import ThemeImage from '../../components/ThemeImage'
 点击任意其他货币卡片的名称或金额区域，该卡片会成为新的输入货币。CalculatorX 会先把它当前显示的换算值作为新金额，再重新计算其他卡片，因此切换过程中代表的价值不会突然改变。
 
 <ThemeImage
-  src="/images/docs/exchange/switch-base.png"
+  src="/images/docs/exchange/overview/switch-base.png"
   alt="从美元卡片切换到人民币卡片作为新的金额输入货币"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 点击卡片左侧的货币代码和下拉箭头是更换该卡片的货币类型，不是切换输入状态。两个点击区域的作用不要混淆。

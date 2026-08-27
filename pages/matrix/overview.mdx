@@ -3,6 +3,7 @@ title: 创建与输入矩阵
 description: 在 CalculatorX 中选择 1×1 至 6×6 的矩阵尺寸，填写元素并编辑多个矩阵。
 ---
 import ThemeImage from '../../components/ThemeImage'
+import BackspaceKey from '../../components/BackspaceKey'
 
 # 创建与输入矩阵
 
@@ -15,12 +16,12 @@ import ThemeImage from '../../components/ThemeImage'
 3. 检查顶栏中间是否显示“矩阵与向量”。
 
 <ThemeImage
-  src="/images/docs/matrix/overview.png"
+  src="/images/docs/matrix/overview/overview.png"
   alt="CalculatorX 矩阵与向量模式的公式区和六行五列键盘"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-键盘包含方向键、分数、矩阵尺寸、求逆、转置、加减乘、哈达玛积、`Ans` 和等号。橙色第二功能中还提供行列式、矩阵乘方、共轭转置以及更多线性代数运算。
+键盘包含方向键、分数、矩阵尺寸、求逆、转置、加减乘、哈达玛积、`Ans` 和等号。Shift 功能层中还提供行列式、矩阵乘方、共轭转置以及更多线性代数运算。
 
 ## 选择矩阵尺寸
 
@@ -32,9 +33,9 @@ import ThemeImage from '../../components/ThemeImage'
 4. 点击“创建矩阵”。
 
 <ThemeImage
-  src="/images/docs/matrix/dimension-dialog.png"
+  src="/images/docs/matrix/overview/dimension-dialog.png"
   alt="矩阵维度窗口通过六乘六方格选择矩阵的行数和列数"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 可选尺寸从 $1\times1$ 到 $6\times6$，行数和列数可以不同。例如，点击第 2 行第 3 列的方格会创建 $2\times3$ 矩阵。窗口初次打开时默认选择 $3\times3$。
@@ -58,12 +59,12 @@ $$
 $$
 
 <ThemeImage
-  src="/images/docs/matrix/matrix-input.png"
+  src="/images/docs/matrix/overview/matrix-input.png"
   alt="矩阵与向量模式中填写一二三四组成的二乘二矩阵"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-矩阵元素可以是整数、小数、分数或包含 $i$ 的复数。分数键会插入分子和分母两个位置；$i$ 是数字 `0` 上方的 Shift 第二功能。
+矩阵元素可以是整数、小数、分数或包含 $i$ 的复数。分数键会插入分子和分母两个位置；$i$ 是数字 `0` 上方的 Shift 功能。
 
 ## 使用方向键编辑矩阵
 
@@ -72,13 +73,13 @@ $$
 - 左右方向键在相邻字符和矩阵元素间移动；
 - 上下方向键在不同行、分数或指数的上下层位置间移动；
 - 长按方向键可以连续移动；
-- 退格删除光标前的内容，`AC` 清空整个当前公式；
+- 点击 <BackspaceKey /> 删除光标前的内容，点击 <kbd className="key-cap">AC</kbd> 清空整个当前公式；
 - 顶栏的撤销和重做可以恢复矩阵输入步骤。
 
 <ThemeImage
-  src="/images/docs/matrix/matrix-editing.png"
+  src="/images/docs/matrix/overview/matrix-editing.png"
   alt="使用方向键在矩阵的不同行列元素之间移动光标"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 ## 在同一公式中输入多个矩阵
@@ -86,9 +87,9 @@ $$
 完成第一个矩阵后，先把光标移到矩阵外侧，再输入运算符并再次使用尺寸按钮创建下一个矩阵。
 
 <ThemeImage
-  src="/images/docs/matrix/multiple-matrices.png"
+  src="/images/docs/matrix/overview/multiple-matrices.png"
   alt="同一公式中输入两个矩阵并在中间放置矩阵运算符"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 如果光标仍停留在某个元素内部，新矩阵也会被插入该元素中。看到嵌套位置不正确时，可以撤销后先用方向键移出当前矩阵。

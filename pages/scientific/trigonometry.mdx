@@ -18,9 +18,9 @@ CalculatorX 支持常用三角函数、反三角函数、倒数三角函数和�
 点击 <kbd className="key-cap">R/D</kbd> 可以立即切换。也可以在“设置 → 计算设置 → 角度单位”中修改。
 
 <ThemeImage
-  src="/images/docs/scientific/angle-unit.png"
+  src="/images/docs/scientific/trigonometry/angle-unit.png"
   alt="科学计算顶栏分别显示 DEG 和 RAD 角度单位"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 角度单位是全局设置。离开科学计算页面后再次返回，最近选择的单位仍会保留。
@@ -39,6 +39,12 @@ $$
 \sin(30)=\frac{1}{2}
 $$
 
+<ThemeImage
+  src="/images/docs/scientific/trigonometry/trigonometry-example.png"
+  alt="科学计算模式在角度制下计算三十度的正弦"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
 弧度制下，对应输入为：
 
 $$
@@ -46,16 +52,18 @@ $$
 $$
 
 <ThemeImage
-  src="/images/docs/scientific/trigonometry-example.png"
-  alt="科学计算模式在角度制下计算三十度的正弦"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  src="/images/docs/scientific/trigonometry/trigonometry-example2.png"
+  alt="科学计算模式在弧度制下计算π/6的正弦"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-同样的方法适用于 `cos` 和 `tan`。如果结果明显不符合预期，首先检查是否选错了 `DEG` 或 `RAD`。
+同样的方法适用于 `cos` 和 `tan`。
+
+如果结果明显不符合预期，首先检查是否选错了 `DEG` 或 `RAD`。
 
 ## 使用反三角函数
 
-`sin`、`cos`、`tan` 上方的橙色第二功能分别是：
+`sin`、`cos`、`tan` 上方以橙色标出的 Shift 功能分别是：
 
 $$
 \sin^{-1},\quad \cos^{-1},\quad \tan^{-1}
@@ -83,12 +91,12 @@ $$
 | `cos` | `sec` | $\sec x=\frac{1}{\cos x}$ |
 | `tan` | `cot` | $\cot x=\frac{1}{\tan x}$ |
 
-气泡菜单中还提供它们的反函数。保持按住并滑向目标，等选项高亮后松开。
+气泡菜单中还提供它们的反函数和双曲函数。保持按住并滑向目标，等选项高亮后松开。
 
 <ThemeImage
-  src="/images/docs/scientific/reciprocal-trigonometry.png"
+  src="/images/docs/scientific/overview/long-press-menu.png"
   alt="长按正弦余弦正切按键选择余割正割或余切函数"
-  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 ## 使用双曲函数
