@@ -1,0 +1,99 @@
+---
+title: 求解方程组
+description: 使用 2 至 6 行方程组模板输入多个等式，并求解 x、y、z、u、v、w。
+---
+import ThemeImage from '../../components/ThemeImage'
+
+# 求解方程组
+
+方程求解模式提供专用的方程组模板。模板可以包含 2 至 6 行等式，适合求解由 $x$、$y$、$z$、$u$、$v$、$w$ 组成的多元方程组。
+
+## 插入方程组模板
+
+高级键盘第一行的方程组图标提供以下操作：
+
+- 短按图标，插入 2 行方程组；
+- 长按图标，保持手指按住并滑向 3 行、4 行、5 行或 6 行，目标高亮后松开。
+
+<ThemeImage
+  src="/images/docs/equations/system-template-menu.png"
+  alt="长按方程组按键后显示三行到六行模板的滑动气泡菜单"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+模板中的每一行都有一个空白输入位置。应根据实际等式数量选择行数，不需要为了用满模板而重复方程。
+
+## 输入一个二元方程组
+
+下面求解：
+
+$$
+\begin{cases}
+x+y=5 \\
+x-y=1
+\end{cases}
+$$
+
+1. 短按方程组图标，插入 2 行模板。
+2. 在第一行输入 $x+y=5$。
+3. 使用方向键移动到第二行。
+4. 输入 $x-y=1$。
+5. 检查两行等式都已填写完整，然后点击 <kbd className="key-cap">EXE</kbd>。
+6. 结果应给出 $x=3$、$y=2$。
+
+<ThemeImage
+  src="/images/docs/equations/system-input.png"
+  alt="方程求解模式在两行模板中输入 x 加 y 等于五和 x 减 y 等于一"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+<ThemeImage
+  src="/images/docs/equations/system-result.png"
+  alt="二元方程组求解结果显示 x 等于三和 y 等于二"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+每一行中的 `=` 仍然只是输入等号，只有最后的 `EXE` 才会求解整个方程组。
+
+## 使用三个以上未知数
+
+$x$、$y$、$z$ 可以直接从键盘输入；$u$、$v$、$w$ 通过 Shift 第二功能输入。CalculatorX 会检查整个方程组中实际出现了哪些受支持变量，并把对应结果一起显示。
+
+例如，三元方程组通常应选择 3 行模板，并在各行中写入包含 $x$、$y$、$z$ 的等式。方程数量与未知数数量不匹配时，方程组可能无解、存在多组解，或无法得到唯一数值结果。
+
+## 在模板中移动和修改
+
+- 左右方向键用于移动到相邻字符或输入位置；
+- 上下方向键可以切换行，也能进入分数和指数等上下层结构；
+- 长按方向键可以连续移动；
+- 退格会删除当前光标前的内容；
+- 如果模板行数选错，通常使用 `AC` 清空后重新插入更直接。
+
+<ThemeImage
+  src="/images/docs/equations/system-editing.png"
+  alt="使用方向键在多行方程组模板的不同等式之间移动光标"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+## 结果与常见问题
+
+- **显示无解**：检查各行是否互相矛盾，或是否有空白行和缺失的等号；
+- **结果不是唯一一组数值**：方程可能不足以确定所有未知数；
+- **某个字母没有被求解**：确认使用的是 $x$、$y$、$z$、$u$、$v$、$w$；
+- **光标跳到意外位置**：先用方向键确认当前高亮的空白框，再继续输入。
+
+求解成功的方程组会进入方程历史。你可以点击顶栏右上角的历史按钮，把原方程组或结果重新插入当前公式。
+
+## 相关教程
+
+- [求解单个方程](/equations/overview)
+- [输入与编辑公式](/basics/input)
+- [查看和复用历史记录](/history)

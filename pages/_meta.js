@@ -2,6 +2,8 @@ export default {
   "index": "快速入门",
   "basics": "基础使用",
   "scientific": "科学计算",
+  "equations": "方程求解",
+  "matrix": "矩阵与向量",
   "history": "历史记录",
   "settings": "设置",
   "home": {

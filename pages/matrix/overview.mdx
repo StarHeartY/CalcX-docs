@@ -1,0 +1,116 @@
+---
+title: 创建与输入矩阵
+description: 在 CalculatorX 中选择 1×1 至 6×6 的矩阵尺寸，填写元素并编辑多个矩阵。
+---
+import ThemeImage from '../../components/ThemeImage'
+
+# 创建与输入矩阵
+
+矩阵与向量模式提供独立的矩阵模板和线性代数键盘。你可以先选择行数和列数，再逐格填写元素，最后执行矩阵运算。
+
+## 进入矩阵与向量
+
+1. 点击左上角的侧边栏按钮。
+2. 在“进阶”分组中选择“矩阵与向量”。
+3. 检查顶栏中间是否显示“矩阵与向量”。
+
+<ThemeImage
+  src="/images/docs/matrix/overview.png"
+  alt="CalculatorX 矩阵与向量模式的公式区和六行五列键盘"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+键盘包含方向键、分数、矩阵尺寸、求逆、转置、加减乘、哈达玛积、`Ans` 和等号。橙色第二功能中还提供行列式、矩阵乘方、共轭转置以及更多线性代数运算。
+
+## 选择矩阵尺寸
+
+矩阵尺寸按钮使用一个小方格图标表示：
+
+1. 点击矩阵尺寸按钮，打开“矩阵维度”窗口。
+2. 在 $6\times6$ 方格中点击目标区域的右下角方格。
+3. 检查窗口顶部显示的“行数 × 列数”。
+4. 点击“创建矩阵”。
+
+<ThemeImage
+  src="/images/docs/matrix/dimension-dialog.png"
+  alt="矩阵维度窗口通过六乘六方格选择矩阵的行数和列数"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+可选尺寸从 $1\times1$ 到 $6\times6$，行数和列数可以不同。例如，点击第 2 行第 3 列的方格会创建 $2\times3$ 矩阵。窗口初次打开时默认选择 $3\times3$。
+
+## 填写矩阵元素
+
+创建矩阵后，每个元素位置都会显示一个空白框：
+
+1. 在当前空白框中输入第一个元素。
+2. 使用方向键移动到相邻元素。
+3. 按照从左到右、从上到下的顺序填写其余位置。
+4. 确认没有空白框后，再输入运算符或点击等号。
+
+例如，一个 $2\times2$ 矩阵可以写作：
+
+$$
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}
+$$
+
+<ThemeImage
+  src="/images/docs/matrix/matrix-input.png"
+  alt="矩阵与向量模式中填写一二三四组成的二乘二矩阵"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+矩阵元素可以是整数、小数、分数或包含 $i$ 的复数。分数键会插入分子和分母两个位置；$i$ 是数字 `0` 上方的 Shift 第二功能。
+
+## 使用方向键编辑矩阵
+
+矩阵键盘提供上、下、左、右四个方向键：
+
+- 左右方向键在相邻字符和矩阵元素间移动；
+- 上下方向键在不同行、分数或指数的上下层位置间移动；
+- 长按方向键可以连续移动；
+- 退格删除光标前的内容，`AC` 清空整个当前公式；
+- 顶栏的撤销和重做可以恢复矩阵输入步骤。
+
+<ThemeImage
+  src="/images/docs/matrix/matrix-editing.png"
+  alt="使用方向键在矩阵的不同行列元素之间移动光标"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+## 在同一公式中输入多个矩阵
+
+完成第一个矩阵后，先把光标移到矩阵外侧，再输入运算符并再次使用尺寸按钮创建下一个矩阵。
+
+<ThemeImage
+  src="/images/docs/matrix/multiple-matrices.png"
+  alt="同一公式中输入两个矩阵并在中间放置矩阵运算符"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+如果光标仍停留在某个元素内部，新矩阵也会被插入该元素中。看到嵌套位置不正确时，可以撤销后先用方向键移出当前矩阵。
+
+## 使用 Ans 和历史记录
+
+一次矩阵计算成功后，可以点击 `Ans` 把最近结果插入当前公式。顶栏右上角的历史按钮还可以打开矩阵历史，分别回填过去的输入或结果。
+
+`Ans` 适合紧接着继续计算；需要查找更早的矩阵时，应使用历史记录。
+
+## 相关教程
+
+- [矩阵运算](/matrix/operations)
+- [输入与编辑公式](/basics/input)
+- [查看和复用历史记录](/history)
