@@ -1,10 +1,8 @@
 export default {
   "index": "快速入门",
-  "basics": "基础计算",
-  "scientific": "科学计算",
-  "historys": "历史记录",
-  "support": "支持",
-  "faq": "常见问题解答",
+  "basics": "基础使用",
+  "history": "历史记录",
+  "settings": "设置",
   "home": {
     "title": "主页",
     "type": "page",

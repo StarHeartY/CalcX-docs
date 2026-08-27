@@ -9,18 +9,14 @@ CalcX-docs/
 ├── pages/                       # CalculatorX 用户手册源码
 │   ├── _app.jsx                 # 注入全站样式
 │   ├── _meta.js                 # 顶层导航与页面顺序
-│   ├── index.mdx                # 帮助中心首页
+│   ├── index.mdx                # 快速入门与帮助中心首页
 │   ├── about.mdx                # 关于 CalculatorX
-│   ├── faq.md                   # 常见问题
-│   ├── basics/                  # 基础计算页面及局部导航
-│   ├── scientific/              # 科学计算与 CAS 页面
-│   ├── historys/                # 历史记录页面
-│   └── support/                 # 更新日志与隐私声明
+│   ├── history.mdx              # 局部与全局历史记录
+│   ├── settings.mdx             # 计算、外观与体验设置
+│   └── basics/                  # 基础使用页面及局部导航
 ├── components/                  # MDX 使用的 React 组件
 │   ├── HelpLink.jsx
-│   ├── ThemeImage.jsx
-│   ├── counters.tsx
-│   └── counters.module.css
+│   └── ThemeImage.jsx
 ├── public/                      # 构建时原样收集的静态源资源
 │   ├── favicon.png
 │   └── images/
@@ -56,8 +52,7 @@ CalcX-docs/
 这里存放 MDX 可复用的展示组件。修改组件可能影响多个页面，必须搜索调用位置并执行完整构建。
 
 - `HelpLink.jsx`：内部说明链接；
-- `ThemeImage.jsx`：明暗主题图片切换；
-- `counters.*`：当前未被页面引用的辅助组件，删除或改造前仍需核实历史用途。
+- `ThemeImage.jsx`：明暗主题图片切换；页面引用普通图片时会自动查找同目录下的 `_dark` 变体。
 
 ### `public/`
 

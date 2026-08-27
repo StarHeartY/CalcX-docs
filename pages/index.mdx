@@ -1,56 +1,74 @@
 ---
-title: 介绍
+title: 快速入门
+description: 从认识 CalculatorX 界面开始，完成第一次计算并找到历史记录和常用设置。
 ---
 import { Cards } from 'nextra/components'
-import HelpLink from '../components/HelpLink'
-import Image from 'next/image'
 import ThemeImage from '../components/ThemeImage'
-
-
 
 # CalculatorX 使用手册
 
-欢迎使用 **CalculatorX 计算器**（简称 CalcX）。本指南将带你快速熟悉软件的核心布局与基础操作，助你立刻上手这款功能强大的科学计算器。
+CalculatorX 是一款面向 HarmonyOS 的科学与符号计算器。你可以用它完成日常计算，也可以处理科学函数、方程、矩阵、函数图像和汇率换算。
 
+如果你是第一次使用 CalculatorX，可以先跟随本页完成一次基础计算，再按需要阅读后续专题。
 
-## 简介
+## 认识主界面
 
-CalcX 是一款 **专业级符号计算器 (CAS)** <HelpLink href="/faq#1-什么是“符号计算器”？" title="什么是专业级符号计算器 (CAS 引擎)？" />兼 **多功能计算工具**，你可以借助它轻松应对微积分、方程求解、符号推导、函数图像、概率统计等诸多场景。也能作为计算、单位转换等日常工具。
+计算页面从上到下分为顶栏、公式显示区和按键区。顶栏用于打开侧边栏、识别当前模式以及进入该模式支持的历史记录或编辑功能；公式显示区负责输入和展示结果；按键区会随模式改变。
 
-## 界面
-
-初次打开应用，所有的布局逻辑都旨在为你提供最沉浸的计算体验：
-<ThemeImage src="/images/docs/index/scientific.png"
-  alt="App 首页"
+<ThemeImage
+  src="/images/docs/index/scientific.png"
+  alt="CalculatorX 科学计算主界面"
   width={1424}
-  height = {2931} 
-  style = {{ maxWidth: '300px', height: 'auto',borderRadius: '12px', marginTop: '16px' }}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-* **公式显示区：** 告别枯燥的纯文本代码。你的所有输入与计算结果，都会被实时渲染为印刷级的标准数学公式。
-* **主键盘区：** 提供大面积的数字与基础运算符，支持极速连击输入，并具备防误触设计。
-* **高级功能面板：** 包含三角函数（支持 DEG/RAD 极速无缝切换）、指数对数、微积分符号及各类科学常数。
-* **历史记录抽屉：** 每次按下等号，完整的计算过程都会被自动存档。你可以随时查阅，甚至点击历史结果将其直接“无缝填入”当前的光标位置。
+不同模式共用相似的界面结构，但顶栏按钮和键盘会根据当前任务变化。例如，科学计算、方程求解和矩阵模式提供撤销与重做；函数图像模式的右上角则是编辑按钮。
 
-##  接下来去哪儿？
+## 完成第一次计算
 
-为了让你充分发挥 CalculatorX 的全部实力，我们为你准备了不同深度的专题指南。请根据你的实际使用场景选择阅读：
+下面以 $12+8\times3$ 为例：
+
+1. 点击左上角的侧边栏按钮。
+2. 在“模式”分组中选择“基础计算”。
+3. 依次点击 <kbd className="key-cap">1</kbd>、<kbd className="key-cap">2</kbd>、<kbd className="key-cap">+</kbd>、<kbd className="key-cap">8</kbd>、<kbd className="key-cap">×</kbd>、<kbd className="key-cap">3</kbd>。
+4. 检查公式显示区中的表达式是否为 $12+8\times3$。
+5. 点击 <kbd className="key-cap">=</kbd>，结果应为 $36$。
+
+<ThemeImage
+  src="/images/docs/getting-started/first-calculation.png"
+  alt="基础计算模式中输入十二加八乘三并得到三十六"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+CalculatorX 会按照通常的数学运算顺序先算乘除、后算加减，因此上例先计算 $8\times3$，再与 $12$ 相加。
+
+## 选择适合的模式
+
+侧边栏提供当前版本已经开放的主要功能：
+
+| 模式 | 适合完成的任务 |
+| --- | --- |
+| 基础计算 | 四则运算、百分数和小数计算 |
+| 科学计算 | 三角函数、指数对数、代数和微积分 |
+| 方程求解 | 一元方程和多元方程组 |
+| 矩阵与向量 | 矩阵输入及线性代数运算 |
+| 函数图像 | 绘制和比较不同类型的函数 |
+| 汇率 | 多币种金额换算和离线缓存 |
+
+切换模式不会改变全局设置。主题、角度单位、答案格式和触感反馈等偏好会继续生效。
+
+## 接下来去哪儿？
+
+如果你已经完成第一次计算，可以继续了解输入、结果和历史记录：
 
 <Cards>
-  <Cards.Card
-    title="📐 基础运算：常规操作与历史记录"
-    href="/basics"
-  />
-  <Cards.Card
-    title="🔬 科学计算：函数、常数与进阶功能"
-    href="/scientific"
-  />
-  <Cards.Card
-    title="🚀 CAS 引擎：代数、微积分与方程终极指南"
-    href="/cas"
-  />
-  <Cards.Card
-    title="❓ 常见问题解答 (FAQ)"
-    href="/support"
-  />
+  <Cards.Card title="认识界面与切换模式" href="/basics/interface" />
+  <Cards.Card title="输入与编辑公式" href="/basics/input" />
+  <Cards.Card title="四则运算、百分数与小数" href="/basics/arithmetic" />
+  <Cards.Card title="查看与转换结果" href="/basics/results" />
+  <Cards.Card title="查看和复用历史记录" href="/history" />
+  <Cards.Card title="调整 CalculatorX 设置" href="/settings" />
 </Cards>

@@ -13,7 +13,7 @@ CalculatorX 官方中文帮助中心，为 HarmonyOS 平台上的科学计算器
 
 ## 项目状态
 
-网站框架、静态构建、Cloudflare Pages 部署和官网 `/docs` 反向代理链路已经建立。用户手册仍在持续编写，部分专题页面保留占位内容；页面存在不代表对应教程已经完成。
+网站框架、静态构建、Cloudflare Pages 部署和官网 `/docs` 反向代理链路已经建立。用户手册正在按功能分批编写；导航只收录已经完成的页面，不再使用占位教程预告尚未撰写的内容。
 
 本仓库只维护帮助中心。CalculatorX 应用功能、版本发布和客户端内部加载逻辑由 [CalculatorX 主项目](https://github.com/StarHeartY/CalculatorX)负责。
 
