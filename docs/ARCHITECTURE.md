@@ -66,6 +66,7 @@ Nextra 把 `pages/` 视为文档路由源：
 - `nextra-theme-docs`：侧边栏、目录、搜索和主题切换；
 - `HelpLink`：通过 Next.js `Link` 提供带说明的内部帮助链接；
 - `ThemeImage`：根据明暗主题显示普通图片或 `_dark` 变体；
+- `ThemeVideo`：只加载当前主题对应的视频，并在深色变体缺失时回退到普通视频；
 - KaTeX/LaTeX：由 Nextra 的 `latex: true` 配置启用数学公式渲染。
 
 站点没有运行时服务器。`output: 'export'` 会为每个可导出路由生成 HTML、JavaScript、CSS 和静态资源。

@@ -92,7 +92,8 @@ public/images/docs/<section>/<name>_dark.png
 - 文件名使用小写英文、数字和连字符；
 - 明暗主题成对图片使用 `_dark` 后缀；
 - `alt` 准确描述图片展示的界面或结果，不能写“图片”“名字”等占位词；
-- 在页面中声明真实宽高，并用样式限制显示尺寸；
+- `ThemeImage` 会使用图片的天然尺寸，无需在页面中手工填写宽高；
+- 需要缩小显示时使用样式限制宽度，并保持 `height: 'auto'`；
 - 不手动提交构建后的 WebP；源文件保留 PNG/JPG，构建脚本负责产物转换；
 - 新截图不得包含账号、密钥、个人通知或其他不应公开的信息。
 
@@ -104,13 +105,34 @@ import ThemeImage from '../../components/ThemeImage'
 <ThemeImage
   src="/images/docs/scientific/keyboard.png"
   alt="CalculatorX 科学计算键盘"
-  width={1200}
-  height={2400}
   style={{ maxWidth: '320px', height: 'auto' }}
 />
 ```
 
-组件会自动尝试加载同目录下的 `_dark` 图片；暗色图片不存在时回退到普通图片。
+组件使用原生图片的懒加载能力，并自动尝试加载同目录下的 `_dark` 图片；暗色图片不存在时回退到普通图片。
+
+## 视频
+
+需要展示光标移动、连续按键或界面手势等动态过程时，优先使用短视频，不使用 GIF 代替。视频文件放在 `public/videos/docs/` 下，并按页面或主题分组：
+
+```text
+public/videos/docs/<section>/<name>.mp4
+public/videos/docs/<section>/<name>_dark.mp4
+```
+
+视频推荐使用无音轨的 H.264 MP4，删除录制前后的等待片段，并保持足以看清操作的画质。页面通过 `ThemeVideo` 引用视频：
+
+```mdx
+import ThemeVideo from '../../components/ThemeVideo'
+
+<ThemeVideo
+  src="/videos/docs/basics/nested-cursor.mp4"
+  ariaLabel="使用方向键在分数的分子和分母之间移动光标"
+  style={{ maxWidth: '320px', borderRadius: '12px', marginTop: '16px' }}
+/>
+```
+
+组件默认静音、循环、行内自动播放并显示控制栏；系统启用“减少动态效果”时会停止自动播放。组件会自动尝试加载同目录下的 `_dark` 视频，深色变体不存在时回退到普通视频。不要在一个页面中连续放置大量自动播放视频。
 
 ## 数学公式
 

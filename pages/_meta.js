@@ -1,4 +1,8 @@
 export default {
+  "404": {
+    "title": "页面不存在",
+    "display": "hidden"
+  },
   "index": "快速入门",
   "basics": "基础使用",
   "scientific": "科学计算",
