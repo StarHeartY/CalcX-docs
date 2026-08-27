@@ -1,6 +1,7 @@
 export default {
   "index": "快速入门",
   "basics": "基础使用",
+  "scientific": "科学计算",
   "history": "历史记录",
   "settings": "设置",
   "home": {

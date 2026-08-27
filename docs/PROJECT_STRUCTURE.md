@@ -13,7 +13,8 @@ CalcX-docs/
 │   ├── about.mdx                # 关于 CalculatorX
 │   ├── history.mdx              # 局部与全局历史记录
 │   ├── settings.mdx             # 计算、外观与体验设置
-│   └── basics/                  # 基础使用页面及局部导航
+│   ├── basics/                  # 基础使用页面及局部导航
+│   └── scientific/              # 科学计算专题及局部导航
 ├── components/                  # MDX 使用的 React 组件
 │   ├── HelpLink.jsx
 │   └── ThemeImage.jsx
