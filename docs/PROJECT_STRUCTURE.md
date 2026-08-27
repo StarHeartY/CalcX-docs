@@ -16,7 +16,9 @@ CalcX-docs/
 │   ├── basics/                  # 基础使用页面及局部导航
 │   ├── scientific/              # 科学计算专题及局部导航
 │   ├── equations/               # 单个方程与方程组教程
-│   └── matrix/                  # 矩阵输入与线性代数运算教程
+│   ├── matrix/                  # 矩阵输入与线性代数运算教程
+│   ├── graphing/                # 函数类型、编辑管理与画布操作教程
+│   └── exchange/                # 汇率换算、货币列表与离线缓存教程
 ├── components/                  # MDX 使用的 React 组件
 │   ├── HelpLink.jsx
 │   └── ThemeImage.jsx

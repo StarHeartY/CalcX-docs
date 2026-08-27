@@ -1,0 +1,174 @@
+---
+title: 选择函数类型
+description: 了解普通函数、极坐标方程、参数方程、隐函数和独立点的输入方式与适用场景。
+---
+import ThemeImage from '../../components/ThemeImage'
+
+# 选择函数类型
+
+函数图像模式支持五种输入类型。新建条目时先选择正确类型，编辑面板就会提供对应的表达式行、变量键和定义域设置。
+
+## 打开类型选择窗口
+
+1. 打开右上角的“编辑函数图像”面板。
+2. 滚动到函数列表底部。
+3. 点击“+ 添加新的函数”。
+4. 在“选择函数类型”窗口中选择一种类型。
+
+<ThemeImage
+  src="/images/docs/graphing/function-type-dialog.png"
+  alt="选择函数类型窗口列出普通函数、极坐标、参数方程、隐函数和点"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+创建后不能直接把条目改成另一种类型。选错时可以左滑删除，再重新添加正确类型。
+
+## 普通函数 f(x)
+
+普通函数用于绘制 $y=f(x)$。编辑时只输入右侧表达式，不要重复输入 $f(x)=$。
+
+例如输入：
+
+$$
+x^2-4
+$$
+
+画布会绘制：
+
+$$
+y=x^2-4
+$$
+
+<ThemeImage
+  src="/images/docs/graphing/normal-function.png"
+  alt="普通函数条目输入 x 平方减四并绘制对应抛物线"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+普通函数适合多项式、分式、根式、指数、对数和三角函数等单变量图像。
+
+## 参数方程 x(t), y(t)
+
+参数方程包含两条表达式和一个 $t$ 的定义域：
+
+$$
+\begin{cases}
+x=x(t) \\
+y=y(t)
+\end{cases}
+$$
+
+例如，要绘制单位圆，可以分别输入：
+
+$$
+x(t)=\cos t,\qquad y(t)=\sin t
+$$
+
+并把定义域设置为：
+
+$$
+0\le t\le6.28
+$$
+
+这个示例使用弧度制。开始前请在设置中把“角度单位”切换为 `RAD`；如果使用 `DEG`，三角函数会按角度制解释 $t$，相同定义域将得到不同图像。
+
+<ThemeImage
+  src="/images/docs/graphing/parametric-function.png"
+  alt="参数方程分别输入 cos t 和 sin t 并设置 t 的定义域"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+点击 $x(t)$ 或 $y(t)$ 所在行可以分别编辑，两行需要都填写完整才能得到预期曲线。
+
+## 极坐标方程 r(θ)
+
+极坐标类型输入半径 $r$ 关于角度 $\theta$ 的表达式。最简单的示例是：
+
+$$
+r(\theta)=2
+$$
+
+将 $\theta$ 的定义域设为 $0$ 到 $6.28$，可以绘制半径为 $2$ 的圆。
+
+<ThemeImage
+  src="/images/docs/graphing/polar-function.png"
+  alt="极坐标函数输入常数二并绘制半径为二的圆"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+编辑键盘会自动提供 $\theta$，不需要使用字母或其他符号代替。
+
+## 隐函数 f(x,y)
+
+隐函数用于绘制满足 $f(x,y)=0$ 的点集。编辑面板已经约定右侧等于零，因此只输入左侧表达式。
+
+例如输入：
+
+$$
+x^2+y^2-4
+$$
+
+表示：
+
+$$
+x^2+y^2-4=0
+$$
+
+画布会绘制半径为 $2$ 的圆。
+
+<ThemeImage
+  src="/images/docs/graphing/implicit-function.png"
+  alt="隐函数输入 x 平方加 y 平方减四并绘制圆形零值线"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+隐函数键盘同时提供 $x$ 和 $y$。不要在表达式中再次输入等号。
+
+## 点 (x, y)
+
+独立点包含 $x$ 坐标和 $y$ 坐标两行。例如分别输入 $2$ 和 $3$，画布会在 $(2,3)$ 位置绘制一个实心点。
+
+<ThemeImage
+  src="/images/docs/graphing/point.png"
+  alt="独立点类型分别输入横坐标二和纵坐标三并在画布中显示实心点"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+坐标可以是数字，也可以是能够计算为常数的表达式，例如 $\pi$ 或分数；不要在点坐标中使用 $x$、$y$、$t$、$\theta$ 等自变量。
+
+## 设置参数与极坐标定义域
+
+参数方程和极坐标条目会显示两个定义域输入框，新建时默认为 $-10$ 到 $10$：
+
+1. 点击左侧或右侧边界。
+2. 使用专用数字键盘输入整数或小数；需要负数时点击负号。
+3. 点击“确定”保存当前边界。
+4. 确保左侧最小值小于右侧最大值。
+
+<ThemeImage
+  src="/images/docs/graphing/domain.png"
+  alt="参数方程条目使用数字键盘编辑 t 的最小值和最大值"
+  width={1424}
+  height={2931}
+  style={{ maxWidth: '320px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+定义域决定采样从哪里开始、在哪里结束。范围过小可能只显示曲线的一部分，范围过大则可能让局部细节不够明显。
+
+## 相关教程
+
+- [绘制第一条函数图像](/graphing/overview)
+- [管理多个函数](/graphing/manage-functions)
+- [观察与调整图像](/graphing/view-graph)
