@@ -13,6 +13,7 @@ CalcX-docs/
 │   ├── about.mdx                # 关于 CalculatorX
 │   ├── history.mdx              # 局部与全局历史记录
 │   ├── settings.mdx             # 计算、外观与体验设置
+│   ├── troubleshooting.mdx      # 跨模块常见问题与故障排查
 │   ├── basics/                  # 基础使用页面及局部导航
 │   ├── scientific/              # 科学计算专题及局部导航
 │   ├── equations/               # 单个方程与方程组教程

@@ -8,6 +8,7 @@ export default {
   "exchange": "汇率换算",
   "history": "历史记录",
   "settings": "设置",
+  "troubleshooting": "常见问题与故障排查",
   "home": {
     "title": "主页",
     "type": "page",
