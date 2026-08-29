@@ -9,7 +9,9 @@ import BackspaceKey from '../../components/BackspaceKey'
 
 基础计算模式提供数字、加减乘除、小数点、百分数、退格、清空和等号，适合快速完成日常算术。
 
-## 进入基础计算
+## 开始计算
+
+### 进入基础计算
 
 1. 点击左上角的侧边栏按钮。
 2. 在“模式”分组中选择“基础计算”。
@@ -33,7 +35,7 @@ import BackspaceKey from '../../components/BackspaceKey'
 | `AC` | 清空当前表达式 |
 | `=` | 执行计算 |
 
-## 完成四则运算
+### 完成四则运算
 
 以 $48\div6+7$ 为例：
 
@@ -47,7 +49,9 @@ import BackspaceKey from '../../components/BackspaceKey'
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-## 运算顺序
+## 常用算术
+
+### 运算顺序
 
 CalculatorX 遵循通常的数学运算顺序：
 
@@ -63,13 +67,13 @@ $$
 
 基础键盘没有括号键。如果表达式需要括号、分数、幂或其他多层结构，请切换到科学计算模式。
 
-## 输入小数
+### 输入小数
 
-点击 <kbd className="key-cap">.</kbd> 输入小数点。例如，输入 $2.5\times4$ 后点击等号，结果为 $10$。
+点击 <kbd className="key-cap">.</kbd> 输入小数点。例如，输入 $2.5\times4$ 后点击 <kbd className="key-cap">=</kbd>，结果为 $10$。
 
 同一个数字中只应输入一个小数点。若表达式不完整或小数点位置不合法，计算可能无法得到有效结果；使用 <BackspaceKey /> 修正后重新计算即可。
 
-## 计算百分数
+### 计算百分数
 
 百分号会把它前面的值除以 $100$：
 

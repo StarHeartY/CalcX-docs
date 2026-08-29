@@ -12,7 +12,7 @@ import ThemeImage from '../../components/ThemeImage'
 
 ### 求导
 
-求导是 `lim` 上方的 Shift 功能。先按 Shift 再点击 `lim`，或直接长按 `lim`，会插入：
+求导是 <kbd className="key-cap">lim</kbd> 上方的 Shift 功能。先按 <kbd className="key-cap">⇧Shift</kbd> 再点击 <kbd className="key-cap">lim</kbd>，或直接长按 <kbd className="key-cap">lim</kbd>，会插入：
 
 $$
 \frac{d}{dx}\left(\square\right)
@@ -34,7 +34,7 @@ $$
 
 ### 定积分
 
-点击定积分键会插入下限、上限和被积函数三个输入位置：
+点击 <kbd className="key-cap">$\int$</kbd> 会插入下限、上限和被积函数三个输入位置：
 
 $$
 \int_{\square}^{\square}\left(\square\right)dx
@@ -45,7 +45,7 @@ $$
 1. 在下限填入 $0$。
 2. 使用方向键移动到上限并填入 $1$。
 3. 移动到被积函数位置并输入 $x^2$。
-4. 点击等号。
+4. 点击 <kbd className="key-cap">=</kbd>。
 
 结果为：
 
@@ -59,7 +59,7 @@ $$
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-如果符号引擎无法得到合适的闭式结果，部分定积分会使用数值方法降级计算，此时可能得到近似小数而不是精确表达式。
+如果无法得到精确的符号结果，部分定积分会改用数值方法计算，此时可能显示近似小数。
 
 ### 不定积分
 
@@ -79,7 +79,7 @@ CalculatorX 会在不定积分结果后添加积分常数 $\mathbf{C}$。
 
 ### 极限
 
-点击 `lim` 会插入：
+点击 <kbd className="key-cap">$\lim$</kbd> 会插入：
 
 $$
 \lim_{x\to\square}\left(\square\right)
@@ -129,17 +129,11 @@ $$
 \prod_{x=1}^{5}x=120
 $$
 
-<ThemeImage
-  src="/images/docs/scientific/calculus/sum-and-product.png"
-  alt="科学计算模式分别计算一到五的有限求和与有限求积"
-  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
-
 求和键和求积键的 Shift 功能分别是 `GCD` 与 `LCM`。如果看到的是最大公约数或最小公倍数模板，说明 Shift 仍处于启用状态或刚才通过长按触发了对应功能。
 
 ### 无限求和与无限求积
 
-求和与求积模板的上限不只可以填写整数，也可以直接输入科学键盘上的 $\infty$。CalculatorX 会把它作为真正的无穷上限交给符号计算引擎，而不是截取前若干项进行有限近似。
+求和与求积模板的上限不只可以填写整数，也可以直接输入科学键盘上的 $\infty$。CalculatorX 会按照真正的无穷上限计算，而不是只截取前若干项进行有限近似。
 
 例如，下面的无限级数可以得到精确结果：
 
@@ -147,21 +141,27 @@ $$
 \sum_{x=1}^{\infty}\frac{1}{x^2}=\frac{\pi^2}{6}
 $$
 
+<ThemeImage
+  src="/images/docs/scientific/calculus/infinite-sum.png"
+  alt="科学计算模式计算无穷级数"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
 无限求积同样受到支持。下面的乘积会逐项消去相邻因子，最终收敛到 $\frac{1}{2}$：
 
 $$
 \prod_{x=2}^{\infty}\left(1-\frac{1}{x^2}\right)=\frac{1}{2}
 $$
 
-输入方法与有限求和、求积相同：填写下限，将上限设为 $\infty$，再填写通项并点击等号。对于引擎能够识别的收敛级数或无穷乘积，CalculatorX 可以直接返回精确值。
+输入方法与有限求和、求积相同：填写下限，将上限设为 $\infty$，再填写通项并点击 <kbd className="key-cap">=</kbd>。对于能够直接化简的收敛级数或无穷乘积，CalculatorX 可以返回精确值。
 
 <ThemeImage
-  src="/images/docs/scientific/calculus/infinite-sum-and-product.png"
-  alt="科学计算模式计算无穷级数和无穷乘积并返回精确结果"
-  style={{ maxWidth: '380px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  src="/images/docs/scientific/calculus/infinite-product.png"
+  alt="科学计算模式计算无穷乘积"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-> **注意：** 使用无穷上限不代表所有表达式都会得到有限结果。级数或乘积必须收敛，并且其形式能够被符号引擎识别；发散或过于复杂的表达式可能无法化简或触发错误。
+> **注意：** 使用无穷上限不代表所有表达式都会得到有限结果。级数或乘积必须收敛；发散或过于复杂的表达式可能无法化简或触发错误。
 
 ## 遇到错误或长时间计算
 

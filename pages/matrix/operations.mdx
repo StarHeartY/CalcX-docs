@@ -8,7 +8,9 @@ import ThemeImage from '../../components/ThemeImage'
 
 创建并填写矩阵后，可以直接使用主键盘上的运算符，也可以通过 Shift 调用按键上方以橙色标出的功能。矩阵运算对尺寸有明确要求，输入前先确认行数和列数可以减少报错。
 
-## 加法、减法与乘法
+## 基础矩阵运算
+
+### 加法、减法与乘法
 
 | 运算 | 按键 | 尺寸要求 |
 | --- | --- | --- |
@@ -33,13 +35,13 @@ $$
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-## 求逆、转置与共轭转置
+### 求逆、转置与共轭转置
 
 这些运算写在矩阵右侧：
 
-- 输入矩阵后点击 `M⁻¹`，计算逆矩阵；
-- 输入矩阵后点击 `Mᵀ`，计算转置；
-- 输入矩阵后先点击 Shift，再点击 `Mᵀ`，计算共轭转置 $M^{\mathrm H}$。
+- 输入矩阵后点击 <kbd className="key-cap">M⁻¹</kbd>，计算逆矩阵；
+- 输入矩阵后点击 <kbd className="key-cap">Mᵀ</kbd>，计算转置；
+- 输入矩阵后先点击 <kbd className="key-cap">⇧Shift</kbd>，再点击 <kbd className="key-cap">Mᵀ</kbd>，计算共轭转置 $M^{\mathrm H}$。
 
 <ThemeImage
   src="/images/docs/matrix/operations/inverse-and-transpose.png"
@@ -49,19 +51,21 @@ $$
 
 逆矩阵只适用于可逆方阵。转置可以用于任意矩阵；共轭转置会在转置的同时对复数元素取共轭，因此在只包含实数时与普通转置结果相同。
 
-## 计算矩阵乘方
+### 计算矩阵乘方
 
 矩阵乘方是 `M⁻¹` 上方的 Shift 功能：
 
 1. 输入一个方阵。
-2. 点击 Shift。
-3. 点击 `M⁻¹` 所在按键，插入矩阵幂的指数框。
+2. 点击 <kbd className="key-cap">⇧Shift</kbd>。
+3. 点击 <kbd className="key-cap">M⁻¹</kbd> 所在按键，插入矩阵幂的指数框。
 4. 输入整数指数。
 5. 点击 <kbd className="key-cap">=</kbd> 计算。
 
 指数为 $2$ 表示矩阵与自身相乘。指数为 $0$ 时结果为同阶单位矩阵；负指数要求原矩阵可逆。
 
-## 使用行列式和高级运算
+## 高级矩阵运算
+
+### 使用行列式和高级运算
 
 以下功能位于 Shift 功能层：
 
@@ -73,7 +77,7 @@ $$
 | 秩 `rank` | Shift + 加号键 | 任意矩阵 |
 | 迹 `tr` | Shift + 减号键 | 方阵 |
 
-这些按键会先插入一个带空白框的函数模板。光标位于空白框时，点击矩阵尺寸按钮创建矩阵并填写元素，然后点击等号。
+这些按键会先插入一个带空白框的函数模板。光标位于空白框时，点击矩阵尺寸按钮创建矩阵并填写元素，然后点击 <kbd className="key-cap">=</kbd>。
 
 <ThemeImage
   src="/images/docs/matrix/operations/advanced-operations.png"
@@ -81,7 +85,7 @@ $$
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-## 运算含义
+### 运算含义
 
 - **行列式**：返回方阵对应的一个标量，可用于判断矩阵是否可逆；
 - **行最简形**：通过初等行变换得到简化矩阵，常用于分析线性方程组；
@@ -103,11 +107,11 @@ $$
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-## 输入单位矩阵
+### 输入单位矩阵
 
 单位矩阵是矩阵尺寸按钮上方的 Shift 功能：
 
-1. 点击 Shift。
+1. 点击 <kbd className="key-cap">⇧Shift</kbd>。
 2. 点击矩阵尺寸按钮，插入单位矩阵 $I$ 的阶数输入框。
 3. 输入阶数，例如 $3$ 表示 $3\times3$ 单位矩阵。
 

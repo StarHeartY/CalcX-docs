@@ -10,7 +10,9 @@ import HelpLink from '../../components/HelpLink'
 
 科学计算模式在基础数字键盘上方增加了函数、常数、变量和微积分按键。许多按键还提供以橙色标出的 Shift 功能或长按菜单，因此同一屏幕可以完成从普通算术到符号计算的多种任务。
 
-## 进入科学计算
+## 认识科学计算
+
+### 进入科学计算
 
 1. 点击左上角的侧边栏按钮。
 2. 在“模式”分组中选择“科学计算”。
@@ -22,7 +24,7 @@ import HelpLink from '../../components/HelpLink'
   style={{ maxWidth: '380px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-## 键盘分区
+### 键盘分区
 
 科学计算页面的公式区约占上方三分之一，键盘位于下方。键盘又分成两部分：
 
@@ -42,7 +44,9 @@ import HelpLink from '../../components/HelpLink'
 | `nCr`、`nPr`、`!` | 组合、排列和阶乘 |
 | `sin`、`cos`、`tan` | 输入三角函数 |
 
-## 使用 Shift 功能
+## 使用扩展功能
+
+### 使用 Shift 功能
 
 高级键盘上方的橙色标签表示 Shift 功能。例如，`sin` 上方是反正弦，$\pi$ 上方是 $x$，`lim` 上方是求导，定积分上方是不定积分。
 
@@ -55,7 +59,7 @@ import HelpLink from '../../components/HelpLink'
 
 多数按键也可以通过长按直接触发对应的 Shift 功能。
 
-## 使用滑动气泡菜单
+### 使用滑动气泡菜单
 
 部分按键长按后会显示多个选项：
 
@@ -75,7 +79,9 @@ import HelpLink from '../../components/HelpLink'
 
 直接在原按键上松开而没有选中气泡选项时，不会插入气泡中的函数。
 
-## 编辑多层公式
+## 编辑与复用结果
+
+### 编辑多层公式
 
 分数、根式、指数、对数和积分都可能包含多个输入位置。插入模板后：
 
@@ -85,21 +91,21 @@ import HelpLink from '../../components/HelpLink'
 - 使用 <BackspaceKey /> 删除光标前的内容；
 - 使用顶栏撤销或重做恢复编辑步骤。
 
-## 切换角度单位
+### 切换角度单位
 
 点击 <kbd className="key-cap">R/D</kbd> 可以在 `RAD` 和 `DEG` 之间切换，顶栏会立即显示新的状态。这个设置会同步到全局设置，并影响三角函数的输入解释。
 
-## 转换计算结果
+### 转换计算结果
 
 完成计算后：
 
 - 短按 <kbd className="key-cap">S⇄D</kbd>，在小数和分数形式之间切换；
 - 长按该键，从菜单中选择明确的结果格式；
-- 先按 Shift 再按 `S⇄D`，可以快速显示带分数。
+- 先按 <kbd className="key-cap">⇧Shift</kbd> 再按 <kbd className="key-cap">S⇄D</kbd>，可以快速显示带分数。
 
 结果转换只针对最近一次成功计算，不会改变设置页面中的默认答案输出方式。
 
-## 保存与复用
+### 保存与复用
 
 成功计算后，表达式和结果会保存到科学计算历史。点击顶栏右上角的历史按钮，可以把旧表达式或结果重新插入当前光标位置<HelpLink href="/history" title="了解如何查看和复用历史记录" />。
 

@@ -8,7 +8,9 @@ import ThemeImage from '../../components/ThemeImage'
 
 函数图像模式可以绘制普通函数、极坐标方程、参数方程、隐函数和独立点。与其他计算模式不同，这里先在编辑面板中输入表达式，再回到坐标系观察图像。
 
-## 进入函数图像
+## 创建第一条函数图像
+
+### 进入函数图像
 
 1. 点击左上角的侧边栏按钮。
 2. 在“进阶”分组中选择“函数图像”。
@@ -22,7 +24,7 @@ import ThemeImage from '../../components/ThemeImage'
 
 顶栏右上角显示编辑按钮，而不是计算历史按钮。函数表达式、显隐状态和类型都在编辑面板中管理。
 
-## 打开编辑面板
+### 打开编辑面板
 
 点击右上角的编辑按钮，打开“编辑函数图像”面板。第一次使用时，列表中通常已经有一个空白的普通函数条目。
 
@@ -34,7 +36,7 @@ import ThemeImage from '../../components/ThemeImage'
 
 普通函数条目显示为 $f(x)=$。页面已经提供函数名称和等号，你只需输入等号右侧的表达式。
 
-## 绘制抛物线
+### 绘制抛物线
 
 下面以 $f(x)=x^2$ 为例：
 
@@ -56,9 +58,11 @@ import ThemeImage from '../../components/ThemeImage'
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-点击“确定”或键盘收起键都会保存当前输入并折叠公式键盘。键盘仍展开时直接返回，CalculatorX 会先保存表达式并收起键盘；再次返回才会关闭整个编辑面板。
+点击 <kbd className="key-cap">确定</kbd> 或键盘收起键都会保存当前输入并折叠公式键盘。键盘仍展开时直接返回，CalculatorX 会先保存表达式并收起键盘；再次返回才会关闭整个编辑面板。
 
-## 认识函数键盘
+## 编辑函数
+
+### 认识函数键盘
 
 函数键盘会根据当前函数类型提供正确的变量：
 
@@ -68,7 +72,7 @@ import ThemeImage from '../../components/ThemeImage'
 - 隐函数同时提供 $x$ 和 $y$；
 - 独立点只输入坐标表达式，不提供变量键。
 
-键盘还包含括号、方向键、分数、根式、幂、对数、三角函数、绝对值、数字、$pi$ 和 $e$。点击 Shift，可以使用按键上方以橙色标出的立方根、绝对值、立方、反三角函数和常用对数等功能。
+键盘还包含括号、方向键、分数、根式、幂、对数、三角函数、绝对值、数字、$pi$ 和 $e$。点击 <kbd className="key-cap">⇧Shift</kbd>，可以使用按键上方以橙色标出的立方根、绝对值、立方、反三角函数和常用对数等功能。
 
 <ThemeImage
   src="/images/docs/graphing/overview/keyboard.png"
@@ -76,9 +80,9 @@ import ThemeImage from '../../components/ThemeImage'
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-## 修改已经绘制的函数
+### 修改已经绘制的函数
 
-重新点击顶栏编辑按钮，再点击需要修改的表达式。原有公式会载入键盘，可以使用方向键、退格、`AC` 和数学按键继续编辑。点击“确定”后，图像与左上角图例会随新表达式更新。
+重新点击顶栏编辑按钮，再点击需要修改的表达式。原有公式会载入键盘，可以使用方向键、退格、<kbd className="key-cap">AC</kbd> 和数学按键继续编辑。点击 <kbd className="key-cap">确定</kbd> 后，图像与左上角图例会随新表达式更新。
 
 函数图像不使用普通计算历史。表达式列表会保存在设备本地，下次进入时可以继续使用。
 

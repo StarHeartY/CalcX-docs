@@ -9,7 +9,9 @@ import BackspaceKey from '../../components/BackspaceKey'
 
 汇率模式可以把一个输入金额同时换算成列表中的多种货币。你可以随时点击另一张货币卡片，把它改成新的输入货币，其余结果会自动重新计算。
 
-## 进入汇率模式
+## 开始换算
+
+### 进入汇率模式
 
 1. 点击左上角的侧边栏按钮。
 2. 在“转换”分组中选择“汇率”。
@@ -23,7 +25,7 @@ import BackspaceKey from '../../components/BackspaceKey'
 
 首次使用时，默认列表包含美元、人民币、港币、欧元、英镑、日元和韩元，默认输入金额为 $100$。以后再次进入时，会恢复你保存的货币顺序、输入金额和当前输入货币。
 
-## 输入换算金额
+### 输入换算金额
 
 当前输入货币的卡片会突出显示，并打开底部数字键盘：
 
@@ -31,7 +33,7 @@ import BackspaceKey from '../../components/BackspaceKey'
 2. 使用 <kbd className="key-cap">AC</kbd> 清空旧金额。
 3. 输入新的整数或小数金额。
 4. 列表中的其他货币会同步显示换算结果。
-5. 点击“确定”或键盘收起键，关闭数字键盘。
+5. 点击 <kbd className="key-cap">确定</kbd> 或键盘收起键，关闭数字键盘。
 
 <ThemeImage
   src="/images/docs/exchange/overview/amount-input.png"
@@ -47,7 +49,7 @@ import BackspaceKey from '../../components/BackspaceKey'
 
 换算结果最多保留四位小数，并自动去掉末尾多余的零。汇率会随更新时间变化，因此教程不提供固定的换算数值。
 
-## 使用金额键盘
+### 使用金额键盘
 
 汇率键盘提供：
 
@@ -55,7 +57,7 @@ import BackspaceKey from '../../components/BackspaceKey'
 - 小数点；
 - `AC` 清零；
 - 退格；
-- “确定”和键盘收起键。
+- <kbd className="key-cap">确定</kbd> 和键盘收起键。
 
 <ThemeImage
   src="/images/docs/exchange/overview/keyboard.png"
@@ -71,7 +73,7 @@ import BackspaceKey from '../../components/BackspaceKey'
 - 当前键盘不提供负号，只用于输入非负金额；
 - 手动滚动货币列表时，键盘会自动收起。
 
-## 切换输入货币
+### 切换输入货币
 
 点击任意其他货币卡片的名称或金额区域，该卡片会成为新的输入货币。CalculatorX 会先把它当前显示的换算值作为新金额，再重新计算其他卡片，因此切换过程中代表的价值不会突然改变。
 
