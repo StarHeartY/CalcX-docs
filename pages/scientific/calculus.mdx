@@ -77,6 +77,12 @@ $$
 
 CalculatorX 会在不定积分结果后添加积分常数 $\mathbf{C}$。
 
+<ThemeImage
+  src="/images/docs/scientific/calculus/undefinite-integral.png"
+  alt="科学计算模式计算 2x 的不定积分并得到 x 的平方加 C"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
 ### 极限
 
 点击 <kbd className="key-cap">$\lim$</kbd> 会插入：
@@ -115,6 +121,19 @@ $$
 \sum_{x=1}^{5}x=15
 $$
 
+求和还可实现无穷级数的计算，例如：
+
+$$
+\sum_{x=1}^{\infty}\frac{1}{x^2}=\frac{\pi^2}{6}
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/calculus/infinite-sum.png"
+  alt="科学计算模式计算无穷级数"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+
 ### 求积
 
 求积键的结构与求和类似：
@@ -129,31 +148,11 @@ $$
 \prod_{x=1}^{5}x=120
 $$
 
-求和键和求积键的 Shift 功能分别是 `GCD` 与 `LCM`。如果看到的是最大公约数或最小公倍数模板，说明 Shift 仍处于启用状态或刚才通过长按触发了对应功能。
-
-### 无限求和与无限求积
-
-求和与求积模板的上限不只可以填写整数，也可以直接输入科学键盘上的 $\infty$。CalculatorX 会按照真正的无穷上限计算，而不是只截取前若干项进行有限近似。
-
-例如，下面的无限级数可以得到精确结果：
-
-$$
-\sum_{x=1}^{\infty}\frac{1}{x^2}=\frac{\pi^2}{6}
-$$
-
-<ThemeImage
-  src="/images/docs/scientific/calculus/infinite-sum.png"
-  alt="科学计算模式计算无穷级数"
-  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
-
 无限求积同样受到支持。下面的乘积会逐项消去相邻因子，最终收敛到 $\frac{1}{2}$：
 
 $$
 \prod_{x=2}^{\infty}\left(1-\frac{1}{x^2}\right)=\frac{1}{2}
 $$
-
-输入方法与有限求和、求积相同：填写下限，将上限设为 $\infty$，再填写通项并点击 <kbd className="key-cap">=</kbd>。对于能够直接化简的收敛级数或无穷乘积，CalculatorX 可以返回精确值。
 
 <ThemeImage
   src="/images/docs/scientific/calculus/infinite-product.png"
@@ -161,7 +160,11 @@ $$
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
+对于能够直接化简的收敛级数或无穷乘积，CalculatorX 可以计算得到精确值。
+
 > **注意：** 使用无穷上限不代表所有表达式都会得到有限结果。级数或乘积必须收敛；发散或过于复杂的表达式可能无法化简或触发错误。
+
+求和键和求积键的 Shift 功能分别是 `GCD` 与 `LCM`。如果看到的是最大公约数或最小公倍数模板，说明 Shift 仍处于启用状态或刚才通过长按触发了对应功能。
 
 ## 遇到错误或长时间计算
 
