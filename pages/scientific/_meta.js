@@ -1,9 +1,8 @@
 export default {
-  "trigonometry": "三角函数",
-  "exponents": "指数、对数与科学计数法",
-  "fractions": "分数与小数的一键转换",
-  "intro": "CAS 引擎能力简介",
-  "algebra": "代数化简与因式分解",
-  "calculus": "导数与定积分计算",
-  "equations": "一元二次、线性方程组求解"
+  "overview": "科学计算键盘与 Shift",
+  "algebra": "符号与代数运算",
+  "trigonometry": "三角函数与角度单位",
+  "powers-logarithms": "幂、根式、指数与对数",
+  "combinatorics-number-theory": "排列组合与数论",
+  "calculus": "高等数学"
 }

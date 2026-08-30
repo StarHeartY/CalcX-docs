@@ -10,12 +10,12 @@ export default {
   footer: {
     content: (
       <span>
-        Copyright © {(() => {
+        © {(() => {
           const start = 2026
           const now = new Date().getFullYear()
           return start === now ? now : `${start}–${now}`
-        })()} <a href="https://calcx.startyi.com" target="_blank" rel="noopener noreferrer">CalculatorX</a>.
-        All Rights Reserved.
+        })()} <a href="https://calcx.startyi.com" target="_blank" rel="noopener noreferrer">CalculatorX</a>。
+        保留所有权利。
       </span>
     )
   },
@@ -32,11 +32,28 @@ export default {
   // 搜索框中文化
   search: {
     placeholder: '搜索…',
+    loading: '正在加载…',
+    error: '搜索索引加载失败。',
     emptyResult: (
       <span className="_block _select-none _p-8 _text-center _text-sm _text-gray-400">
         未找到相关结果
       </span>
     )
+  },
+
+  // 主题切换选项中文化
+  themeSwitch: {
+    useOptions: {
+      light: '浅色',
+      dark: '深色',
+      system: '跟随系统'
+    }
+  },
+
+  // 右侧本页目录中文化
+  toc: {
+    title: '本页目录',
+    backToTop: '返回顶部'
   },
 
   // 将 "Last updated on" 改为中文

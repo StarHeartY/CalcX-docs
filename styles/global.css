@@ -125,6 +125,22 @@
   border-bottom-color: #020617;
 }
 
+.backspace-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2em;
+}
+
+.backspace-key-icon {
+  display: inline-block;
+  width: 1.25em;
+  height: 1em;
+  background-color: currentColor;
+  -webkit-mask: url('/docs/icon/icon_backspace.svg') center / contain no-repeat;
+  mask: url('/docs/icon/icon_backspace.svg') center / contain no-repeat;
+}
+
 /* --- 5. 脚注/注释问号链接 --- */
 .annotation-link {
   display: inline-flex;

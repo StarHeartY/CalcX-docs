@@ -1,0 +1,134 @@
+---
+title: 矩阵运算
+description: 使用 CalculatorX 完成矩阵加减乘、哈达玛积、求逆、转置、行列式、秩、行最简形、迹和特征值计算。
+---
+import ThemeImage from '../../components/ThemeImage'
+
+# 矩阵运算
+
+创建并填写矩阵后，可以直接使用主键盘上的运算符，也可以通过 Shift 调用按键上方以橙色标出的功能。矩阵运算对尺寸有明确要求，输入前先确认行数和列数可以减少报错。
+
+## 基础矩阵运算
+
+### 加法、减法与乘法
+
+| 运算 | 按键 | 尺寸要求 |
+| --- | --- | --- |
+| 矩阵加法 | `+` | 两个矩阵的行数和列数完全相同 |
+| 矩阵减法 | `−` | 两个矩阵的行数和列数完全相同 |
+| 矩阵乘法 | `×` | 左矩阵的列数等于右矩阵的行数 |
+| 哈达玛积 | `∘` | 两个矩阵的行数和列数完全相同 |
+
+哈达玛积是对应位置元素逐项相乘，与通常的矩阵乘法不同。例如：
+
+$$
+\begin{bmatrix}1&2\\3&4\end{bmatrix}
+\circ
+\begin{bmatrix}5&6\\7&8\end{bmatrix}
+=
+\begin{bmatrix}5&12\\21&32\end{bmatrix}
+$$
+
+<ThemeImage
+  src="/images/docs/matrix/operations/basic-operations.png"
+  alt="矩阵与向量模式中对两个矩阵执行加法、乘法或哈达玛积"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+### 求逆、转置与共轭转置
+
+这些运算写在矩阵右侧：
+
+- 输入矩阵后点击 <kbd className="key-cap">M⁻¹</kbd>，计算逆矩阵；
+- 输入矩阵后点击 <kbd className="key-cap">Mᵀ</kbd>，计算转置；
+- 输入矩阵后先点击 <kbd className="key-cap">⇧Shift</kbd>，再点击 <kbd className="key-cap">Mᵀ</kbd>，计算共轭转置 $M^{\mathrm H}$。
+
+<ThemeImage
+  src="/images/docs/matrix/operations/inverse-and-transpose.png"
+  alt="矩阵键盘使用 M 负一次方、M 转置和 Shift 共轭转置按键"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+逆矩阵只适用于可逆方阵。转置可以用于任意矩阵；共轭转置会在转置的同时对复数元素取共轭，因此在只包含实数时与普通转置结果相同。
+
+### 计算矩阵乘方
+
+矩阵乘方是 `M⁻¹` 上方的 Shift 功能：
+
+1. 输入一个方阵。
+2. 点击 <kbd className="key-cap">⇧Shift</kbd>。
+3. 点击 <kbd className="key-cap">M⁻¹</kbd> 所在按键，插入矩阵幂的指数框。
+4. 输入整数指数。
+5. 点击 <kbd className="key-cap">=</kbd> 计算。
+
+指数为 $2$ 表示矩阵与自身相乘。指数为 $0$ 时结果为同阶单位矩阵；负指数要求原矩阵可逆。
+
+## 高级矩阵运算
+
+### 使用行列式和高级运算
+
+以下功能位于 Shift 功能层：
+
+| 功能 | 输入方法 | 适用对象 |
+| --- | --- | --- |
+| 行列式 `det` | Shift + 分数键 | 方阵 |
+| 行最简形 `rref` | Shift + 左括号键 | 任意矩阵 |
+| 特征值 `eig` | Shift + 右括号键 | 方阵 |
+| 秩 `rank` | Shift + 加号键 | 任意矩阵 |
+| 迹 `tr` | Shift + 减号键 | 方阵 |
+
+这些按键会先插入一个带空白框的函数模板。光标位于空白框时，点击矩阵尺寸按钮创建矩阵并填写元素，然后点击 <kbd className="key-cap">=</kbd>。
+
+<ThemeImage
+  src="/images/docs/matrix/operations/advanced-operations.png"
+  alt="矩阵键盘启用 Shift 后显示 det、rref、eig、rank 和 tr 功能"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+### 运算含义
+
+- **行列式**：返回方阵对应的一个标量，可用于判断矩阵是否可逆；
+- **行最简形**：通过初等行变换得到简化矩阵，常用于分析线性方程组；
+- **特征值**：返回满足 $Av=\lambda v$ 的 $\lambda$；
+- **秩**：返回矩阵中线性无关行或列的数量；
+- **迹**：返回方阵主对角线元素之和。
+
+例如，对角矩阵
+
+$$
+A=\begin{bmatrix}2&0\\0&3\end{bmatrix}
+$$
+
+的行列式为 $6$，迹为 $5$，特征值为 $2$ 和 $3$。
+
+<ThemeImage
+  src="/images/docs/matrix/operations/eigenvalues.png"
+  alt="矩阵与向量模式计算二和三组成的对角矩阵特征值"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+### 输入单位矩阵
+
+单位矩阵是矩阵尺寸按钮上方的 Shift 功能：
+
+1. 点击 <kbd className="key-cap">⇧Shift</kbd>。
+2. 点击矩阵尺寸按钮，插入单位矩阵 $I$ 的阶数输入框。
+3. 输入阶数，例如 $3$ 表示 $3\times3$ 单位矩阵。
+
+单位矩阵可以直接参与加法、减法和乘法，也可以用于核对矩阵乘方等结果。
+
+## 出现尺寸错误时
+
+依次检查：
+
+1. 加法、减法或哈达玛积的两个矩阵是否同型；
+2. 矩阵乘法中左矩阵列数是否等于右矩阵行数；
+3. 求逆、行列式、迹、特征值和矩阵乘方是否使用了方阵；
+4. 矩阵中的所有空白框是否已经填写；
+5. 运算符或函数模板是否放在矩阵外侧的正确位置。
+
+## 相关教程
+
+- [创建与输入矩阵](/matrix/overview)
+- [输入与编辑公式](/basics/input)
+- [查看和复用历史记录](/history)

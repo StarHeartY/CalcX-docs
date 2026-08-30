@@ -1,0 +1,112 @@
+---
+title: 管理多个函数
+description: 在 CalculatorX 中添加、编辑、隐藏和删除函数，并使用颜色图例比较多条曲线。
+---
+import ThemeImage from '../../components/ThemeImage'
+
+# 管理多个函数
+
+函数图像模式可以在同一坐标系中保存最多 10 个条目。每个普通函数、参数方程、极坐标方程、隐函数或独立点都计为一个条目。
+
+## 编辑函数列表
+
+### 认识函数列表
+
+打开顶栏右侧的编辑按钮后，每个条目由三部分组成：
+
+- 左侧颜色圆点：表示曲线颜色，也用于切换显隐；
+- 中间表达式：点击后打开公式键盘；
+- 参数方程和极坐标下方的定义域：点击后使用专用数字键盘编辑。
+
+<ThemeImage
+  src="/images/docs/graphing/manage-functions/function-list.png"
+  alt="编辑函数图像列表显示颜色圆点、表达式和参数定义域"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+正在编辑的条目会突出显示。参数方程和独立点有两行表达式，应点击具体一行选择编辑目标。
+
+### 添加一个函数
+
+1. 滚动到列表底部。
+2. 点击“+ 添加新的函数”。
+3. 选择函数类型。
+4. 在自动打开的公式键盘中填写表达式。
+5. 点击 <kbd className="key-cap">确定</kbd> 保存。
+
+<ThemeImage
+  src="/images/docs/graphing/manage-functions/add-function.png"
+  alt="函数列表底部的添加新函数按钮以及新建后的表达式条目"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+CalculatorX 会从预设颜色中自动分配当前列表尚未使用的颜色。当前版本不提供手动选色入口。
+
+### 编辑已有函数
+
+点击目标表达式行即可载入原公式。切换到另一个条目或另一行表达式时，CalculatorX 会先保存刚才的输入，再打开新的编辑目标。
+
+完成后点击 <kbd className="key-cap">确定</kbd> 或键盘收起键。回到画布后，左上角图例会显示所有可见条目的颜色和表达式。
+
+## 管理显示与数量
+
+### 临时隐藏曲线
+
+点击条目左侧的颜色圆点，可以在显示与隐藏之间切换：
+
+- 彩色圆点表示条目可见；
+- 灰色圆点表示条目隐藏；
+- 隐藏不会删除表达式、类型或定义域；
+- 再次点击圆点即可恢复显示。
+
+<ThemeImage
+  src="/images/docs/graphing/manage-functions/visibility.png"
+  alt="函数列表中一个彩色可见圆点和一个灰色隐藏圆点"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+比较多条曲线时，可以逐条隐藏，观察剩余函数的形状。隐藏的条目也不会出现在画布左上角图例中。
+
+### 删除函数
+
+1. 在目标条目上向左滑动。
+2. 点击出现的红色删除按钮。
+3. 条目会立即从列表和画布移除。
+
+<ThemeImage
+  src="/images/docs/graphing/manage-functions/delete-function.png"
+  alt="函数条目左滑后显示红色垃圾桶删除按钮"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+删除操作没有单独的确认对话框，也不能从函数图像历史中恢复。暂时不想显示时，应优先使用颜色圆点隐藏。
+
+### 数量上限
+
+列表最多保存 10 个条目。达到上限后，底部按钮会显示“已达数量上限 (10/10)”，无法继续添加。
+
+<ThemeImage
+  src="/images/docs/graphing/manage-functions/function-limit.png"
+  alt="函数列表达到十条后显示已达数量上限十比十"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+需要添加其他函数时，可以先删除不再使用的条目，或隐藏暂时不需要比较的条目。
+
+## 保存规则
+
+函数列表会保存在设备本地，包括：
+
+- 表达式；
+- 函数类型；
+- 自动分配的颜色；
+- 显示或隐藏状态；
+- 参数方程和极坐标的定义域。
+
+函数图像不进入基础计算、科学计算、方程或矩阵的历史记录。管理和复用函数应直接通过编辑面板完成。
+
+## 相关教程
+
+- [绘制第一条函数图像](/graphing/overview)
+- [选择函数类型](/graphing/function-types)
+- [观察与调整图像](/graphing/view-graph)

@@ -1,0 +1,139 @@
+---
+title: 三角函数与角度单位
+description: 使用正弦、余弦、正切、反三角、倒数三角和双曲函数，并正确选择 DEG 或 RAD。
+---
+import ThemeImage from '../../components/ThemeImage'
+
+# 三角函数与角度单位
+
+CalculatorX 支持常用三角函数、反三角函数、倒数三角函数和双曲函数。普通三角函数的结果会受到 `DEG` 或 `RAD` 角度单位影响，因此计算前应先检查顶栏状态。
+
+## 基础三角计算
+
+### 选择角度制或弧度制
+
+科学计算顶栏会显示当前角度单位：
+
+- `DEG`：角度制，一整圈为 $360°$；
+- `RAD`：弧度制，一整圈为 $2\pi$。
+
+点击 <kbd className="key-cap">R/D</kbd> 可以立即切换。也可以在“设置 → 计算设置 → 角度单位”中修改。
+
+<ThemeImage
+  src="/images/docs/scientific/trigonometry/angle-unit.png"
+  alt="科学计算顶栏分别显示 DEG 和 RAD 角度单位"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+角度单位是全局设置。离开科学计算页面后再次返回，最近选择的单位仍会保留。
+
+### 计算正弦、余弦和正切
+
+角度制示例：
+
+1. 确认顶栏显示 `DEG`。
+2. 点击 <kbd className="key-cap">sin</kbd>，在括号内输入 $30$。
+3. 点击 <kbd className="key-cap">=</kbd>。
+
+结果为：
+
+$$
+\sin(30)=\frac{1}{2}
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/trigonometry/trigonometry-example.png"
+  alt="科学计算模式在角度制下计算三十度的正弦"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+弧度制下，对应输入为：
+
+$$
+\sin\left(\frac{\pi}{6}\right)=\frac{1}{2}
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/trigonometry/trigonometry-example2.png"
+  alt="科学计算模式在弧度制下计算π/6的正弦"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+同样的方法适用于 `cos` 和 `tan`。
+
+如果结果明显不符合预期，首先检查是否选错了 `DEG` 或 `RAD`。
+
+### 使用反三角函数
+
+`sin`、`cos`、`tan` 上方以橙色标出的 Shift 功能分别是：
+
+$$
+\sin^{-1},\quad \cos^{-1},\quad \tan^{-1}
+$$
+
+先点击 <kbd className="key-cap">⇧Shift</kbd>，再点击对应主键，即可插入反三角函数。<kbd className="key-cap">sin</kbd>、<kbd className="key-cap">cos</kbd> 和 <kbd className="key-cap">tan</kbd> 的长按用于打开其他函数的气泡菜单，不会直接插入反三角函数。
+
+在角度制下：
+
+$$
+\sin^{-1}\left(\frac{1}{2}\right)=30
+$$
+
+在弧度制下：
+
+$$
+\sin^{-1}\left(\frac{1}{2}\right)=\frac{\pi}{6}
+$$
+
+
+这里的 $\sin^{-1}$ 表示反正弦，不表示 $\frac{1}{\sin}$。正弦的倒数是余割 `csc`。
+
+## 扩展三角功能
+
+### 使用倒数三角函数
+
+长按 <kbd className="key-cap">sin</kbd>、<kbd className="key-cap">cos</kbd> 或 <kbd className="key-cap">tan</kbd> 会显示滑动气泡菜单：
+
+| 主键 | 倒数函数 | 定义 |
+| --- | --- | --- |
+| `sin` | `csc` | $\csc x=\frac{1}{\sin x}$ |
+| `cos` | `sec` | $\sec x=\frac{1}{\cos x}$ |
+| `tan` | `cot` | $\cot x=\frac{1}{\tan x}$ |
+
+气泡菜单中还提供它们的反函数和双曲函数。保持按住并滑向目标，等选项高亮后松开。
+
+<ThemeImage
+  src="/images/docs/scientific/overview/long-press-menu.png"
+  alt="长按正弦余弦正切按键选择余割正割或余切函数"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+### 使用双曲函数
+
+同一个长按菜单还提供：
+
+- `sinh`、`cosh`、`tanh`；
+- `sinh⁻¹`、`cosh⁻¹`、`tanh⁻¹`。
+
+双曲函数以指数函数定义，不把输入当作普通几何角度，因此 `DEG/RAD` 主要用于普通三角函数和反三角函数。
+
+## 角度表示与限制
+
+### 度分秒输入与结果
+
+科学键盘提供度分秒模板，也可以长按 <kbd className="key-cap">S⇄D</kbd> 把最近结果显示为度分秒。两者用途不同：
+
+- 度分秒模板用于输入包含度、分、秒的角度；
+- `S⇄D` 的度分秒选项用于转换计算结果的显示形式。
+
+如果度分秒结构不完整或数值位置不合法，应用会返回格式错误。使用方向键检查每个输入位置后重新计算。
+
+### 定义域与无效结果
+
+部分三角函数在某些输入处没有有限实数值，例如角度制下的 $\tan(90)$。反三角函数也有各自的实数定义域。遇到定义域错误时，应检查输入值、角度单位以及是否本来需要复数结果。
+
+## 相关教程
+
+- [科学计算键盘与 Shift](/scientific/overview)
+- [幂、根式、指数与对数](/scientific/powers-logarithms)
+- [调整 CalculatorX 设置](/settings)

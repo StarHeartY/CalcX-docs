@@ -1,0 +1,184 @@
+---
+title: 高等数学
+description: 使用 CalculatorX 完成符号求导、定积分、不定积分、极限，以及有限或无限范围的求和与求积。
+---
+import ThemeImage from '../../components/ThemeImage'
+
+# 高等数学
+
+科学计算模式提供以 $x$ 为变量的求导、积分和极限模板，也可以计算有限或无限范围内的求和与求积。模板中出现的空白框需要使用方向键依次填写。
+
+## 微积分
+
+### 求导
+
+求导是 <kbd className="key-cap">lim</kbd> 上方的 Shift 功能。先按 <kbd className="key-cap">⇧Shift</kbd> 再点击 <kbd className="key-cap">lim</kbd>，或直接长按 <kbd className="key-cap">lim</kbd>，会插入：
+
+$$
+\frac{d}{dx}\left(\square\right)
+$$
+
+例如，对 $x^3+2x$ 求导：
+
+$$
+\frac{d}{dx}\left(x^3+2x\right)=3x^2+2
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/calculus/derivative.png"
+  alt="科学计算模式对 x 的三次方加二 x 求导并得到三 x 平方加二"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+当前快捷模板按 $x$ 求导。输入其他字母但没有明确的 $x$ 时，结果可能被视为常量表达式。
+
+### 定积分
+
+点击 <kbd className="key-cap">$\int$</kbd> 会插入下限、上限和被积函数三个输入位置：
+
+$$
+\int_{\square}^{\square}\left(\square\right)dx
+$$
+
+计算 $\int_0^1x^2\,dx$：
+
+1. 在下限填入 $0$。
+2. 使用方向键移动到上限并填入 $1$。
+3. 移动到被积函数位置并输入 $x^2$。
+4. 点击 <kbd className="key-cap">=</kbd>。
+
+结果为：
+
+$$
+\int_0^1x^2\,dx=\frac{1}{3}
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/calculus/definite-integral.png"
+  alt="科学计算模式计算零到一的 x 平方定积分并得到三分之一"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+如果无法得到精确的符号结果，部分定积分会改用数值方法计算，此时可能显示近似小数。
+
+### 不定积分
+
+不定积分是定积分键上方的 Shift 功能。它会插入：
+
+$$
+\int\left(\square\right)dx
+$$
+
+例如：
+
+$$
+\int 2x\,dx=x^2+\mathbf{C}
+$$
+
+CalculatorX 会在不定积分结果后添加积分常数 $\mathbf{C}$。
+
+<ThemeImage
+  src="/images/docs/scientific/calculus/undefinite-integral.png"
+  alt="科学计算模式计算 2x 的不定积分并得到 x 的平方加 C"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+### 极限
+
+点击 <kbd className="key-cap">$\lim$</kbd> 会插入：
+
+$$
+\lim_{x\to\square}\left(\square\right)
+$$
+
+先填写趋近值，再填写表达式。下面的经典极限按照弧度定义，计算前应确认顶栏显示 `RAD`：
+
+$$
+\lim_{x\to0}\frac{\sin x}{x}=1
+$$
+
+需要趋向无穷时，可以使用科学键盘上的 $\infty$。极限使用的变量为 $x$。
+
+<ThemeImage
+  src="/images/docs/scientific/calculus/limit.png"
+  alt="科学计算模式计算 x 趋近零时正弦 x 除以 x 的极限"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+## 求和与求积
+
+### 求和
+
+求和键插入下标、上标和通项：
+
+$$
+\sum_{x=\square}^{\square}\left(\square\right)
+$$
+
+例如：
+
+$$
+\sum_{x=1}^{5}x=15
+$$
+
+求和还可实现无穷级数的计算，例如：
+
+$$
+\sum_{x=1}^{\infty}\frac{1}{x^2}=\frac{\pi^2}{6}
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/calculus/infinite-sum.png"
+  alt="科学计算模式计算无穷级数"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+
+### 求积
+
+求积键的结构与求和类似：
+
+$$
+\prod_{x=\square}^{\square}\left(\square\right)
+$$
+
+例如：
+
+$$
+\prod_{x=1}^{5}x=120
+$$
+
+无限求积同样受到支持。下面的乘积会逐项消去相邻因子，最终收敛到 $\frac{1}{2}$：
+
+$$
+\prod_{x=2}^{\infty}\left(1-\frac{1}{x^2}\right)=\frac{1}{2}
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/calculus/infinite-product.png"
+  alt="科学计算模式计算无穷乘积"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+对于能够直接化简的收敛级数或无穷乘积，CalculatorX 可以计算得到精确值。
+
+> **注意：** 使用无穷上限不代表所有表达式都会得到有限结果。级数或乘积必须收敛；发散或过于复杂的表达式可能无法化简或触发错误。
+
+求和键和求积键的 Shift 功能分别是 `GCD` 与 `LCM`。如果看到的是最大公约数或最小公倍数模板，说明 Shift 仍处于启用状态或刚才通过长按触发了对应功能。
+
+## 遇到错误或长时间计算
+
+复杂积分、极限、求和或求积可能无法得到结果，或触发定义域、语法、溢出和超时错误。可以尝试：
+
+1. 检查所有模板空白是否填写完整；
+2. 确认上下限顺序和变量位置；
+3. 将复杂表达式拆成较小部分；
+4. 对定积分改用有限且明确的数值边界；
+5. 检查表达式在目标区间内是否存在奇点，并确认无限级数或无限乘积是否收敛。
+
+## 相关教程
+
+- [科学计算键盘与 Shift](/scientific/overview)
+- [符号与代数运算](/scientific/algebra)
+- [幂、根式、指数与对数](/scientific/powers-logarithms)
+- [排列组合与数论](/scientific/combinatorics-number-theory)

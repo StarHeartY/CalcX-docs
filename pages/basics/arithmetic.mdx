@@ -1,0 +1,109 @@
+---
+title: 四则运算、百分数与小数
+description: 使用 CalculatorX 基础计算模式完成加减乘除、百分数和小数运算。
+---
+import ThemeImage from '../../components/ThemeImage'
+import BackspaceKey from '../../components/BackspaceKey'
+
+# 四则运算、百分数与小数
+
+基础计算模式提供数字、加减乘除、小数点、百分数、退格、清空和等号，适合快速完成日常算术。
+
+## 开始计算
+
+### 进入基础计算
+
+1. 点击左上角的侧边栏按钮。
+2. 在“模式”分组中选择“基础计算”。
+3. 检查顶栏中间是否显示“基础计算”。
+
+<ThemeImage
+  src="/images/docs/basics/arithmetic/basic-keyboard.png"
+  alt="CalculatorX 基础计算模式的公式显示区和四则运算键盘"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+基础键盘中的主要按键如下：
+
+| 按键 | 作用 |
+| --- | --- |
+| `0`~`9` | 输入数字 |
+| `.` | 输入小数点 |
+| `+`、`−`、`×`、`÷` | 输入四则运算符 |
+| `%` | 把前面的数表示为百分数 |
+| <BackspaceKey /> | 删除光标前的内容，长按可连续删除 |
+| `AC` | 清空当前表达式 |
+| `=` | 执行计算 |
+
+### 完成四则运算
+
+以 $48\div6+7$ 为例：
+
+1. 依次点击 <kbd className="key-cap">4</kbd>、<kbd className="key-cap">8</kbd>、<kbd className="key-cap">÷</kbd>、<kbd className="key-cap">6</kbd>、<kbd className="key-cap">+</kbd>、<kbd className="key-cap">7</kbd>。
+2. 点击 <kbd className="key-cap">=</kbd>。
+3. CalculatorX 先计算 $48\div6$，最终结果为 $15$。
+
+<ThemeImage
+  src="/images/docs/basics/arithmetic/arithmetic-example.png"
+  alt="基础计算模式计算四十八除以六加七并得到十五"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+## 常用算术
+
+### 运算顺序
+
+CalculatorX 遵循通常的数学运算顺序：
+
+1. 先计算乘法和除法；
+2. 再计算加法和减法；
+3. 同一级运算按表达式结构处理。
+
+例如：
+
+$$
+12+8\times3=12+24=36
+$$
+
+基础键盘没有括号键。如果表达式需要括号、分数、幂或其他多层结构，请切换到科学计算模式。
+
+### 输入小数
+
+点击 <kbd className="key-cap">.</kbd> 输入小数点。例如，输入 $2.5\times4$ 后点击 <kbd className="key-cap">=</kbd>，结果为 $10$。
+
+同一个数字中只应输入一个小数点。若表达式不完整或小数点位置不合法，计算可能无法得到有效结果；使用 <BackspaceKey /> 修正后重新计算即可。
+
+### 计算百分数
+
+百分号会把它前面的值除以 $100$：
+
+$$
+15\%=\frac{15}{100}=0.15
+$$
+
+因此，计算 $200$ 的 $15\%$ 可以输入：
+
+$$
+200\times15\%=30
+$$
+
+<ThemeImage
+  src="/images/docs/basics/arithmetic/percentage-example.png"
+  alt="基础计算模式使用二百乘百分之十五得到三十"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+这里的 `%` 表示数学上的“除以一百”，不会自动判断“增加百分之多少”或“减少百分之多少”。例如增加 $15\%$ 应明确输入 $200\times(1+15\%)$；这类带括号的表达式建议在科学计算模式中输入。
+
+## 修正输入
+
+- 输错最后一个数字时，点击 <BackspaceKey />；
+- 需要连续删除时，长按 <BackspaceKey />；
+- 想重新开始时，点击 <kbd className="key-cap">AC</kbd>；
+- 需要调整复杂表达式时，切换到具有方向键和撤销功能的模式。
+
+## 相关教程
+
+- [输入与编辑公式](/basics/input)
+- [查看与转换结果](/basics/results)
+- [查看和复用历史记录](/history)

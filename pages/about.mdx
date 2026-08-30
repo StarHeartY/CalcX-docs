@@ -1,5 +1,6 @@
 ---
 title: 关于
+description: 了解 CalculatorX 的软件信息、开发者、联系方式、开源组件和下载入口。
 ---
 
 # 关于 CalculatorX
@@ -29,6 +30,8 @@ title: 关于
 
 ---
 
+## 软件与支持
+
 ### 软件信息
 
 * **支持系统：** HarmonyOS
@@ -37,6 +40,8 @@ title: 关于
 ### 联系与支持
 
 如果你在使用过程中遇到任何问题，或者有新的功能建议，欢迎通过以下方式与我们取得联系：
+
+提交问题前，可以先查看[常见问题与故障排查](/troubleshooting)，确认计算模式、输入方式、设置和网络状态。
 
 <div style={{ display: 'flex', gap: '16px', justifyContent: 'left', flexWrap: 'wrap', marginTop: '32px', marginBottom: '32px' }}>
 
@@ -91,11 +96,11 @@ title: 关于
 
 ---
 
-### 特别鸣谢
+## 特别鸣谢
 
 > "我们站在巨人的肩膀上。"
 
-CalculatorX 的强大不仅源于自身的架构设计，更得益于开源社区的无私奉献。本项目在底层 CAS 引擎、高精度计算以及前端渲染等模块，深度依赖或参考了以下卓越的开源组件与第三方库：
+CalculatorX 的许多能力也得益于开源社区的无私奉献。以下开源项目为符号运算、公式输入与显示、高精度计算等功能提供了重要支持：
 
 {/* ================= 3. 六个开源库鸣谢 ================= */}
 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px', marginTop: '24px', marginBottom: '40px' }}>
@@ -106,7 +111,7 @@ CalculatorX 的强大不仅源于自身的架构设计，更得益于开源社�
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px', flexShrink: 0, transform: 'translateY(11.5px)' }}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
       Giac/Xcas
     </span>
-    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>核心微积分与高级符号运算引擎</span>
+    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>微积分与高级符号运算</span>
   </a>
 
   {/* SymEngine */}
@@ -115,7 +120,7 @@ CalculatorX 的强大不仅源于自身的架构设计，更得益于开源社�
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px', flexShrink: 0, transform: 'translateY(11.5px)' }}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
       SymEngine
     </span>
-    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>基础计算机代数系统 (CAS)</span>
+    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>基础符号运算</span>
   </a>
 
   {/* MathLive */}
@@ -124,7 +129,7 @@ CalculatorX 的强大不仅源于自身的架构设计，更得益于开源社�
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px', flexShrink: 0, transform: 'translateY(11.5px)' }}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
       MathLive
     </span>
-    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>前端公式渲染与 MathJSON 引擎</span>
+    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>数学公式输入与显示</span>
   </a>
 
   {/* nlohmann/json */}
@@ -133,7 +138,7 @@ CalculatorX 的强大不仅源于自身的架构设计，更得益于开源社�
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px', flexShrink: 0, transform: 'translateY(11.5px)' }}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
       nlohmann/json
     </span>
-    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>C++ 高效 JSON 解析库</span>
+    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>数据读写与处理</span>
   </a>
 
   {/* Boost */}
@@ -142,7 +147,7 @@ CalculatorX 的强大不仅源于自身的架构设计，更得益于开源社�
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px', flexShrink: 0, transform: 'translateY(11.5px)' }}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
       Boost
     </span>
-    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>高性能泛型 C++ 基础库</span>
+    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>通用计算基础功能</span>
   </a>
 
   {/* GMP */}
@@ -151,7 +156,7 @@ CalculatorX 的强大不仅源于自身的架构设计，更得益于开源社�
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px', flexShrink: 0, transform: 'translateY(11.5px)' }}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
       GMP
     </span>
-    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>GNU 多精度算术库，提供极速大数支持</span>
+    <span className="badge-desc" style={{ fontSize: '13px', lineHeight: '1.5' }}>高精度大数计算</span>
   </a>
 
 </div>
@@ -160,7 +165,7 @@ CalculatorX 的强大不仅源于自身的架构设计，更得益于开源社�
 
 向以上所有开源项目的贡献者致以最诚挚的敬意！
 
-### 获取 CalculatorX
+## 获取 CalculatorX
 
 <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '32px', marginBottom: '32px' }}>
 

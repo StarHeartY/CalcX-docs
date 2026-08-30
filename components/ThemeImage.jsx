@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import Image from 'next/image'
 
-export default function ThemeImage({ src, alt, width, height, className, style }) {
+export default function ThemeImage({ src, alt, className, style }) {
   let cleanSrc = src;
   if (!src.startsWith('http') && !src.startsWith('/docs')) {
     cleanSrc = src.startsWith('/')
@@ -18,19 +17,19 @@ export default function ThemeImage({ src, alt, width, height, className, style }
 
   return (
     <>
-      <Image
+      <img
         src={cleanSrc}
         alt={alt}
-        width={width}
-        height={height}
+        loading="lazy"
+        decoding="async"
         className={`img-light-mode ${className || ''}`}
         style={{ maxWidth: '100%', height: 'auto', ...style }}
       />
-      <Image
+      <img
         src={finalDarkSrc}
         alt={alt}
-        width={width}
-        height={height}
+        loading="lazy"
+        decoding="async"
         className={`img-dark-mode ${className || ''}`}
         style={{ maxWidth: '100%', height: 'auto', ...style }}
         onError={() => setDarkFailed(true)}
@@ -38,38 +37,3 @@ export default function ThemeImage({ src, alt, width, height, className, style }
     </>
   );
 }
-
-
-
-/*
-
-import ThemeImage from '../components/ThemeImage'
-
-<ThemeImage 
-  src="/docs/images/docs/index/scientific.png" 
-  alt="公式推导图"
-  width={1200} 
-  height={800} 
-  style = {{ maxWidth: '300px', height: 'auto',borderRadius: '12px', marginTop: '16px' }}
-/>
-
-
-*/
-
-/*
-
-<ThemeImage
-  srcLight="/docs/images/formula-light.png"
-  srcDark="/docs/images/formula-dark.png"
-  alt="名字"
-  width={1200}
-  height={800}
-  style={{
-    maxWidth: '400px',
-    height: 'auto',
-    borderRadius: '12px',
-    marginTop: '16px'
-  }}
-/>
-
-*/

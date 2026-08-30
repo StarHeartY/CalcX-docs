@@ -35,7 +35,7 @@ async function main() {
     fs.mkdirSync(targetDocsDir, { recursive: true });
     fs.cpSync(outDir, targetDocsDir, { recursive: true });
 
-    // 获取 release/docs 下的所有文件
+    // 获取临时 docs 目录下的所有文件
     const allFiles = getAllFiles(targetDocsDir);
 
     // 找出所有图片
@@ -69,7 +69,7 @@ async function main() {
         }
       }
     } else {
-      console.log(`🖼️ [2/3] 未检测到需要压缩的图片，跳过。`);
+      console.log(`🖼️ [2/5] 未检测到需要压缩的图片，跳过。`);
     }
 
     console.log('🧹 [4/5] 正在安全清空原始 out 目录 (保留外壳防锁)...');

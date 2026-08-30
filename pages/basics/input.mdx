@@ -1,0 +1,84 @@
+---
+title: 输入与编辑公式
+description: 学习 CalculatorX 中的公式输入、光标移动、删除、清空、撤销、重做和长按操作。
+---
+import ThemeImage from '../../components/ThemeImage'
+import BackspaceKey from '../../components/BackspaceKey'
+
+# 输入与编辑公式
+
+CalculatorX 会把按键输入转换成排版后的数学公式。简单表达式可以直接连续输入；遇到分数、根式、指数或矩阵等多层结构时，需要留意光标当前位于哪个输入框。
+
+## 输入与定位光标
+
+### 输入普通表达式
+
+数字和运算符会插入到当前光标位置。例如，要输入 $25\times4+7$，依次点击对应的数字和运算符即可。
+
+<ThemeImage
+  src="/images/docs/basics/input/input-expression.png"
+  alt="CalculatorX 公式显示区中正在输入二十五乘四加七"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+在科学计算、方程和矩阵模式中，函数或模板按键可能一次插入多个输入位置。例如分数包含分子和分母，幂包含底数和指数。空白框表示仍需填写的部分。
+
+### 移动光标
+
+在提供方向键的模式中：
+
+- <kbd className="key-cap">⇦</kbd> 和 <kbd className="key-cap">⇨</kbd> 在相邻字符或输入位置之间移动；
+- <kbd className="key-cap">⇧</kbd> 和 <kbd className="key-cap">⇩</kbd> 用于在分子、分母、矩阵等上下层结构间移动；
+- 长按方向键可以连续移动。
+
+{/* <ThemeImage
+  src="/images/docs/basics/input/nested-cursor.png"
+  alt="使用方向键在分数的分子和分母之间移动光标"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/> */}
+
+基础计算键盘没有独立方向键。如果需要编辑多层公式或输入更复杂的结构，请切换到科学计算模式。
+
+## 修改与复用公式
+
+### 删除或清空输入
+
+- 点击 <BackspaceKey /> 删除光标前的一个字符或结构；
+- 长按 <BackspaceKey /> 可以连续删除；
+- 点击 <kbd className="key-cap">AC</kbd> 清空当前公式。
+
+清空只影响正在编辑的公式，不会清除已经保存的历史记录。历史记录需要在历史页面中单独删除。
+
+### 撤销与重做
+
+科学计算、方程求解和矩阵模式的顶栏提供撤销与重做按钮：
+
+1. 输入或删除内容后，点击左侧撤销按钮回到上一步；
+2. 如果撤销过多，点击右侧重做按钮恢复刚才的操作。
+
+基础计算模式不显示这两个按钮。
+
+### 使用 Shift 和长按
+
+科学计算、方程和矩阵键盘提供 Shift 功能，部分按键另有长按操作：
+
+- 点击 <kbd className="key-cap">⇧Shift</kbd> 后，带橙色标签的按键会切换到标签所示功能；
+- 顶栏中间显示“SHIFT”时，表示 Shift 功能已经启用；
+- 部分按键长按后会直接执行对应的 Shift 功能；
+- 部分按键会弹出横向气泡菜单，保持按住并滑向目标选项后松开即可选择。
+
+不同按键的长按行为并不完全相同，应以屏幕上出现的气泡或按键标签为准。
+
+### 插入上一次结果
+
+带有 <kbd className="key-cap">Ans</kbd> 的键盘可以插入当前计算页面中的上一次结果。CalculatorX 会为结果加上必要的括号，便于继续参与运算。
+
+刚进入页面、还没有完成计算时，`Ans` 的初始值为 $0$。切换到新的计算模式后，`Ans` 也可能重新从 $0$ 开始，因此不要把它当作跨模式的永久变量。
+
+## 相关教程
+
+- [认识界面与切换模式](/basics/interface)
+- [四则运算、百分数与小数](/basics/arithmetic)
+- [查看与转换结果](/basics/results)
+- [从历史记录插入公式或结果](/history)
+- [常见问题与故障排查](/troubleshooting)

@@ -1,77 +1,124 @@
 # CalculatorX 帮助中心
 
-基于 [Nextra](https://nextra.site) v3 构建的 **CalculatorX** 官方中文文档站，为 HarmonyOS 平台上的专业级符号计算器提供完整的使用指南与参考。
+CalculatorX 官方中文帮助中心，为 HarmonyOS 平台上的科学计算器提供快速入门、基础计算、科学计算、历史记录、常见问题和支持信息。
 
-## 项目概述
+[在线帮助中心](https://calcx.startyi.com/docs/) · [CalculatorX 官网](https://calcx.startyi.com) · [CalculatorX 源码](https://github.com/StarHeartY/CalculatorX)
 
-CalculatorX 是一款运行于 **HarmonyOS** 的高性能科学计算器，具备 CAS（计算机代数系统）引擎，支持微积分、方程求解、符号推导、函数图像等多场景计算需求。
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/images/docs/index/scientific_dark.png">
+    <img src="public/images/docs/index/scientific.png" alt="CalculatorX 科学计算界面" width="280">
+  </picture>
+</p>
 
-本站点即为 CalculatorX 的用户手册，内容涵盖：
+## 项目状态
 
-- **快速入门** — 应用界面与基本交互
-- **基础运算篇** — 四则运算、历史记录等常规操作
-- **科学计算篇** — 三角函数、指数对数、科学常数、微积分等
-- **高级代数与 CAS 引擎篇** — 符号推导、方程求解、代数运算
-- **常见问题与支持篇** — FAQ、更新日志、隐私声明
+网站框架、静态构建、Cloudflare Pages 部署和官网 `/docs` 反向代理链路已经建立。用户手册主体内容已经覆盖当前实现的基础计算、科学计算、方程求解、矩阵、函数图像、汇率换算、历史记录和设置；维护者仍需按页面引用逐步补齐明暗主题截图。
+
+导航只收录已经完成的正式页面，不使用占位教程预告尚未实现或尚未核实的功能。
+
+本仓库只维护帮助中心。CalculatorX 应用功能、版本发布和客户端内部加载逻辑由 [CalculatorX 主项目](https://github.com/StarHeartY/CalculatorX)负责。
+
+## 能力
+
+- 使用 Markdown 和 MDX 编写结构化用户手册；
+- 使用 Nextra 提供侧边栏、目录、搜索和明暗主题；
+- 支持 LaTeX 数学公式；
+- 支持普通/暗色截图自动切换；
+- 导出纯静态网站，不依赖运行时服务器；
+- 构建时将本地 PNG/JPG 副本转换为 WebP；
+- 生成统一的 `out/docs/` 产物，用于线上部署和离线交付。
 
 ## 技术栈
 
 | 类别 | 方案 |
-|------|------|
-| 框架 | [Next.js 14](https://nextjs.org) (Pages Router) |
-| 文档引擎 | [Nextra v3](https://nextra.site) |
+| --- | --- |
+| Web 框架 | Next.js 14（Pages Router） |
+| 文档引擎 | Nextra 3 |
 | 主题 | `nextra-theme-docs` |
-| 渲染 | MDX + LaTeX（数学公式） |
-| 部署 | 纯静态导出 (`output: 'export'`) |
+| 页面格式 | Markdown、MDX、React |
+| 数学公式 | Nextra LaTeX / KaTeX |
+| 图片后处理 | Sharp |
+| 构建模式 | Next.js 静态导出 |
+| 托管 | Cloudflare Pages |
+| 官网接入 | Cloudflare Worker 反向代理到 `/docs` |
 
-## 本地开发
+## 快速开始
 
-确保已安装 **Node.js 18+** 和 **pnpm**。
-
-```bash
-# 安装依赖
-pnpm install
-
-# 启动开发服务器
-pnpm dev
-```
-
-浏览器访问 `http://localhost:3000/docs` 即可预览。
-
-## 生产构建
+需要 Node.js 18 或更高版本。项目统一使用 npm。
 
 ```bash
-pnpm build
+git clone https://github.com/StarHeartY/CalcX-docs.git
+cd CalcX-docs
+npm ci
+npm run dev
 ```
 
-产物输出至 `out/` 目录，可直接部署到任意静态托管服务。
+访问：
 
-## 目录结构
-
+```text
+http://localhost:3000/docs
 ```
+
+## 构建与预览
+
+```bash
+npm run build
+npm run preview
+```
+
+`npm run build` 会执行 Next.js 静态导出和自定义后处理。唯一正式产物是：
+
+```text
+out/docs/
+```
+
+不要直接修改或提交 `.next/`、`out/`、`out_temp/` 和 `node_modules/`。
+
+## 项目结构
+
+```text
 CalcX-docs/
-├── pages/                  # 文档页面 (MDX)
-│   ├── index.mdx           # 首页
-│   ├── about.mdx           # 关于页
-│   ├── _meta.js            # 顶部导航配置
-│   ├── basics/             # 基础运算篇
-│   ├── scientific/         # 科学计算篇
-│   ├── cas/                # CAS 引擎篇
-│   └── support/            # FAQ 与支持
-├── components/             # 自定义 React 组件
-├── public/
-│   └── images/             # 配图资源
-├── theme.config.jsx        # Nextra 主题配置
-├── next.config.mjs         # Next.js + Nextra 配置
-└── package.json
+├── pages/              # 发布给 CalculatorX 用户的帮助内容
+├── components/         # MDX/React 自定义组件
+├── public/images/      # 原始截图和静态图片
+├── styles/             # 全站样式
+├── docs/               # 本仓库的工程文档
+├── AGENTS.md           # AI 协作规则
+├── CONTRIBUTING.md     # 贡献和变更流程
+├── next.config.mjs     # Nextra、/docs 和静态导出配置
+├── theme.config.tsx    # 站点主题与元信息
+└── postbuild.mjs       # out/docs 重组与图片后处理
 ```
 
-## 相关链接
+完整目录说明见[项目结构](docs/PROJECT_STRUCTURE.md)。
 
-- [CalculatorX 主站](https://calcx.startyi.com)
-- [CalculatorX 源码](https://github.com/StarHeartY/CalculatorX)
-- [Nextra 文档](https://nextra.site)
+## 工程文档
 
-## 开源许可
+| 文档 | 内容 |
+| --- | --- |
+| [工程文档索引](docs/README.md) | 阅读顺序与权威来源 |
+| [架构说明](docs/ARCHITECTURE.md) | 内容、构建、Pages、Worker 和离线产物关系 |
+| [项目结构](docs/PROJECT_STRUCTURE.md) | 核心目录、配置和生成目录职责 |
+| [开发指南](docs/DEVELOPMENT.md) | 环境、命令、工作流和验证方式 |
+| [内容编写规范](docs/CONTENT_GUIDE.md) | Markdown、MDX、导航、公式和图片规则 |
+| [部署指南](docs/DEPLOYMENT.md) | Cloudflare Pages、Worker、发布与回退 |
+| [维护指南](docs/MAINTENANCE.md) | 依赖、事实、链接和基础设施维护 |
+| [贡献指南](CONTRIBUTING.md) | 维护者与 AI 的标准变更流程 |
+| [AI 协作规则](AGENTS.md) | 修改边界和验证要求 |
 
-本项目基于 MIT 协议开源。
+## 内容与协作
+
+用户手册页面位于 `pages/`，工程说明位于 `docs/`。新增或修改内容前请阅读[内容编写规范](docs/CONTENT_GUIDE.md)。
+
+项目当前由维护者主导并使用 AI 辅助，不以建设大型贡献者社区为目标。任何修改都应保持范围明确、事实可核实、验证结果可说明，具体流程见[贡献指南](CONTRIBUTING.md)。
+
+## 部署概览
+
+Cloudflare Pages 从 `main` 自动构建 `out/`。独立 Worker `calcx-docs-proxy` 接管 `calcx.startyi.com/docs*`，仅把目标主机替换为 `calcx-docs.pages.dev`，并保留原始 `/docs` 路径。
+
+部署参数和离线交付边界见[部署指南](docs/DEPLOYMENT.md)。
+
+## 许可证
+
+本项目基于 [MIT License](LICENSE) 开源。

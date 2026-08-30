@@ -1,10 +1,18 @@
 export default {
+  "404": {
+    "title": "页面不存在",
+    "display": "hidden"
+  },
   "index": "快速入门",
-  "basics": "基础计算",
+  "basics": "基础使用",
   "scientific": "科学计算",
-  "historys": "历史记录",
-  "support": "支持",
-  "faq": "常见问题解答",
+  "equations": "方程求解",
+  "matrix": "矩阵与向量",
+  "graphing": "函数图像",
+  "exchange": "汇率换算",
+  "history": "历史记录",
+  "settings": "设置",
+  "troubleshooting": "常见问题与故障排查",
   "home": {
     "title": "主页",
     "type": "page",

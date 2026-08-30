@@ -1,0 +1,200 @@
+---
+title: 排列组合与数论
+description: 使用阶乘、排列、组合、最大公约数、最小公倍数和取模运算解决离散计算问题。
+---
+import ThemeImage from '../../components/ThemeImage'
+
+# 排列组合与数论
+
+科学计算键盘提供阶乘、排列、组合、最大公约数、最小公倍数和取模运算，适合计数问题与常见整数计算。
+
+## 排列与组合
+
+### 阶乘
+
+阶乘键在数字或表达式后插入 `!`。对于非负整数 $n$：
+
+$$
+n!=n\times(n-1)\times\cdots\times2\times1
+$$
+
+例如：
+
+$$
+5!=120
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/combinatorics-number-theory/factorial.png"
+  alt="科学计算模式输入五的阶乘并得到一百二十"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+负整数阶乘没有定义，会返回定义域错误。非常大的阶乘不会始终展开成完整整数，CalculatorX 可能改用科学记数法表示其数量级。
+
+### 组合数
+
+组合数表示从 $n$ 个不同对象中选出 $r$ 个、不考虑顺序的方法数：
+
+$$
+\binom{n}{r}=\frac{n!}{r!(n-r)!}
+$$
+
+> **提示：** 组合键的写法取决于“按键样式”设置。如果你看到的按键与本文示例不同，可以前往[“组合与排列显示样式”设置](/settings#组合与排列显示样式)，选择自己熟悉的形式。
+
+CalculatorX 支持以下 5 种组合写法：
+
+$$
+\binom{n}{r}\qquad \mathrm{C}_{n}^{r}\qquad {}^{n}\mathrm{C}_{r}\qquad {}_{n}\mathrm{C}_{r}\qquad \mathrm{C}(n,r)
+$$
+
+本文档统一采用第一种“国际学术规范” $\binom{n}{r}$ 写法演示。你可以按照自己的阅读习惯选择其他样式；不同写法只改变按键与公式的显示形式，不会改变参数含义和计算结果。
+
+计算从 $10$ 个对象中选出 $3$ 个：
+
+1. 点击 <kbd className="key-cap">$\binom{\square}{\square}$</kbd>。
+2. 在第一个输入位置填入 $10$。
+3. 使用方向键移动到第二个输入位置并填入 $3$。
+4. 点击 <kbd className="key-cap">=</kbd>。
+
+结果为：
+
+$$
+\binom{10}{3}=120
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/combinatorics-number-theory/combination.png"
+  alt="科学计算模式计算十选三的组合数"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+### 排列数
+
+排列数考虑选出对象的先后顺序：
+
+$$
+\mathrm{P}(n,r)=\frac{n!}{(n-r)!}
+$$
+
+> **提示：** 排列键也可以在[“组合与排列显示样式”设置](/settings#组合与排列显示样式)中单独选择写法。
+
+CalculatorX 支持以下 5 种排列写法：
+
+$$
+\mathrm{A}_{n}^{r}\qquad \mathrm{P}_{n}^{r}\qquad {}^{n}\mathrm{P}_{r}\qquad {}_{n}\mathrm{P}_{r}\qquad \mathrm{P}(n,r)
+$$
+
+本文档统一采用第五种“平铺函数风格” $\mathrm{P}(n,r)$ 写法演示。无论你在设置中选择哪一种样式，两个参数的含义、输入顺序和计算结果都保持不变。
+
+例如：
+
+$$
+\mathrm{P}(10,3)=720
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/combinatorics-number-theory/permutation.png"
+  alt="科学计算模式计算十选三的排列数"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+普通计数问题通常使用非负整数，并满足 $0\le r\le n$。如果参数不符合问题定义，应先检查两个输入位置是否填反。
+
+### 更改排列组合的样式
+
+在“设置 → 按键样式”中，可以分别调整组合和排列的显示形式。可选样式包括学术式、角标式、现代或早期计算器式，以及 `C(n, r)`、`P(n, r)` 平铺形式。
+
+<ThemeImage
+  src="/images/docs/scientific/combinatorics-number-theory/style.png"
+  alt="设置页面选择组合数和排列数的不同输入显示样式"
+  style={{ maxWidth: '480px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+样式只改变模板的写法，不改变参数含义和计算结果。
+
+## 最大公约数和最小公倍数
+
+### 最大公约数
+
+最大公约数 `GCD` 是求和键上方的 Shift 功能。依次点击 <kbd className="key-cap">⇧Shift</kbd> <kbd className="key-cap">$\sum$</kbd>，或直接长按 <kbd className="key-cap">$\sum$</kbd>，即可进行计算。
+
+例如：
+
+$$
+\gcd(84,30)=6
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/combinatorics-number-theory/gcd.png"
+  alt="科学计算模式计算八十四和三十的最大公约数"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+### 最小公倍数
+
+最小公倍数 `LCM` 是求积键上方的 Shift 功能。依次点击 <kbd className="key-cap">⇧Shift</kbd> <kbd className="key-cap">$\prod$</kbd>，或直接长按 <kbd className="key-cap">$\prod$</kbd>，即可进行计算。
+
+例如：
+
+$$
+\operatorname{lcm}(84,30)=420
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/combinatorics-number-theory/lcm.png"
+  alt="科学计算模式计算八十四和三十的最小公倍数"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+### 含未知数的多项式
+
+`GCD` 和 `LCM` 不只可以处理整数，还可以直接计算含未知数的多项式表达式。例如，下面两个多项式分别可以分解为 $(x-1)(x+1)$ 和 $(x-1)^2$：
+
+$$
+x^2-1\qquad x^2-2x+1
+$$
+
+把它们分别填入 `GCD` 的两个输入位置，可以直接找出公共因式：
+
+$$
+\gcd\left(x^2-1,\,x^2-2x+1\right)=x-1
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/combinatorics-number-theory/gcd-polynomials.png"
+  alt="科学计算模式计算含未知数多项式的最大公约式和最小公倍式"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+使用 `LCM` 计算同一组表达式，则可以得到同时包含两式全部因式的最小公倍式：
+
+$$
+\operatorname{lcm}\left(x^2-1,\,x^2-2x+1\right)=(x-1)^2(x+1)
+$$
+
+<ThemeImage
+  src="/images/docs/scientific/combinatorics-number-theory/lcm-polynomials.png"
+  alt="科学计算模式计算含未知数多项式的最大公约式和最小公倍式"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
+输入时，将两个完整表达式分别放入模板的两个位置，再点击 <kbd className="key-cap">=</kbd>。这样无需先手动分解因式，就能快速找出多项式的公因式或最小公倍式。
+
+无论计算整数还是多项式，都应完整填写两个输入位置。输入小数或不完整表达式时，可能无法得到有效结果。
+
+## 取模运算
+
+取模 `mod` 是绝对值键上方的 Shift 功能。它返回整数相除后的余数：
+
+$$
+17\bmod5=2
+$$
+
+输入时先写被除数，再插入 `mod`，最后输入除数。
+
+## 相关教程
+
+- [科学计算键盘与 Shift](/scientific/overview)
+- [微积分、求和与求积](/scientific/calculus)
+- [调整 CalculatorX 设置](/settings)
