@@ -105,6 +105,41 @@ export default {
 
 Worker 代码和路由不存放在本仓库。修改它们时，应核对这里记录的架构事实，但不要把 Cloudflare 密钥、令牌或账号信息写入仓库。
 
+## 阿里云 ECS
+
+仓库通过 [`.github/workflows/deploy-aliyun.yml`](../.github/workflows/deploy-aliyun.yml) 将同一份静态产物部署到阿里云 ECS。该流程在推送 `main` 或手动触发时运行：
+
+1. 使用 `.node-version` 指定的 Node.js 24；
+2. 执行 `npm ci` 和 `npm run build`；
+3. 检查 `out/docs/` 的首页、404、静态资源目录和 `/docs` 资源前缀；
+4. 校验 ECS 的 SSH host key，并使用仓库 Secret `ALIYUN_SSH_KEY` 连接 `agent` 用户；
+5. 把 `out/docs/` 中的内容上传到提交 SHA 对应的版本目录；
+6. 验证版本完整后，原子切换 `current` 符号链接；
+7. 从 ECS 本机携带 `Host: calcx.startyi.cn` 请求 Nginx，检查首页和深层页面。
+
+ECS 发布结构为：
+
+```text
+/var/www/calcx-docs
+        -> /var/www/calcx-docs-releases/current
+        -> /var/www/calcx-docs-releases/<commit-sha>/
+```
+
+版本目录直接包含 `index.html`、`404.html`、`_next/` 和 `images/`，不会再增加一层 `docs/`。Nginx 在现有 `calcx.startyi.cn` HTTP server block 中把 URL `/docs/` 映射到 `/var/www/calcx-docs/`，并负责：
+
+- 将 `/docs` 重定向到 `/docs/`；
+- 为无扩展名页面查找同名 `.html`；
+- 保留 `/docs/_next/`、图片和字体资源路径；
+- 对不存在的文档页面返回 `404.html`，同时保留 HTTP 404 状态。
+
+Nginx、DNS、HTTPS 证书和安全组均为服务器外部配置，不由 workflow 修改。DNS 和 HTTPS 就绪前，可在 ECS 本机通过以下方式验证当前 HTTP server block：
+
+```bash
+curl -H 'Host: calcx.startyi.cn' http://127.0.0.1/docs/
+```
+
+旧版本不会在新版本上传时被覆盖，可通过重新指向 `current` 完成快速回退。历史版本需由维护者在确认不再需要后单独清理。
+
 ## 请求流程
 
 ```text
@@ -129,7 +164,7 @@ Cloudflare Pages 的 out/docs/...
 
 ## 自动部署与预览
 
-- 推送到 `main` 会触发 Production 构建并更新 Pages 生产部署；
+- 推送到 `main` 会触发 Cloudflare Pages Production 构建，并运行 GitHub Actions 更新 ECS 静态版本；
 - 非生产分支可以生成独立的 Preview 部署；
 - 较大的内容、样式、依赖或构建变更应先通过 Preview URL 验证；
 - Preview URL 只用于审查，不写入 README 或用户手册作为长期链接。
@@ -155,6 +190,14 @@ entry/src/main/resources/rawfile/docs
 5. 页面导航、搜索、亮色/暗色图片和数学公式正常；
 6. 不存在把 Preview URL、构建日志或私密配置写入公开页面的情况。
 
+ECS 发布还应检查：
+
+1. `/docs` 返回到 `/docs/` 的永久重定向；
+2. `/docs/`、`/docs/about` 和至少一个深层页面返回 200；
+3. `/docs/_next/` 下的 JavaScript/CSS 和图片资源返回正确 MIME；
+4. 不存在的文档页面显示自定义页面并保持 HTTP 404；
+5. 主站 `/` 和主站原有 404 行为不受影响。
+
 ## 故障定位
 
 | 现象 | 优先检查 |
@@ -165,16 +208,27 @@ entry/src/main/resources/rawfile/docs
 | HTML 正常但 CSS/JS 404 | `/docs/_next/` 是否存在，basePath 是否仍为 `/docs` |
 | 构建后图片 404 | WebP 是否生成、产物引用是否已替换、源图片路径是否正确 |
 | 生产异常但 Preview 正常 | `main` 对应部署、生产环境变量和 Worker 目标主机 |
+| Actions 无法连接 ECS | `ALIYUN_SSH_KEY`、SSH host key 指纹和 `agent` 授权 |
+| ECS `/docs` 404 | `current` 指向、版本目录关键文件和 Nginx `/docs` location |
+| ECS HTML 正常但资源 404 | 是否上传了 `out/docs/` 的内容、`_next/` 是否位于版本目录根部 |
 
 ## 回退
 
-如果生产部署出现问题：
+如果 Cloudflare 生产部署出现问题：
 
 1. 保留失败部署的日志和提交标识；
 2. 在 Git 中恢复到最近一次确认可用的源码状态，或回退引入问题的提交；
 3. 推送 `main` 触发新的生产构建；
 4. 按“发布验证”重新检查 Pages 原站和官网代理地址；
 5. 根因修复后补充相关工程文档或维护记录。
+
+如果 ECS 发布出现问题：
+
+1. 找到 `/var/www/calcx-docs-releases/` 中最近一次确认可用的提交目录；
+2. 在该目录内创建新的临时符号链接；
+3. 使用 `mv -T` 原子替换 `current`，不要直接修改或清空版本目录；
+4. 重新检查 `/docs/`、深层页面、静态资源和 404；
+5. 保留失败版本用于排查，确认不再需要后再单独删除。
 
 ## 相关文档
 

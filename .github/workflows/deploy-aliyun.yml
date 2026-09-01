@@ -1,0 +1,125 @@
+name: Deploy to Aliyun ECS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-aliyun-calcx-docs
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Validate artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          test -f out/docs/index.html
+          test -f out/docs/404.html
+          test -d out/docs/_next
+          test -d out/docs/images
+          test ! -d out_temp
+
+          html_count="$(find out/docs -type f -name '*.html' | wc -l)"
+          test "$html_count" -gt 0
+
+          if grep -R -n -E '(src|href)="/(_next|images|icon)/' out/docs --include='*.html'; then
+            echo "Found asset references that are missing the /docs base path."
+            exit 1
+          fi
+
+      - name: Configure SSH
+        env:
+          ALIYUN_SSH_KEY: ${{ secrets.ALIYUN_SSH_KEY }}
+        run: |
+          install -d -m 700 "$HOME/.ssh"
+
+          printf '%s\n' "$ALIYUN_SSH_KEY" > "$HOME/.ssh/aliyun_deploy_key"
+          chmod 600 "$HOME/.ssh/aliyun_deploy_key"
+
+          ssh-keyscan -t ed25519 120.77.79.138 > /tmp/aliyun_host_key 2>/dev/null
+
+          actual_fingerprint="$(ssh-keygen -lf /tmp/aliyun_host_key -E sha256 | awk '{print $2}')"
+          expected_fingerprint="SHA256:EbT3WQEtESMow8rGZu+n+DcNEVMDVhIweM0wNK5yItQ"
+
+          if [ "$actual_fingerprint" != "$expected_fingerprint" ]; then
+            echo "Aliyun SSH host key fingerprint mismatch."
+            exit 1
+          fi
+
+          cat /tmp/aliyun_host_key >> "$HOME/.ssh/known_hosts"
+          chmod 600 "$HOME/.ssh/known_hosts"
+
+      - name: Deploy to Aliyun ECS
+        env:
+          ALIYUN_HOST: 120.77.79.138
+          ALIYUN_USER: agent
+          RELEASE_ROOT: /var/www/calcx-docs-releases
+        run: |
+          set -euo pipefail
+
+          SSH=(ssh -i "$HOME/.ssh/aliyun_deploy_key" -o IdentitiesOnly=yes "$ALIYUN_USER@$ALIYUN_HOST")
+          RELEASE_ID="$GITHUB_SHA"
+          RELEASE="$RELEASE_ROOT/$RELEASE_ID"
+          STAGING="$RELEASE_ROOT/.upload-$RELEASE_ID-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          NEXT_LINK=".current-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+
+          if ! "${SSH[@]}" "test -d '$RELEASE'"; then
+            "${SSH[@]}" "set -eu; test ! -e '$STAGING'; mkdir -m 0755 '$STAGING'"
+
+            cleanup_staging() {
+              "${SSH[@]}" "rm -rf -- '$STAGING'" || true
+            }
+            trap cleanup_staging ERR
+
+            tar -C out/docs -czf - . | \
+              "${SSH[@]}" "tar -xzf - -C '$STAGING'"
+
+            "${SSH[@]}" "set -eu; \
+              test -f '$STAGING/index.html'; \
+              test -f '$STAGING/404.html'; \
+              test -d '$STAGING/_next'; \
+              test -d '$STAGING/images'; \
+              mv '$STAGING' '$RELEASE'"
+
+            trap - ERR
+          fi
+
+          "${SSH[@]}" "set -eu; \
+            test -f '$RELEASE/index.html'; \
+            test -f '$RELEASE/404.html'; \
+            test -d '$RELEASE/_next'; \
+            cd '$RELEASE_ROOT'; \
+            test ! -e '$NEXT_LINK'; \
+            ln -s '$RELEASE_ID' '$NEXT_LINK'; \
+            mv -Tf '$NEXT_LINK' current; \
+            test -f /var/www/calcx-docs/index.html"
+
+          "${SSH[@]}" "set -eu; \
+            curl -fsS -H 'Host: calcx.startyi.cn' http://127.0.0.1/docs/ >/dev/null; \
+            curl -fsS -H 'Host: calcx.startyi.cn' http://127.0.0.1/docs/about >/dev/null"

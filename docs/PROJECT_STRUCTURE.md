@@ -36,6 +36,9 @@ CalcX-docs/
 │   ├── CONTENT_GUIDE.md
 │   ├── DEPLOYMENT.md
 │   └── MAINTENANCE.md
+├── .github/
+│   └── workflows/
+│       └── deploy-aliyun.yml    # 构建并原子部署到阿里云 ECS
 ├── README.md                    # 项目入口
 ├── AGENTS.md                    # AI 协作规则
 ├── CONTRIBUTING.md              # 贡献与变更流程
@@ -78,6 +81,7 @@ CalcX-docs/
 | `next.config.mjs` | Nextra 主题、LaTeX、`/docs` basePath、静态导出 |
 | `theme.config.tsx` | 站点标题、搜索、主题、页脚、SEO 元信息 |
 | `postbuild.mjs` | 把静态产物整理成 `out/docs/` 并转换图片 |
+| `.github/workflows/deploy-aliyun.yml` | 使用 Node.js 24 构建并把 `out/docs/` 原子部署到 ECS |
 | `.nvmrc`、`.node-version` | 将本地、CI 和云端构建统一到 Node.js 24 |
 | `styles/global.css` | 自定义样式和明暗主题显示规则 |
 | `tsconfig.json` | 编辑器和 TypeScript/JSX 分析配置 |
