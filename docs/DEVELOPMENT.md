@@ -4,12 +4,12 @@
 
 ## 环境要求
 
-- Node.js 18 或更高版本；
+- Node.js 24 LTS；
 - npm；
 - Git；
 - 可访问 npm 公共依赖源的网络环境。
 
-本项目统一使用 npm 和 `package-lock.json`。不要使用 pnpm、Yarn 或其他工具重新生成依赖锁定文件。
+本项目通过根目录的 `.nvmrc`、`.node-version` 和 `package.json` 统一约束 Node.js 24，并统一使用 npm 和 `package-lock.json`。不要使用其他 Node.js 大版本，也不要使用 pnpm、Yarn 或其他工具重新生成依赖锁定文件。
 
 查看本地版本：
 

@@ -57,10 +57,10 @@ out/docs/images/
 | 构建监视路径 | `*` |
 | 构建系统 | 版本 3 |
 | 构建缓存 | 当前禁用 |
-| 生产环境变量 | `NODE_VERSION=18` |
+| 生产环境变量（要求） | `NODE_VERSION=24`，需在外部控制台确认 |
 | Pages 域名 | `calcx-docs.pages.dev` |
 
-项目的本地最低要求是 Node.js 18，生产 Pages 当前明确固定为 Node.js 18。升级生产 Node.js 版本前，应先在分支部署中完成构建和页面验证。
+仓库通过 `.nvmrc`、`.node-version` 和 `package.json` 统一使用 Node.js 24 LTS。Cloudflare Pages 是仓库外配置，更新仓库后仍需在控制台确认 Production 和 Preview 都使用 `NODE_VERSION=24`；如果外部配置仍覆盖为 Node.js 18，Sharp 图片处理会因运行时版本过低而失败。
 
 Pages 输出目录配置为 `out`，但其中真正的网站位于 `out/docs/`。因此 Pages 原站的有效入口是：
 

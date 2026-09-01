@@ -18,6 +18,9 @@
     "url": "https://github.com/shuding/nextra-docs-template/issues"
   },
   "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "next": "^14.2.0",
     "next-image-export-optimizer": "^1.20.1",
@@ -28,7 +31,7 @@
     "sharp": "^0.35.2"
   },
   "devDependencies": {
-    "@types/node": "18.11.10",
+    "@types/node": "^24.0.0",
     "typescript": "^6.0.3"
   }
 }

@@ -45,7 +45,7 @@ CalculatorX 官方中文帮助中心，为 HarmonyOS 平台上的科学计算器
 
 ## 快速开始
 
-需要 Node.js 18 或更高版本。项目统一使用 npm。
+需要 Node.js 24 LTS。项目通过 `.nvmrc`、`.node-version` 和 `package.json` 统一约束 Node.js 24，并统一使用 npm。
 
 ```bash
 git clone https://github.com/StarHeartY/CalcX-docs.git

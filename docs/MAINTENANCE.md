@@ -39,7 +39,7 @@ CalcX-docs 当前由项目维护者主导，并使用 AI 辅助调查、编写�
 
 不要同时引入第二个包管理器或新的锁定文件。Node.js、Next.js、Nextra、React、TypeScript 和 Sharp 的升级都视为结构性变更。
 
-Cloudflare 当前固定使用 Node.js 18。计划升级时先在本地和 Preview 环境验证，再调整生产环境变量，并同步更新 README、开发指南和部署指南。
+仓库统一使用 Node.js 24 LTS。调整 Node.js 大版本时，应同步修改 `.nvmrc`、`.node-version`、`package.json`、`package-lock.json`、README、开发指南和部署指南，再在本地及 Preview 环境验证，并确认 Cloudflare Production 与 Preview 没有使用不同的外部覆盖值。
 
 ## 内容维护
 
