@@ -1,4 +1,5 @@
 import { useConfig } from 'nextra-theme-docs'
+import { useRouter } from 'next/router'
 
 export default {
   logo: <strong>CalculatorX 帮助中心</strong>,
@@ -75,6 +76,11 @@ export default {
   // 用函数形式以获取当前页面的动态标题
   head: function useHead() {
     const { frontMatter, title: pageTitle } = useConfig()
+    const { pathname, basePath } = useRouter()
+    // 当前文档使用静态路由，pathname 不包含查询参数和片段。
+    const canonicalUrl = pathname === '/404' || pathname === '/_error'
+      ? null
+      : `https://calcx.startyi.com${basePath}${pathname === '/' ? '/' : pathname.replace(/\/+$/, '')}`
     const title = pageTitle
       ? `${pageTitle} - CalculatorX 帮助中心`
       : 'CalculatorX 帮助中心'
@@ -82,6 +88,7 @@ export default {
     return (
       <>
         <title>{title}</title>
+        {canonicalUrl && <link key="canonical" rel="canonical" href={canonicalUrl} />}
         <meta property="og:title" content={title} />
         {frontMatter.description && (
           <>

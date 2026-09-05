@@ -87,7 +87,7 @@ async function main() {
     // 销毁外部的 out_temp 空壳
     fs.rmSync(tempDir, { recursive: true, force: true });
 
-    console.log('🔗 [SEO 1/2] 正在为每个页面注入指向 calcx.startyi.com 的 canonical...');
+    console.log('🔗 [SEO 1/2] 正在校验页面导出的 canonical...');
     const canonicalOrigin = 'https://calcx.startyi.com';
     const canonicalBasePath = '/docs';
 
@@ -103,37 +103,25 @@ async function main() {
     const htmlFiles = getAllFiles(finalDocsDir).filter((f) => f.endsWith('.html'));
     const canonicalUrls = [];
 
-    for (const htmlPath of htmlFiles) {
-      const rel = path.relative(finalDocsDir, htmlPath).split(path.sep).join('/');
-      // 404 是错误页，不参与收录，不加 canonical
-      if (rel === '404.html') {
-        continue;
-      }
-
-      let content = fs.readFileSync(htmlPath, 'utf8');
-      if (!/<head[\s>]/i.test(content)) {
-        throw new Error(`页面缺少 <head>，无法注入 canonical: ${rel}`);
-      }
-
-      // 幂等：先清掉旧标签再插入，重复执行不会叠加
-      content = content.replace(/<link\s+rel="canonical"[^>]*\/?>\s*/gi, '');
-      const url = canonicalUrlFor(htmlPath);
-      content = content.replace(/<head[^>]*>/i, (headTag) => `${headTag}\n    <link rel="canonical" href="${url}"/>`);
-      fs.writeFileSync(htmlPath, content, 'utf8');
-      canonicalUrls.push(url);
-    }
-
-    // 自检：逐个文件回读，实际解析出的 canonical 必须与预期完全一致，数量必须恰好为一
+    // canonical 由页面头部管理；后处理只校验，避免破坏客户端导航时的同步。
     for (const htmlPath of htmlFiles) {
       const rel = path.relative(finalDocsDir, htmlPath).split(path.sep).join('/');
       const content = fs.readFileSync(htmlPath, 'utf8');
-      const found = [...content.matchAll(/<link\s+rel="canonical"\s+href="([^"]+)"\s*\/?>/gi)].map((m) => m[1]);
+      const head = content.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1];
+      if (head === undefined) {
+        throw new Error(`页面缺少 <head>: ${rel}`);
+      }
+      const found = [...head.matchAll(/<link\b[^>]*>/gi)]
+        .map((m) => m[0])
+        .filter((tag) => /\brel=["']canonical["']/i.test(tag))
+        .map((tag) => tag.match(/\bhref=["']([^"']*)["']/i)?.[1]);
       const expected = rel === '404.html' ? [] : [canonicalUrlFor(htmlPath)];
       if (found.length !== expected.length || found.some((u, i) => u !== expected[i])) {
         throw new Error(`canonical 自检失败 ${rel}: 期望 ${JSON.stringify(expected)}，实际 ${JSON.stringify(found)}`);
       }
+      canonicalUrls.push(...found);
     }
-    console.log(`   ✅ ${canonicalUrls.length} 个内容页各含 1 个 canonical，404.html 不含，全部与线上已验证 URL 一致`);
+    console.log(`   ✅ ${canonicalUrls.length} 个内容页各含 1 个 canonical，404.html 不含，全部与预期规范 URL 一致`);
 
     console.log('🗺️ [SEO 2/2] 正在生成 sitemap.xml...');
     const lastmod = new Date().toISOString().slice(0, 10);
