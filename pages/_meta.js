@@ -16,7 +16,7 @@ export default {
   "home": {
     "title": "主页",
     "type": "page",
-    "href": "https://calcx.startyi.com",
+    "href": "/",
     "newWindow": false
   },
   "about": {
