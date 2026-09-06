@@ -36,18 +36,6 @@ import BackspaceKey from '../../components/BackspaceKey'
 4. 列表中的其他货币会同步显示换算结果。
 5. 点击 <kbd className="key-cap">确定</kbd> 或键盘收起键，关闭数字键盘。
 
-<ThemeImage
-  src="/images/docs/exchange/overview/amount-input.png"
-  alt="汇率模式以美元为当前输入货币并输入一百的金额"
-  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
-
-<ThemeImage
-  src="/images/docs/exchange/overview/results.png"
-  alt="输入美元金额后人民币、港币、欧元等卡片同步显示换算结果"
-  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
-
 换算结果最多保留四位小数，并自动去掉末尾多余的零。汇率会随更新时间变化，因此教程不提供固定的换算数值。
 
 ### 使用金额键盘
@@ -78,17 +66,33 @@ import BackspaceKey from '../../components/BackspaceKey'
 
 点击任意其他货币卡片的名称或金额区域，该卡片会成为新的输入货币。CalculatorX 会先把它当前显示的换算值作为新金额，再重新计算其他卡片，因此切换过程中代表的价值不会突然改变。
 
+点击卡片左侧的货币代码和下拉箭头是更换该卡片的货币类型，不是切换输入状态。两个点击区域的作用不要混淆。
+
+## 顶部更新信息
+
+页面顶部会显示“上次更新”时间，以及手动更新按钮，进入页面时会自动更新一次，无需手动更新。
+
+若更新失败，将会以最后一次更新的缓存记录作为计算依据。
+
 <ThemeImage
-  src="/images/docs/exchange/overview/switch-base.png"
-  alt="从美元卡片切换到人民币卡片作为新的金额输入货币"
+  src="/images/docs/exchange/overview/updating.png"
+  alt="正在更新提示"
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-点击卡片左侧的货币代码和下拉箭头是更换该卡片的货币类型，不是切换输入状态。两个点击区域的作用不要混淆。
+<ThemeImage
+  src="/images/docs/exchange/overview/update-successful.png"
+  alt="更新成功提示"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
 
-## 结果仅供参考
+<ThemeImage
+  src="/images/docs/exchange/overview/update-failed.png"
+  alt="更新失败提示"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
 
-页面顶部会显示“上次更新”时间，并注明汇率数据仅供参考。银行、支付平台、现金兑换点或交易市场可能加入点差、手续费和更新时间差异，实际成交金额应以服务提供方报价为准。
+如图为更新的多种状态提示
 
 ## 相关教程
 
