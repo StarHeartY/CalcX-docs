@@ -1,7 +1,8 @@
 ---
 title: 求解单个方程
-description: 使用 CalculatorX 输入等式、选择未知数并求出一元方程的一个或多个解。
+description: 使用 CalculatorX 输入等式、选择未知数并求出一元方程的实数解或复数解。
 ---
+import { Cards } from 'nextra/components'
 import ThemeImage from '../../components/ThemeImage'
 import BackspaceKey from '../../components/BackspaceKey'
 
@@ -53,6 +54,12 @@ $$
 
 数字与变量相邻时表示乘法，因此输入 $2$ 后直接输入 $x$ 即可得到 $2x$，不必额外插入乘号。
 
+<ThemeImage
+  src="/images/docs/equations/overview/example.png"
+  alt="计算2倍x加3等于11的解"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
+
 ## 理解和复用结果
 
 ### 区分等号与 EXE
@@ -61,12 +68,6 @@ $$
 | --- | --- |
 | `=` | 把等号写入当前公式，分隔方程左右两边 |
 | `EXE` | 把已经写好的方程交给 CalculatorX 求解 |
-
-<ThemeImage
-  src="/images/docs/equations/overview/equal-and-exe.png"
-  alt="方程键盘底部并列显示用于输入等式的等号键和执行求解的 EXE 键"
-  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
 
 只点击 <kbd className="key-cap">=</kbd> 不会开始计算；只输入表达式而没有等式，也无法明确方程的左右两边。通常应先完成“左边 = 右边”，最后再点击 <kbd className="key-cap">EXE</kbd>。
 
@@ -86,7 +87,29 @@ $$
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-方程求解使用复数求解能力，因此某些在实数范围内没有解的方程仍可能返回复数结果。
+### 求解复数根
+
+方程求解默认会在复数范围内查找解。即使一个方程在实数范围内没有解，CalculatorX 仍可能求出它的复数根，不需要另外开启设置。
+
+例如：
+
+$$
+x^2+1=0
+$$
+
+输入方程并点击 <kbd className="key-cap">EXE</kbd> 后，结果应包含：
+
+$$
+x=i,\qquad x=-i
+$$
+
+其中 $i$ 是虚数单位，满足 $i^2=-1$。这两个结果共同构成该方程的完整解集；如果只在实数范围内考虑，这个方程则没有解。
+
+<ThemeImage
+  src="/images/docs/equations/overview/complex-roots.png"
+  alt="方程求解模式显示 x 平方加一等于零的两个复数根"
+  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+/>
 
 ### 编辑与复用方程
 
@@ -100,8 +123,10 @@ $$
 
 ## 相关教程
 
-- [求解方程组](/equations/systems)
-- [输入与编辑公式](/basics/input)
-- [幂、根式、指数与对数](/scientific/powers-logarithms)
-- [查看和复用历史记录](/history)
-- [常见问题与故障排查](/troubleshooting)
+<Cards>
+  <Cards.Card title="求解方程组" href="/equations/systems" />
+  <Cards.Card title="输入与编辑公式" href="/basics/input" />
+  <Cards.Card title="幂、根式、指数与对数" href="/scientific/powers-logarithms" />
+  <Cards.Card title="查看和复用历史记录" href="/history" />
+  <Cards.Card title="常见问题与故障排查" href="/troubleshooting" />
+</Cards>

@@ -17,7 +17,7 @@ export default {
     "title": "主页",
     "type": "page",
     "href": "/",
-    "newWindow": false
+    "newWindow": true
   },
   "about": {
     "title": "关于",

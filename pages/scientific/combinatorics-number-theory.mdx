@@ -2,6 +2,7 @@
 title: 排列组合与数论
 description: 使用阶乘、排列、组合、最大公约数、最小公倍数和取模运算解决离散计算问题。
 ---
+import { Cards } from 'nextra/components'
 import ThemeImage from '../../components/ThemeImage'
 
 # 排列组合与数论
@@ -106,7 +107,7 @@ $$
 在“设置 → 按键样式”中，可以分别调整组合和排列的显示形式。可选样式包括学术式、角标式、现代或早期计算器式，以及 `C(n, r)`、`P(n, r)` 平铺形式。
 
 <ThemeImage
-  src="/images/docs/scientific/combinatorics-number-theory/style.png"
+  src="/images/docs/settings/combinatorics-style.png"
   alt="设置页面选择组合数和排列数的不同输入显示样式"
   style={{ maxWidth: '480px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
@@ -195,6 +196,8 @@ $$
 
 ## 相关教程
 
-- [科学计算键盘与 Shift](/scientific/overview)
-- [微积分、求和与求积](/scientific/calculus)
-- [调整 CalculatorX 设置](/settings)
+<Cards>
+  <Cards.Card title="科学计算键盘与 Shift" href="/scientific/overview" />
+  <Cards.Card title="微积分、求和与求积" href="/scientific/calculus" />
+  <Cards.Card title="调整 CalculatorX 设置" href="/settings" />
+</Cards>

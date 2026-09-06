@@ -2,6 +2,7 @@
 title: 调整 CalculatorX 设置
 description: 设置角度单位、答案格式、小数精度、按键样式、启动页面、主题和触感反馈。
 ---
+import { Cards } from 'nextra/components'
 import ThemeImage from '../components/ThemeImage'
 
 # 调整 CalculatorX 设置
@@ -52,12 +53,6 @@ $$
 - **自动模式**：优先保留精确的整数、分数、根式或符号结果；
 - **小数模式**：把结果转换为近似小数。
 
-<ThemeImage
-  src="/images/docs/settings/answer-output.png"
-  alt="设置页面中展开答案输出并选择自动模式或小数模式"
-  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
-
 选择“小数模式”后，页面会显示“小数精度”滑块。它支持 $0$ 至 $16$，最右端显示为“自动”。应用内提示建议在计算大数时将精度调整到 $12$ 位以下。
 
 答案输出是全局默认值。如果当前键盘有 <kbd className="key-cap">S⇄D</kbd>，还可以只对最近一次结果进行临时格式转换，而不改变这里的设置。
@@ -73,7 +68,7 @@ $$
 <ThemeImage
   src="/images/docs/settings/combinatorics-style.png"
   alt="组合与排列显示样式选择面板中的多种公式写法"
-  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+  style={{ maxWidth: '480px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 这些选项只改变输入模板和显示习惯，不改变排列组合的数学含义。
@@ -98,12 +93,6 @@ $$
 - **系统**：跟随 HarmonyOS 的系统颜色模式。
 
 切换后应用界面会立即更新。函数图像的网格、坐标轴和文字，以及历史记录中的公式图片也会适配当前颜色模式。
-
-<ThemeImage
-  src="/images/docs/settings/color-mode.png"
-  alt="CalculatorX 浅色、深色和跟随系统的颜色模式选项"
-  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
 
 ### 触感反馈
 
@@ -131,7 +120,9 @@ $$
 
 ## 相关教程
 
-- [查看与转换结果](/basics/results)
-- [认识界面与切换模式](/basics/interface)
-- [查看和复用历史记录](/history)
-- [常见问题与故障排查](/troubleshooting)
+<Cards>
+  <Cards.Card title="查看与转换结果" href="/basics/results" />
+  <Cards.Card title="认识界面与切换模式" href="/basics/interface" />
+  <Cards.Card title="查看和复用历史记录" href="/history" />
+  <Cards.Card title="常见问题与故障排查" href="/troubleshooting" />
+</Cards>

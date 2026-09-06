@@ -2,6 +2,7 @@
 title: 绘制第一条函数图像
 description: 进入 CalculatorX 函数图像模式，输入普通函数并在坐标系中查看曲线。
 ---
+import { Cards } from 'nextra/components'
 import ThemeImage from '../../components/ThemeImage'
 
 # 绘制第一条函数图像
@@ -46,17 +47,18 @@ import ThemeImage from '../../components/ThemeImage'
 4. 向下关闭编辑面板，返回坐标系。
 5. 画布中应出现一条抛物线，左上角图例显示 $f(x)=x^2$ 及对应颜色。
 
-<ThemeImage
-  src="/images/docs/graphing/overview/first-function-input.png"
-  alt="函数编辑键盘中为普通函数输入 x 的平方"
-  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
-
-<ThemeImage
-  src="/images/docs/graphing/overview/first-function-result.png"
-  alt="函数图像画布绘制 x 平方抛物线并在左上角显示图例"
-  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
+<div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start', marginTop: '16px' }}>
+  <ThemeImage
+    src="/images/docs/graphing/overview/first-function-input.png"
+    alt="函数编辑键盘中为普通函数输入 x 的平方"
+    style={{ width: 'calc(50% - 4px)', maxWidth: '240px', height: 'auto', borderRadius: '12px' }}
+  />
+  <ThemeImage
+    src="/images/docs/graphing/overview/first-function-result.png"
+    alt="函数图像画布绘制 x 平方抛物线并在左上角显示图例"
+    style={{ width: 'calc(50% - 4px)', maxWidth: '240px', height: 'auto', borderRadius: '12px' }}
+  />
+</div>
 
 点击 <kbd className="key-cap">确定</kbd> 或键盘收起键都会保存当前输入并折叠公式键盘。键盘仍展开时直接返回，CalculatorX 会先保存表达式并收起键盘；再次返回才会关闭整个编辑面板。
 
@@ -75,7 +77,7 @@ import ThemeImage from '../../components/ThemeImage'
 键盘还包含括号、方向键、分数、根式、幂、对数、三角函数、绝对值、数字、$pi$ 和 $e$。点击 <kbd className="key-cap">⇧Shift</kbd>，可以使用按键上方以橙色标出的立方根、绝对值、立方、反三角函数和常用对数等功能。
 
 <ThemeImage
-  src="/images/docs/graphing/overview/keyboard.png"
+  src="/images/docs/graphing/overview/first-function-input.png"
   alt="普通函数编辑时显示 x 变量和数学函数的专用键盘"
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
@@ -88,8 +90,10 @@ import ThemeImage from '../../components/ThemeImage'
 
 ## 相关教程
 
-- [选择函数类型](/graphing/function-types)
-- [管理多个函数](/graphing/manage-functions)
-- [观察与调整图像](/graphing/view-graph)
-- [输入与编辑公式](/basics/input)
-- [常见问题与故障排查](/troubleshooting)
+<Cards>
+  <Cards.Card title="选择函数类型" href="/graphing/function-types" />
+  <Cards.Card title="管理多个函数" href="/graphing/manage-functions" />
+  <Cards.Card title="观察与调整图像" href="/graphing/view-graph" />
+  <Cards.Card title="输入与编辑公式" href="/basics/input" />
+  <Cards.Card title="常见问题与故障排查" href="/troubleshooting" />
+</Cards>
