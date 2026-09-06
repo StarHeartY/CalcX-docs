@@ -182,3 +182,15 @@
 .dark .img-dark-mode {
   display: block !important;
 }
+
+
+/* --- 7. 页脚底栏高度压缩 --- */
+
+/* 覆盖 Nextra 页脚内容容器默认的 _py-4（上下各 1rem）内边距。
+   用 div[class] 而非 div，是为了让选择器优先级压过 Nextra 的类选择器 */
+footer > div[class] {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.6rem;
+  padding-right: 4rem;
+}

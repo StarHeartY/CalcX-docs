@@ -7,16 +7,26 @@ export default {
     link: 'https://github.com/StarHeartY/CalcX-docs'
   },
 
-  // 版权声明
+  // 页脚：左侧版权与备案信息，右侧法律文档链接
   footer: {
     content: (
-      <span>
-        版权所有 © {(() => {
-          const start = 2026
-          const now = new Date().getFullYear()
-          return start === now ? now : `${start}–${now}`
-        })()} <a href="/">StartYi</a>
-      </span>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', width: '100%', fontSize: '14px', lineHeight: 2.5, opacity: 0.8 }}>
+        <div>
+          {/* TODO: ICP 备案审核通过后，在此添加备案号一行（须链接至 https://beian.miit.gov.cn/），
+              并按 hostname 判断仅在 calcx.startyi.cn 显示 */}
+          <div>
+            版权所有 © {(() => {
+              const start = 2026
+              const now = new Date().getFullYear()
+              return start === now ? now : `${start}–${now}`
+            })()} <a href="/">StartYi</a>
+          </div>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '48px' }}>
+          <a href="/agreement/">用户协议</a>
+          <a href="/privacy/">隐私政策</a>
+        </div>
+      </div>
     )
   },
 
