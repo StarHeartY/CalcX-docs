@@ -35,24 +35,18 @@ import ThemeImage from '../../components/ThemeImage'
 4. 成功后页面短暂显示“更新成功”，并刷新顶部时间。
 
 <ThemeImage
-  src="/images/docs/exchange/rates-and-offline/update-status.png"
+  src="/images/docs/exchange/rates-and-offline/updating.png"
   alt="汇率页面点击更新后按钮显示更新中状态"
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
 <ThemeImage
-  src="/images/docs/exchange/rates-and-offline/update-success.png"
+  src="/images/docs/exchange/rates-and-offline/update-successful.png"
   alt="汇率更新成功后显示绿色成功提示和新的更新时间"
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
 
-进入汇率模式时也会自动执行同样的检查，通常不需要每次手动点击更新。
-
-### 同一小时内的缓存
-
-CalculatorX 按设备本地时间的自然小时复用汇率缓存。如果最近一次成功更新仍处于当前小时，并且设备确认有网络，点击更新会直接复用缓存，不重复下载完整汇率表。
-
-因此，同一小时内看到“更新成功”表示当前缓存已通过更新检查，不一定代表刚刚重新从服务器下载了数据。跨过整点后，下一次进入页面或手动更新会尝试获取新数据。
+> 进入汇率模式时会自动更新，通常不需要每次手动点击更新。
 
 ## 离线与异常处理
 
@@ -66,7 +60,7 @@ CalculatorX 按设备本地时间的自然小时复用汇率缓存。如果最�
 - 货币列表、排序和输入金额仍可正常修改并保存。
 
 <ThemeImage
-  src="/images/docs/exchange/rates-and-offline/offline-cache.png"
+  src="/images/docs/exchange/rates-and-offline/last-update.png"
   alt="设备离线时汇率页面保留已有换算结果并显示旧的更新时间"
   style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
 />
