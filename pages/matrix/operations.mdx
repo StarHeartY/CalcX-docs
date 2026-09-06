@@ -44,12 +44,6 @@ $$
 - 输入矩阵后点击 <kbd className="key-cap">Mᵀ</kbd>，计算转置；
 - 输入矩阵后先点击 <kbd className="key-cap">⇧Shift</kbd>，再点击 <kbd className="key-cap">Mᵀ</kbd>，计算共轭转置 $M^{\mathrm H}$。
 
-<ThemeImage
-  src="/images/docs/matrix/operations/inverse-and-transpose.png"
-  alt="矩阵键盘使用 M 负一次方、M 转置和 Shift 共轭转置按键"
-  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
-
 逆矩阵只适用于可逆方阵。转置可以用于任意矩阵；共轭转置会在转置的同时对复数元素取共轭，因此在只包含实数时与普通转置结果相同。
 
 ### 计算矩阵乘方
@@ -72,19 +66,13 @@ $$
 
 | 功能 | 输入方法 | 适用对象 |
 | --- | --- | --- |
-| 行列式 `det` | Shift + 分数键 | 方阵 |
-| 行最简形 `rref` | Shift + 左括号键 | 任意矩阵 |
-| 特征值 `eig` | Shift + 右括号键 | 方阵 |
-| 秩 `rank` | Shift + 加号键 | 任意矩阵 |
-| 迹 `tr` | Shift + 减号键 | 方阵 |
+| 行列式 `det` | <kbd className="key-cap">⇧Shift</kbd> + 分数键 | 方阵 |
+| 行最简形 `rref` | <kbd className="key-cap">⇧Shift</kbd> + <kbd className="key-cap">(</kbd> | 任意矩阵 |
+| 特征值 `eig` | <kbd className="key-cap">⇧Shift</kbd> + <kbd className="key-cap">)</kbd> | 方阵 |
+| 秩 `rank` | <kbd className="key-cap">⇧Shift</kbd> + <kbd className="key-cap">+</kbd>| 任意矩阵 |
+| 迹 `tr` | <kbd className="key-cap">⇧Shift</kbd> + <kbd className="key-cap">−</kbd>| 方阵 |
 
 这些按键会先插入一个带空白框的函数模板。光标位于空白框时，点击矩阵尺寸按钮创建矩阵并填写元素，然后点击 <kbd className="key-cap">=</kbd>。
-
-<ThemeImage
-  src="/images/docs/matrix/operations/advanced-operations.png"
-  alt="矩阵键盘启用 Shift 后显示 det、rref、eig、rank 和 tr 功能"
-  style={{ maxWidth: '240px', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-/>
 
 ### 运算含义
 
