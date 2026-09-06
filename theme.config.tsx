@@ -11,12 +11,11 @@ export default {
   footer: {
     content: (
       <span>
-        © {(() => {
+        版权所有 © {(() => {
           const start = 2026
           const now = new Date().getFullYear()
           return start === now ? now : `${start}–${now}`
-        })()} <a href="https://calcx.startyi.com" target="_blank" rel="noopener noreferrer">CalculatorX</a>。
-        保留所有权利。
+        })()} <a href="/">StartYi</a>
       </span>
     )
   },
