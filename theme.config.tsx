@@ -7,18 +7,6 @@ export default {
     link: 'https://github.com/StarHeartY/CalcX-docs'
   },
 
-  // 顶部导航：原生 <a> 链接到主站首页，避免被 Next 的 basePath 改写到 /docs
-  navbar: {
-    extraContent: (
-      <a
-        href="/"
-        className="_text-sm _text-gray-600 hover:_text-gray-800 dark:_text-gray-400 dark:hover:_text-gray-200"
-      >
-        主页
-      </a>
-    )
-  },
-
   // 页脚：左侧版权与备案信息，右侧法律文档链接
   footer: {
     content: (
