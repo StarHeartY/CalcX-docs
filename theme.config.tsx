@@ -7,13 +7,25 @@ export default {
     link: 'https://github.com/StarHeartY/CalcX-docs'
   },
 
+  // 顶部导航：原生 <a> 链接到主站首页，避免被 Next 的 basePath 改写到 /docs
+  navbar: {
+    extraContent: (
+      <a
+        href="/"
+        className="_text-sm _text-gray-600 hover:_text-gray-800 dark:_text-gray-400 dark:hover:_text-gray-200"
+      >
+        主页
+      </a>
+    )
+  },
+
   // 页脚：左侧版权与备案信息，右侧法律文档链接
   footer: {
     content: (
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', width: '100%', fontSize: '14px', lineHeight: 2.5, opacity: 0.8 }}>
         <div>
           {/* TODO: ICP 备案审核通过后，在此添加备案号一行（须链接至 https://beian.miit.gov.cn/），
-              并按 hostname 判断仅在 calcx.startyi.cn 显示 */}
+              仅在 calcx.startyi.cn 显示 */}
           <div>
             版权所有 © {(() => {
               const start = 2026

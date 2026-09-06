@@ -13,12 +13,6 @@ export default {
   "history": "历史记录",
   "settings": "设置",
   "troubleshooting": "常见问题与故障排查",
-  "home": {
-    "title": "主页",
-    "type": "page",
-    "href": "/",
-    "newWindow": false
-  },
   "about": {
     "title": "关于",
     "type": "page"
