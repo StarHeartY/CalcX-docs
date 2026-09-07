@@ -1,5 +1,20 @@
+import { useEffect, useState } from 'react'
 import { useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
+
+// ICP 备案号：仅在备案域名（*.startyi.cn）上显示
+function IcpLink() {
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    setVisible(window.location.hostname.endsWith('.startyi.cn'))
+  }, [])
+  if (!visible) return null
+  return (
+    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+      赣ICP备2026021841号
+    </a>
+  )
+}
 
 export default {
   logo: <strong>CalculatorX 帮助中心</strong>,
@@ -11,16 +26,15 @@ export default {
   footer: {
     content: (
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', width: '100%', fontSize: '14px', lineHeight: 2.5, opacity: 0.8 }}>
-        <div>
-          {/* TODO: ICP 备案审核通过后，在此添加备案号一行（须链接至 https://beian.miit.gov.cn/），
-              仅在 calcx.startyi.cn 显示 */}
-          <div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <span>
             版权所有 © {(() => {
               const start = 2026
               const now = new Date().getFullYear()
               return start === now ? now : `${start}–${now}`
             })()} <a href="/">StartYi</a>
-          </div>
+          </span>
+          <IcpLink />
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '48px' }}>
           <a href="/agreement/">用户协议</a>
