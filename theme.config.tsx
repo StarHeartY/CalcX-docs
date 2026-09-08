@@ -11,7 +11,7 @@ function IcpLink() {
   if (!visible) return null
   return (
     <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
-      赣ICP备2026021841号
+      赣ICP备2026021841号-1
     </a>
   )
 }
