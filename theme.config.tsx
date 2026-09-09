@@ -19,7 +19,7 @@ function IcpLink() {
 export default {
   logo: <strong>CalculatorX 帮助中心</strong>,
   project: {
-    link: 'https://github.com/StarHeartY/CalcX-docs'
+    link: 'https://github.com/StartYR/CalcX-docs'
   },
 
   // 页脚：左侧版权与备案信息，右侧法律文档链接

@@ -26,7 +26,7 @@ export default {
   "contact": {
     "title": "GitHub ↗",
     "type": "page",
-    "href": "https://github.com/StarHeartY/CalculatorX",
+    "href": "https://github.com/StartYR/CalculatorX",
     "newWindow": true
   }
 }

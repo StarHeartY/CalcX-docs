@@ -2,7 +2,7 @@
 
 CalculatorX 官方中文帮助中心，为 HarmonyOS 平台上的科学计算器提供快速入门、基础计算、科学计算、历史记录、常见问题和支持信息。
 
-[在线帮助中心](https://calcx.startyi.com/docs/) · [CalculatorX 官网](https://calcx.startyi.com) · [CalculatorX 源码](https://github.com/StarHeartY/CalculatorX)
+[在线帮助中心](https://calcx.startyi.com/docs/) · [CalculatorX 官网](https://calcx.startyi.com) · [CalculatorX 源码](https://github.com/StartYR/CalculatorX)
 
 <p align="center">
   <picture>
@@ -17,7 +17,7 @@ CalculatorX 官方中文帮助中心，为 HarmonyOS 平台上的科学计算器
 
 导航只收录已经完成的正式页面，不使用占位教程预告尚未实现或尚未核实的功能。
 
-本仓库只维护帮助中心。CalculatorX 应用功能、版本发布和客户端内部加载逻辑由 [CalculatorX 主项目](https://github.com/StarHeartY/CalculatorX)负责。
+本仓库只维护帮助中心。CalculatorX 应用功能、版本发布和客户端内部加载逻辑由 [CalculatorX 主项目](https://github.com/StartYR/CalculatorX)负责。
 
 ## 能力
 
@@ -48,7 +48,7 @@ CalculatorX 官方中文帮助中心，为 HarmonyOS 平台上的科学计算器
 需要 Node.js 24 LTS。项目通过 `.nvmrc`、`.node-version` 和 `package.json` 统一约束 Node.js 24，并统一使用 npm。
 
 ```bash
-git clone https://github.com/StarHeartY/CalcX-docs.git
+git clone https://github.com/StartYR/CalcX-docs.git
 cd CalcX-docs
 npm ci
 npm run dev

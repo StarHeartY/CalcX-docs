@@ -48,7 +48,7 @@ out/docs/images/
 | 配置 | 当前值 |
 | --- | --- |
 | 项目名称 | `calcx-docs` |
-| Git 仓库 | `StarHeartY/CalcX-docs` |
+| Git 仓库 | `StartYR/CalcX-docs` |
 | 生产分支 | `main` |
 | 自动部署 | 已启用 |
 | 构建命令 | `npm run build` |
