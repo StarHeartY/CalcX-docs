@@ -32,8 +32,8 @@ export default {
   footer: {
     content: (
       <div style={{
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', columnGap: '48px', rowGap: '16px', width: '100%', fontSize: '14px', lineHeight: 2.5, opacity: 0.8 }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px' }}>
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', columnGap: '48px', rowGap: '8px', width: '100%', fontSize: '14px', lineHeight: 2.5, opacity: 0.8 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', columnGap: '48px', rowGap: '8px' }}>
           <span>
             版权所有 © {(() => {
               const start = 2026
@@ -43,7 +43,7 @@ export default {
           </span>
           <IcpLink />
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '48px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', columnGap: '48px', rowGap: '8px' }}>
           <a href="/agreement/">用户协议</a>
           <a href="/privacy/">隐私政策</a>
         </div>
