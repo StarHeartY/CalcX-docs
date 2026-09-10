@@ -10,7 +10,7 @@ function IcpLink() {
   }, [])
   if (!visible) return null
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4px 48px' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4px 36px' }}>
       <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style={{ whiteSpace: 'nowrap' }}>
         赣ICP备2026021841号-1
       </a>
@@ -32,8 +32,8 @@ export default {
   footer: {
     content: (
       <div style={{
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', columnGap: '48px', rowGap: '8px', width: '100%', fontSize: '14px', lineHeight: 2.5, opacity: 0.8 }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', columnGap: '48px', rowGap: '8px' }}>
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', columnGap: '36px', rowGap: '8px', width: '100%', fontSize: '14px', lineHeight: 1, opacity: 0.8 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', columnGap: '36px', rowGap: '8px' }}>
           <span>
             版权所有 © {(() => {
               const start = 2026
