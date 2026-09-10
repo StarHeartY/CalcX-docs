@@ -10,7 +10,7 @@ function IcpLink() {
   }, [])
   if (!visible) return null
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4px 16px' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4px 48px' }}>
       <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style={{ whiteSpace: 'nowrap' }}>
         赣ICP备2026021841号-1
       </a>
@@ -31,7 +31,8 @@ export default {
   // 页脚：左侧版权与备案信息，右侧法律文档链接
   footer: {
     content: (
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', width: '100%', fontSize: '14px', lineHeight: 2.5, opacity: 0.8 }}>
+      <div style={{
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', columnGap: '48px', rowGap: '16px', width: '100%', fontSize: '14px', lineHeight: 2.5, opacity: 0.8 }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px' }}>
           <span>
             版权所有 © {(() => {
