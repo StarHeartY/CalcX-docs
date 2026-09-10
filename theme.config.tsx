@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 
-// ICP 备案号：仅在备案域名（*.startyi.cn）上显示
+// 备案信息：仅在备案域名（*.startyi.cn）上显示
 function IcpLink() {
   const [visible, setVisible] = useState(false)
   useEffect(() => {
@@ -10,9 +10,15 @@ function IcpLink() {
   }, [])
   if (!visible) return null
   return (
-    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
-      赣ICP备2026021841号-1
-    </a>
+    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4px 16px' }}>
+      <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style={{ whiteSpace: 'nowrap' }}>
+        赣ICP备2026021841号-1
+      </a>
+      <a href="https://beian.mps.gov.cn/#/query/webSearch?code=44011302005902" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', whiteSpace: 'nowrap' }}>
+        <img src="/docs/images/beian.png" alt="公安备案图标" width="18" height="20" style={{ flexShrink: 0 }} />
+        粤公网安备44011302005902号
+      </a>
+    </div>
   )
 }
 
@@ -26,7 +32,7 @@ export default {
   footer: {
     content: (
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px', width: '100%', fontSize: '14px', lineHeight: 2.5, opacity: 0.8 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '16px' }}>
           <span>
             版权所有 © {(() => {
               const start = 2026
