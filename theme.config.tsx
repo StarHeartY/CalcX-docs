@@ -2,15 +2,17 @@ import { useEffect, useState } from 'react'
 import { useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 
-// 备案信息：仅在备案域名（*.startyi.cn）上显示
+// 备案信息：在备案域名和本机预览地址上显示
 function IcpLink() {
   const [visible, setVisible] = useState(false)
   useEffect(() => {
-    setVisible(window.location.hostname.endsWith('.startyi.cn'))
+    const hostname = window.location.hostname
+    const isLocal = ['localhost', '127.0.0.1', '[::1]', '::1'].includes(hostname)
+    setVisible(isLocal || hostname.endsWith('.startyi.cn'))
   }, [])
   if (!visible) return null
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '4px 36px' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '8px 24px' }}>
       <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style={{ whiteSpace: 'nowrap' }}>
         赣ICP备2026021841号-1
       </a>
@@ -32,8 +34,8 @@ export default {
   footer: {
     content: (
       <div style={{
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', columnGap: '36px', rowGap: '8px', width: '100%', fontSize: '14px', lineHeight: 1, opacity: 0.8 }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', columnGap: '36px', rowGap: '8px' }}>
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px 24px', width: '100%', fontSize: '14px', lineHeight: 2, opacity: 0.8 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '8px 24px' }}>
           <span>
             版权所有 © {(() => {
               const start = 2026
